@@ -24,13 +24,15 @@ main :: () {
     ucal_set(local_cal, .SECOND,      0);
 
     // Convert the timestamp to UTC by getting the UTC time in milliseconds since epoch
-    dateInUTC := ucal_getMillis(local_cal, *status);
+    ms_since_unix_epoch_start := ucal_getMillis(local_cal, *status);
     if status != .ZERO_ERROR {
         log_error("Could not get milliseconds from calendar for timezone \"%\": %", timezone, status);
         exit(1);
     }
-    log("milliseconds since epoch start: %", dateInUTC);
-    apollo_time := APOLLO_TIME_FOR_JAN_1_1970 + milliseconds_to_apollo(cast(s64)dateInUTC);
+
+    log("milliseconds since epoch start: %", ms_since_unix_epoch_start);
+
+    apollo_time := APOLLO_TIME_FOR_JAN_1_1970 + milliseconds_to_apollo(cast(s64) ms_since_unix_epoch_start);
     apollo_cal := to_calendar(apollo_time);
     log("as an apollo calendar: %", apollo_cal);
 }

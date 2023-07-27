@@ -2076,10 +2076,6 @@ u_strFromJavaModifiedUTF8WithSub :: (dest: *UChar, destCapacity: s32, pDestLengt
 
 #import "Basic"; // For assert
 
-libicutu :: #library "/usr/local/homebrew/Cellar/icu4c/73.2/lib/libicutu";
-libicuuc :: #library "/usr/local/homebrew/Cellar/icu4c/73.2/lib/libicuuc";
-libicui18n :: #library "/usr/local/homebrew/Cellar/icu4c/73.2/lib/libicui18n";
-libicudata :: #library "/usr/local/homebrew/Cellar/icu4c/73.2/lib/libicudata";
 
 #run {
     {
@@ -2118,5 +2114,13 @@ libicudata :: #library "/usr/local/homebrew/Cellar/icu4c/73.2/lib/libicudata";
         assert(size_of(type_of(UCharIterator.setState)) == 8, "UCharIterator.setState has unexpected size % instead of 8", size_of(type_of(UCharIterator.setState)));
         assert(size_of(UCharIterator) == 112, "UCharIterator has size % instead of 112", size_of(UCharIterator));
     }
+}
+
+
+#if OS == .MACOS {
+    libicutu :: #library "macos/libicutu";
+    libicuuc :: #library "macos/libicuuc";
+    libicui18n :: #library "macos/libicui18n";
+    libicudata :: #library "macos/libicudata";
 }
 
