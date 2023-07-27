@@ -32,6 +32,9 @@ main :: () {
 
     log("milliseconds since epoch start: %", ms_since_unix_epoch_start);
 
+    // This is currently still in #scope_file in Apollo_Time, so let’s define it locally until that’s changed.
+    APOLLO_TIME_FOR_JAN_1_1970 :: Apollo_Time.{low=0xdbd87f0edb7c8000, high=0x300};
+
     apollo_time := APOLLO_TIME_FOR_JAN_1_1970 + milliseconds_to_apollo(cast(s64) ms_since_unix_epoch_start);
     apollo_cal := to_calendar(apollo_time);
     log("as an apollo calendar: %", apollo_cal);
