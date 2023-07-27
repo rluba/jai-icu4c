@@ -17,7 +17,7 @@ main :: () {
     }
 
     ucal_set(local_cal, .YEAR,        2023);
-    ucal_set(local_cal, .MONTH,       6);
+    ucal_set(local_cal, .MONTH,       6); // zero-based! Because footguns are fun…
     ucal_set(local_cal, .DATE,        27);
     ucal_set(local_cal, .HOUR_OF_DAY, 15);
     ucal_set(local_cal, .MINUTE,      0);
