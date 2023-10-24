@@ -579,201 +579,6 @@ UErrorCode :: enum s32 {
     PLUGIN_ERROR_LIMIT               :: 66818;
 
     ERROR_LIMIT                      :: 66818;
-
-    U_USING_FALLBACK_WARNING           :: USING_FALLBACK_WARNING;
-
-    U_ERROR_WARNING_START              :: ERROR_WARNING_START;
-
-    U_USING_DEFAULT_WARNING            :: USING_DEFAULT_WARNING;
-
-    U_SAFECLONE_ALLOCATED_WARNING      :: SAFECLONE_ALLOCATED_WARNING;
-
-    U_STATE_OLD_WARNING                :: STATE_OLD_WARNING;
-
-    U_STRING_NOT_TERMINATED_WARNING    :: STRING_NOT_TERMINATED_WARNING;
-
-    U_SORT_KEY_TOO_SHORT_WARNING       :: SORT_KEY_TOO_SHORT_WARNING;
-
-    U_AMBIGUOUS_ALIAS_WARNING          :: AMBIGUOUS_ALIAS_WARNING;
-
-    U_DIFFERENT_UCA_VERSION            :: DIFFERENT_UCA_VERSION;
-
-    U_PLUGIN_CHANGED_LEVEL_WARNING     :: PLUGIN_CHANGED_LEVEL_WARNING;
-
-    U_ERROR_WARNING_LIMIT              :: ERROR_WARNING_LIMIT;
-
-    U_ZERO_ERROR                       :: ZERO_ERROR;
-
-    U_ILLEGAL_ARGUMENT_ERROR           :: ILLEGAL_ARGUMENT_ERROR;
-    U_MISSING_RESOURCE_ERROR           :: MISSING_RESOURCE_ERROR;
-    U_INVALID_FORMAT_ERROR             :: INVALID_FORMAT_ERROR;
-    U_FILE_ACCESS_ERROR                :: FILE_ACCESS_ERROR;
-    U_INTERNAL_PROGRAM_ERROR           :: INTERNAL_PROGRAM_ERROR;
-    U_MESSAGE_PARSE_ERROR              :: MESSAGE_PARSE_ERROR;
-    U_MEMORY_ALLOCATION_ERROR          :: MEMORY_ALLOCATION_ERROR;
-    U_INDEX_OUTOFBOUNDS_ERROR          :: INDEX_OUTOFBOUNDS_ERROR;
-    U_PARSE_ERROR                      :: PARSE_ERROR;
-    U_INVALID_CHAR_FOUND               :: INVALID_CHAR_FOUND;
-    U_TRUNCATED_CHAR_FOUND             :: TRUNCATED_CHAR_FOUND;
-    U_ILLEGAL_CHAR_FOUND               :: ILLEGAL_CHAR_FOUND;
-    U_INVALID_TABLE_FORMAT             :: INVALID_TABLE_FORMAT;
-    U_INVALID_TABLE_FILE               :: INVALID_TABLE_FILE;
-    U_BUFFER_OVERFLOW_ERROR            :: BUFFER_OVERFLOW_ERROR;
-    U_UNSUPPORTED_ERROR                :: UNSUPPORTED_ERROR;
-    U_RESOURCE_TYPE_MISMATCH           :: RESOURCE_TYPE_MISMATCH;
-    U_ILLEGAL_ESCAPE_SEQUENCE          :: ILLEGAL_ESCAPE_SEQUENCE;
-    U_UNSUPPORTED_ESCAPE_SEQUENCE      :: UNSUPPORTED_ESCAPE_SEQUENCE;
-    U_NO_SPACE_AVAILABLE               :: NO_SPACE_AVAILABLE;
-    U_CE_NOT_FOUND_ERROR               :: CE_NOT_FOUND_ERROR;
-    U_PRIMARY_TOO_LONG_ERROR           :: PRIMARY_TOO_LONG_ERROR;
-    U_STATE_TOO_OLD_ERROR              :: STATE_TOO_OLD_ERROR;
-    U_TOO_MANY_ALIASES_ERROR           :: TOO_MANY_ALIASES_ERROR;
-
-    U_ENUM_OUT_OF_SYNC_ERROR           :: ENUM_OUT_OF_SYNC_ERROR;
-    U_INVARIANT_CONVERSION_ERROR       :: INVARIANT_CONVERSION_ERROR;
-    U_INVALID_STATE_ERROR              :: INVALID_STATE_ERROR;
-    U_COLLATOR_VERSION_MISMATCH        :: COLLATOR_VERSION_MISMATCH;
-    U_USELESS_COLLATOR_ERROR           :: USELESS_COLLATOR_ERROR;
-    U_NO_WRITE_PERMISSION              :: NO_WRITE_PERMISSION;
-
-    U_INPUT_TOO_LONG_ERROR             :: INPUT_TOO_LONG_ERROR;
-
-    U_STANDARD_ERROR_LIMIT             :: STANDARD_ERROR_LIMIT;
-
-    U_BAD_VARIABLE_DEFINITION          :: BAD_VARIABLE_DEFINITION;
-    U_PARSE_ERROR_START                :: PARSE_ERROR_START;
-    U_MALFORMED_RULE                   :: MALFORMED_RULE;
-    U_MALFORMED_SET                    :: MALFORMED_SET;
-    U_MALFORMED_SYMBOL_REFERENCE       :: MALFORMED_SYMBOL_REFERENCE;
-    U_MALFORMED_UNICODE_ESCAPE         :: MALFORMED_UNICODE_ESCAPE;
-    U_MALFORMED_VARIABLE_DEFINITION    :: MALFORMED_VARIABLE_DEFINITION;
-    U_MALFORMED_VARIABLE_REFERENCE     :: MALFORMED_VARIABLE_REFERENCE;
-    U_MISMATCHED_SEGMENT_DELIMITERS    :: MISMATCHED_SEGMENT_DELIMITERS;
-    U_MISPLACED_ANCHOR_START           :: MISPLACED_ANCHOR_START;
-    U_MISPLACED_CURSOR_OFFSET          :: MISPLACED_CURSOR_OFFSET;
-    U_MISPLACED_QUANTIFIER             :: MISPLACED_QUANTIFIER;
-    U_MISSING_OPERATOR                 :: MISSING_OPERATOR;
-    U_MISSING_SEGMENT_CLOSE            :: MISSING_SEGMENT_CLOSE;
-    U_MULTIPLE_ANTE_CONTEXTS           :: MULTIPLE_ANTE_CONTEXTS;
-    U_MULTIPLE_CURSORS                 :: MULTIPLE_CURSORS;
-    U_MULTIPLE_POST_CONTEXTS           :: MULTIPLE_POST_CONTEXTS;
-    U_TRAILING_BACKSLASH               :: TRAILING_BACKSLASH;
-    U_UNDEFINED_SEGMENT_REFERENCE      :: UNDEFINED_SEGMENT_REFERENCE;
-    U_UNDEFINED_VARIABLE               :: UNDEFINED_VARIABLE;
-    U_UNQUOTED_SPECIAL                 :: UNQUOTED_SPECIAL;
-    U_UNTERMINATED_QUOTE               :: UNTERMINATED_QUOTE;
-    U_RULE_MASK_ERROR                  :: RULE_MASK_ERROR;
-    U_MISPLACED_COMPOUND_FILTER        :: MISPLACED_COMPOUND_FILTER;
-    U_MULTIPLE_COMPOUND_FILTERS        :: MULTIPLE_COMPOUND_FILTERS;
-    U_INVALID_RBT_SYNTAX               :: INVALID_RBT_SYNTAX;
-    U_INVALID_PROPERTY_PATTERN         :: INVALID_PROPERTY_PATTERN;
-    U_MALFORMED_PRAGMA                 :: MALFORMED_PRAGMA;
-    U_UNCLOSED_SEGMENT                 :: UNCLOSED_SEGMENT;
-    U_ILLEGAL_CHAR_IN_SEGMENT          :: ILLEGAL_CHAR_IN_SEGMENT;
-    U_VARIABLE_RANGE_EXHAUSTED         :: VARIABLE_RANGE_EXHAUSTED;
-    U_VARIABLE_RANGE_OVERLAP           :: VARIABLE_RANGE_OVERLAP;
-    U_ILLEGAL_CHARACTER                :: ILLEGAL_CHARACTER;
-    U_INTERNAL_TRANSLITERATOR_ERROR    :: INTERNAL_TRANSLITERATOR_ERROR;
-    U_INVALID_ID                       :: INVALID_ID;
-    U_INVALID_FUNCTION                 :: INVALID_FUNCTION;
-
-    U_PARSE_ERROR_LIMIT                :: PARSE_ERROR_LIMIT;
-
-    U_UNEXPECTED_TOKEN                 :: UNEXPECTED_TOKEN;
-    U_FMT_PARSE_ERROR_START            :: FMT_PARSE_ERROR_START;
-    U_MULTIPLE_DECIMAL_SEPARATORS      :: MULTIPLE_DECIMAL_SEPARATORS;
-    U_MULTIPLE_DECIMAL_SEPERATORS      :: MULTIPLE_DECIMAL_SEPERATORS;
-    U_MULTIPLE_EXPONENTIAL_SYMBOLS     :: MULTIPLE_EXPONENTIAL_SYMBOLS;
-    U_MALFORMED_EXPONENTIAL_PATTERN    :: MALFORMED_EXPONENTIAL_PATTERN;
-    U_MULTIPLE_PERCENT_SYMBOLS         :: MULTIPLE_PERCENT_SYMBOLS;
-    U_MULTIPLE_PERMILL_SYMBOLS         :: MULTIPLE_PERMILL_SYMBOLS;
-    U_MULTIPLE_PAD_SPECIFIERS          :: MULTIPLE_PAD_SPECIFIERS;
-    U_PATTERN_SYNTAX_ERROR             :: PATTERN_SYNTAX_ERROR;
-    U_ILLEGAL_PAD_POSITION             :: ILLEGAL_PAD_POSITION;
-    U_UNMATCHED_BRACES                 :: UNMATCHED_BRACES;
-    U_UNSUPPORTED_PROPERTY             :: UNSUPPORTED_PROPERTY;
-    U_UNSUPPORTED_ATTRIBUTE            :: UNSUPPORTED_ATTRIBUTE;
-    U_ARGUMENT_TYPE_MISMATCH           :: ARGUMENT_TYPE_MISMATCH;
-    U_DUPLICATE_KEYWORD                :: DUPLICATE_KEYWORD;
-    U_UNDEFINED_KEYWORD                :: UNDEFINED_KEYWORD;
-    U_DEFAULT_KEYWORD_MISSING          :: DEFAULT_KEYWORD_MISSING;
-    U_DECIMAL_NUMBER_SYNTAX_ERROR      :: DECIMAL_NUMBER_SYNTAX_ERROR;
-    U_FORMAT_INEXACT_ERROR             :: FORMAT_INEXACT_ERROR;
-    U_NUMBER_ARG_OUTOFBOUNDS_ERROR     :: NUMBER_ARG_OUTOFBOUNDS_ERROR;
-    U_NUMBER_SKELETON_SYNTAX_ERROR     :: NUMBER_SKELETON_SYNTAX_ERROR;
-
-    U_FMT_PARSE_ERROR_LIMIT            :: FMT_PARSE_ERROR_LIMIT;
-
-    U_BRK_INTERNAL_ERROR               :: BRK_INTERNAL_ERROR;
-    U_BRK_ERROR_START                  :: BRK_ERROR_START;
-    U_BRK_HEX_DIGITS_EXPECTED          :: BRK_HEX_DIGITS_EXPECTED;
-    U_BRK_SEMICOLON_EXPECTED           :: BRK_SEMICOLON_EXPECTED;
-    U_BRK_RULE_SYNTAX                  :: BRK_RULE_SYNTAX;
-    U_BRK_UNCLOSED_SET                 :: BRK_UNCLOSED_SET;
-    U_BRK_ASSIGN_ERROR                 :: BRK_ASSIGN_ERROR;
-    U_BRK_VARIABLE_REDFINITION         :: BRK_VARIABLE_REDFINITION;
-    U_BRK_MISMATCHED_PAREN             :: BRK_MISMATCHED_PAREN;
-    U_BRK_NEW_LINE_IN_QUOTED_STRING    :: BRK_NEW_LINE_IN_QUOTED_STRING;
-    U_BRK_UNDEFINED_VARIABLE           :: BRK_UNDEFINED_VARIABLE;
-    U_BRK_INIT_ERROR                   :: BRK_INIT_ERROR;
-    U_BRK_RULE_EMPTY_SET               :: BRK_RULE_EMPTY_SET;
-    U_BRK_UNRECOGNIZED_OPTION          :: BRK_UNRECOGNIZED_OPTION;
-    U_BRK_MALFORMED_RULE_TAG           :: BRK_MALFORMED_RULE_TAG;
-
-    U_BRK_ERROR_LIMIT                  :: BRK_ERROR_LIMIT;
-
-    U_REGEX_INTERNAL_ERROR             :: REGEX_INTERNAL_ERROR;
-    U_REGEX_ERROR_START                :: REGEX_ERROR_START;
-    U_REGEX_RULE_SYNTAX                :: REGEX_RULE_SYNTAX;
-    U_REGEX_INVALID_STATE              :: REGEX_INVALID_STATE;
-    U_REGEX_BAD_ESCAPE_SEQUENCE        :: REGEX_BAD_ESCAPE_SEQUENCE;
-    U_REGEX_PROPERTY_SYNTAX            :: REGEX_PROPERTY_SYNTAX;
-    U_REGEX_UNIMPLEMENTED              :: REGEX_UNIMPLEMENTED;
-    U_REGEX_MISMATCHED_PAREN           :: REGEX_MISMATCHED_PAREN;
-    U_REGEX_NUMBER_TOO_BIG             :: REGEX_NUMBER_TOO_BIG;
-    U_REGEX_BAD_INTERVAL               :: REGEX_BAD_INTERVAL;
-    U_REGEX_MAX_LT_MIN                 :: REGEX_MAX_LT_MIN;
-    U_REGEX_INVALID_BACK_REF           :: REGEX_INVALID_BACK_REF;
-    U_REGEX_INVALID_FLAG               :: REGEX_INVALID_FLAG;
-    U_REGEX_LOOK_BEHIND_LIMIT          :: REGEX_LOOK_BEHIND_LIMIT;
-    U_REGEX_SET_CONTAINS_STRING        :: REGEX_SET_CONTAINS_STRING;
-
-    U_REGEX_OCTAL_TOO_BIG              :: REGEX_OCTAL_TOO_BIG;
-
-    U_REGEX_MISSING_CLOSE_BRACKET      :: REGEX_MISSING_CLOSE_BRACKET;
-    U_REGEX_INVALID_RANGE              :: REGEX_INVALID_RANGE;
-    U_REGEX_STACK_OVERFLOW             :: REGEX_STACK_OVERFLOW;
-    U_REGEX_TIME_OUT                   :: REGEX_TIME_OUT;
-    U_REGEX_STOPPED_BY_CALLER          :: REGEX_STOPPED_BY_CALLER;
-    U_REGEX_PATTERN_TOO_BIG            :: REGEX_PATTERN_TOO_BIG;
-    U_REGEX_INVALID_CAPTURE_GROUP_NAME :: REGEX_INVALID_CAPTURE_GROUP_NAME;
-
-    U_REGEX_ERROR_LIMIT                :: REGEX_ERROR_LIMIT;
-
-    U_IDNA_PROHIBITED_ERROR            :: IDNA_PROHIBITED_ERROR;
-    U_IDNA_ERROR_START                 :: IDNA_ERROR_START;
-    U_IDNA_UNASSIGNED_ERROR            :: IDNA_UNASSIGNED_ERROR;
-    U_IDNA_CHECK_BIDI_ERROR            :: IDNA_CHECK_BIDI_ERROR;
-    U_IDNA_STD3_ASCII_RULES_ERROR      :: IDNA_STD3_ASCII_RULES_ERROR;
-    U_IDNA_ACE_PREFIX_ERROR            :: IDNA_ACE_PREFIX_ERROR;
-    U_IDNA_VERIFICATION_ERROR          :: IDNA_VERIFICATION_ERROR;
-    U_IDNA_LABEL_TOO_LONG_ERROR        :: IDNA_LABEL_TOO_LONG_ERROR;
-    U_IDNA_ZERO_LENGTH_LABEL_ERROR     :: IDNA_ZERO_LENGTH_LABEL_ERROR;
-    U_IDNA_DOMAIN_NAME_TOO_LONG_ERROR  :: IDNA_DOMAIN_NAME_TOO_LONG_ERROR;
-
-    U_IDNA_ERROR_LIMIT                 :: IDNA_ERROR_LIMIT;
-
-    U_STRINGPREP_PROHIBITED_ERROR      :: STRINGPREP_PROHIBITED_ERROR;
-    U_STRINGPREP_UNASSIGNED_ERROR      :: STRINGPREP_UNASSIGNED_ERROR;
-    U_STRINGPREP_CHECK_BIDI_ERROR      :: STRINGPREP_CHECK_BIDI_ERROR;
-
-    U_PLUGIN_ERROR_START               :: PLUGIN_ERROR_START;
-    U_PLUGIN_TOO_HIGH                  :: PLUGIN_TOO_HIGH;
-    U_PLUGIN_DIDNT_SET_LEVEL           :: PLUGIN_DIDNT_SET_LEVEL;
-
-    U_PLUGIN_ERROR_LIMIT               :: PLUGIN_ERROR_LIMIT;
-
-    U_ERROR_LIMIT                      :: ERROR_LIMIT;
 }
 
 u_errorName :: (code: UErrorCode) -> *u8 #foreign libicutu "u_errorName_73";
@@ -821,14 +626,6 @@ ULocDataLocaleType :: enum u32 {
     REQUESTED_LOCALE       :: 2;
 
     DATA_LOCALE_TYPE_LIMIT :: 3;
-
-    ULOC_ACTUAL_LOCALE          :: ACTUAL_LOCALE;
-
-    ULOC_VALID_LOCALE           :: VALID_LOCALE;
-
-    ULOC_REQUESTED_LOCALE       :: REQUESTED_LOCALE;
-
-    ULOC_DATA_LOCALE_TYPE_LIMIT :: DATA_LOCALE_TYPE_LIMIT;
 }
 
 uloc_getDefault :: () -> *u8 #foreign libicutu "uloc_getDefault_73";
@@ -884,14 +681,6 @@ ULocAvailableType :: enum u32 {
     WITH_LEGACY_ALIASES :: 2;
 
     COUNT               :: 3;
-
-    ULOC_AVAILABLE_DEFAULT             :: DEFAULT;
-
-    ULOC_AVAILABLE_ONLY_LEGACY_ALIASES :: ONLY_LEGACY_ALIASES;
-
-    ULOC_AVAILABLE_WITH_LEGACY_ALIASES :: WITH_LEGACY_ALIASES;
-
-    ULOC_AVAILABLE_COUNT               :: COUNT;
 }
 
 uloc_openAvailableByType :: (type: ULocAvailableType, status: *UErrorCode) -> *UEnumeration #foreign libicutu "uloc_openAvailableByType_73";
@@ -923,12 +712,6 @@ ULayoutType :: enum u32 {
     TTB     :: 2;
     BTT     :: 3;
     UNKNOWN :: 4;
-
-    ULOC_LAYOUT_LTR     :: LTR;
-    ULOC_LAYOUT_RTL     :: RTL;
-    ULOC_LAYOUT_TTB     :: TTB;
-    ULOC_LAYOUT_BTT     :: BTT;
-    ULOC_LAYOUT_UNKNOWN :: UNKNOWN;
 }
 
 uloc_getCharacterOrientation :: (localeId: *u8, status: *UErrorCode) -> ULayoutType #foreign libicutu "uloc_getCharacterOrientation_73";
@@ -948,12 +731,6 @@ UAcceptResult :: enum u32 {
     VALID    :: 1;
 
     FALLBACK :: 2;
-
-    ULOC_ACCEPT_FAILED   :: FAILED;
-
-    ULOC_ACCEPT_VALID    :: VALID;
-
-    ULOC_ACCEPT_FALLBACK :: FALLBACK;
 }
 
 uloc_acceptLanguageFromHTTP :: (result: *u8, resultAvailable: s32, outResult: *UAcceptResult, httpAcceptLanguage: *u8, availableLocales: *UEnumeration, status: *UErrorCode) -> s32 #foreign libicutu "uloc_acceptLanguageFromHTTP_73";
@@ -993,12 +770,6 @@ UCalendarType :: enum u32 {
     DEFAULT     :: 0;
 
     GREGORIAN   :: 1;
-
-    UCAL_TRADITIONAL :: TRADITIONAL;
-
-    UCAL_DEFAULT     :: DEFAULT;
-
-    UCAL_GREGORIAN   :: GREGORIAN;
 }
 
 /** Possible fields in a UCalendar
@@ -1056,58 +827,6 @@ UCalendarDateFields :: enum u32 {
     FIELD_COUNT          :: 24;
 
     DAY_OF_MONTH         :: 5;
-
-    UCAL_ERA                  :: ERA;
-
-    UCAL_YEAR                 :: YEAR;
-
-    UCAL_MONTH                :: MONTH;
-
-    UCAL_WEEK_OF_YEAR         :: WEEK_OF_YEAR;
-
-    UCAL_WEEK_OF_MONTH        :: WEEK_OF_MONTH;
-
-    UCAL_DATE                 :: DATE;
-
-    UCAL_DAY_OF_YEAR          :: DAY_OF_YEAR;
-
-    UCAL_DAY_OF_WEEK          :: DAY_OF_WEEK;
-
-    UCAL_DAY_OF_WEEK_IN_MONTH :: DAY_OF_WEEK_IN_MONTH;
-
-    UCAL_AM_PM                :: AM_PM;
-
-    UCAL_HOUR                 :: HOUR;
-
-    UCAL_HOUR_OF_DAY          :: HOUR_OF_DAY;
-
-    UCAL_MINUTE               :: MINUTE;
-
-    UCAL_SECOND               :: SECOND;
-
-    UCAL_MILLISECOND          :: MILLISECOND;
-
-    UCAL_ZONE_OFFSET          :: ZONE_OFFSET;
-
-    UCAL_DST_OFFSET           :: DST_OFFSET;
-
-    UCAL_YEAR_WOY             :: YEAR_WOY;
-
-    UCAL_DOW_LOCAL            :: DOW_LOCAL;
-
-    UCAL_EXTENDED_YEAR        :: EXTENDED_YEAR;
-
-    UCAL_JULIAN_DAY           :: JULIAN_DAY;
-
-    UCAL_MILLISECONDS_IN_DAY  :: MILLISECONDS_IN_DAY;
-
-    UCAL_IS_LEAP_MONTH        :: IS_LEAP_MONTH;
-
-    UCAL_ORDINAL_MONTH        :: ORDINAL_MONTH;
-
-    UCAL_FIELD_COUNT          :: FIELD_COUNT;
-
-    UCAL_DAY_OF_MONTH         :: DAY_OF_MONTH;
 }
 
 /**
@@ -1132,20 +851,6 @@ UCalendarDaysOfWeek :: enum u32 {
     FRIDAY    :: 6;
 
     SATURDAY  :: 7;
-
-    UCAL_SUNDAY    :: SUNDAY;
-
-    UCAL_MONDAY    :: MONDAY;
-
-    UCAL_TUESDAY   :: TUESDAY;
-
-    UCAL_WEDNESDAY :: WEDNESDAY;
-
-    UCAL_THURSDAY  :: THURSDAY;
-
-    UCAL_FRIDAY    :: FRIDAY;
-
-    UCAL_SATURDAY  :: SATURDAY;
 }
 
 /** Possible months in a UCalendar. Note: Calendar month is 0-based.
@@ -1177,32 +882,6 @@ UCalendarMonths :: enum u32 {
     DECEMBER   :: 11;
 
     UNDECIMBER :: 12;
-
-    UCAL_JANUARY    :: JANUARY;
-
-    UCAL_FEBRUARY   :: FEBRUARY;
-
-    UCAL_MARCH      :: MARCH;
-
-    UCAL_APRIL      :: APRIL;
-
-    UCAL_MAY        :: MAY;
-
-    UCAL_JUNE       :: JUNE;
-
-    UCAL_JULY       :: JULY;
-
-    UCAL_AUGUST     :: AUGUST;
-
-    UCAL_SEPTEMBER  :: SEPTEMBER;
-
-    UCAL_OCTOBER    :: OCTOBER;
-
-    UCAL_NOVEMBER   :: NOVEMBER;
-
-    UCAL_DECEMBER   :: DECEMBER;
-
-    UCAL_UNDECIMBER :: UNDECIMBER;
 }
 
 /** Possible AM/PM values in a UCalendar
@@ -1212,10 +891,6 @@ UCalendarAMPMs :: enum u32 {
     AM :: 0;
 
     PM :: 1;
-
-    UCAL_AM :: AM;
-
-    UCAL_PM :: PM;
 }
 
 /**
@@ -1230,12 +905,6 @@ USystemTimeZoneType :: enum u32 {
     CANONICAL          :: 1;
 
     CANONICAL_LOCATION :: 2;
-
-    UCAL_ZONE_TYPE_ANY                :: ANY;
-
-    UCAL_ZONE_TYPE_CANONICAL          :: CANONICAL;
-
-    UCAL_ZONE_TYPE_CANONICAL_LOCATION :: CANONICAL_LOCATION;
 }
 
 ucal_openTimeZoneIDEnumeration :: (zoneType: USystemTimeZoneType, region: *u8, rawOffset: *s32, ec: *UErrorCode) -> *UEnumeration #foreign libicutu "ucal_openTimeZoneIDEnumeration_73";
@@ -1276,14 +945,6 @@ UCalendarDisplayNameType :: enum u32 {
     DST            :: 2;
 
     SHORT_DST      :: 3;
-
-    UCAL_STANDARD       :: STANDARD;
-
-    UCAL_SHORT_STANDARD :: SHORT_STANDARD;
-
-    UCAL_DST            :: DST;
-
-    UCAL_SHORT_DST      :: SHORT_DST;
 }
 
 ucal_getTimeZoneDisplayName :: (cal: *UCalendar, type: UCalendarDisplayNameType, locale: *u8, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "ucal_getTimeZoneDisplayName_73";
@@ -1308,16 +969,6 @@ UCalendarAttribute :: enum u32 {
     REPEATED_WALL_TIME         :: 3;
 
     SKIPPED_WALL_TIME          :: 4;
-
-    UCAL_LENIENT                    :: LENIENT;
-
-    UCAL_FIRST_DAY_OF_WEEK          :: FIRST_DAY_OF_WEEK;
-
-    UCAL_MINIMAL_DAYS_IN_FIRST_WEEK :: MINIMAL_DAYS_IN_FIRST_WEEK;
-
-    UCAL_REPEATED_WALL_TIME         :: REPEATED_WALL_TIME;
-
-    UCAL_SKIPPED_WALL_TIME          :: SKIPPED_WALL_TIME;
 }
 
 /**
@@ -1331,12 +982,6 @@ UCalendarWallTimeOption :: enum u32 {
     FIRST      :: 1;
 
     NEXT_VALID :: 2;
-
-    UCAL_WALLTIME_LAST       :: LAST;
-
-    UCAL_WALLTIME_FIRST      :: FIRST;
-
-    UCAL_WALLTIME_NEXT_VALID :: NEXT_VALID;
 }
 
 ucal_getAttribute :: (cal: *UCalendar, attr: UCalendarAttribute) -> s32 #foreign libicutu "ucal_getAttribute_73";
@@ -1387,18 +1032,6 @@ UCalendarLimitType :: enum u32 {
     ACTUAL_MINIMUM   :: 4;
 
     ACTUAL_MAXIMUM   :: 5;
-
-    UCAL_MINIMUM          :: MINIMUM;
-
-    UCAL_MAXIMUM          :: MAXIMUM;
-
-    UCAL_GREATEST_MINIMUM :: GREATEST_MINIMUM;
-
-    UCAL_LEAST_MAXIMUM    :: LEAST_MAXIMUM;
-
-    UCAL_ACTUAL_MINIMUM   :: ACTUAL_MINIMUM;
-
-    UCAL_ACTUAL_MAXIMUM   :: ACTUAL_MAXIMUM;
 }
 
 ucal_getLimit :: (cal: *UCalendar, field: UCalendarDateFields, type: UCalendarLimitType, status: *UErrorCode) -> s32 #foreign libicutu "ucal_getLimit_73";
@@ -1424,14 +1057,6 @@ UCalendarWeekdayType :: enum u32 {
     WEEKEND_ONSET :: 2;
 
     WEEKEND_CEASE :: 3;
-
-    UCAL_WEEKDAY       :: WEEKDAY;
-
-    UCAL_WEEKEND       :: WEEKEND;
-
-    UCAL_WEEKEND_ONSET :: WEEKEND_ONSET;
-
-    UCAL_WEEKEND_CEASE :: WEEKEND_CEASE;
 }
 
 ucal_getDayOfWeekType :: (cal: *UCalendar, dayOfWeek: UCalendarDaysOfWeek, status: *UErrorCode) -> UCalendarWeekdayType #foreign libicutu "ucal_getDayOfWeekType_73";
@@ -1454,14 +1079,6 @@ UTimeZoneTransitionType :: enum u32 {
     PREVIOUS           :: 2;
 
     PREVIOUS_INCLUSIVE :: 3;
-
-    UCAL_TZ_TRANSITION_NEXT               :: NEXT;
-
-    UCAL_TZ_TRANSITION_NEXT_INCLUSIVE     :: NEXT_INCLUSIVE;
-
-    UCAL_TZ_TRANSITION_PREVIOUS           :: PREVIOUS;
-
-    UCAL_TZ_TRANSITION_PREVIOUS_INCLUSIVE :: PREVIOUS_INCLUSIVE;
 }
 
 ucal_getTimeZoneTransitionDate :: (cal: *UCalendar, type: UTimeZoneTransitionType, transition: *UDate, status: *UErrorCode) -> UBool #foreign libicutu "ucal_getTimeZoneTransitionDate_73";
@@ -1488,21 +1105,736 @@ UTimeZoneLocalOption :: enum u32 {
     DAYLIGHT_FORMER :: 7;
 
     DAYLIGHT_LATTER :: 15;
-
-    UCAL_TZ_LOCAL_FORMER          :: FORMER;
-
-    UCAL_TZ_LOCAL_LATTER          :: LATTER;
-
-    UCAL_TZ_LOCAL_STANDARD_FORMER :: STANDARD_FORMER;
-
-    UCAL_TZ_LOCAL_STANDARD_LATTER :: STANDARD_LATTER;
-
-    UCAL_TZ_LOCAL_DAYLIGHT_FORMER :: DAYLIGHT_FORMER;
-
-    UCAL_TZ_LOCAL_DAYLIGHT_LATTER :: DAYLIGHT_LATTER;
 }
 
 ucal_getTimeZoneOffsetFromLocal :: (cal: *UCalendar, nonExistingTimeOpt: UTimeZoneLocalOption, duplicatedTimeOpt: UTimeZoneLocalOption, rawOffset: *s32, dstOffset: *s32, status: *UErrorCode) -> void #foreign libicutu "ucal_getTimeZoneOffsetFromLocal_73";
+
+/**
+* Currency Usage used for Decimal Format
+* @stable ICU 54
+*/
+UCurrencyUsage :: enum u32 {
+    STANDARD :: 0;
+
+    CASH     :: 1;
+
+    COUNT    :: 2;
+}
+
+ucurr_forLocale :: (locale: *u8, buff: *UChar, buffCapacity: s32, ec: *UErrorCode) -> s32 #foreign libicutu "ucurr_forLocale_73";
+
+/**
+* Selector constants for ucurr_getName().
+*
+* @see ucurr_getName
+* @stable ICU 2.6
+*/
+UCurrNameStyle :: enum u32 {
+    SYMBOL_NAME         :: 0;
+
+    LONG_NAME           :: 1;
+
+    NARROW_SYMBOL_NAME  :: 2;
+
+    FORMAL_SYMBOL_NAME  :: 3;
+
+    VARIANT_SYMBOL_NAME :: 4;
+}
+
+/**
+* @stable ICU 2.6
+*/
+UCurrRegistryKey :: *void;
+
+ucurr_register :: (isoCode: *UChar, locale: *u8, status: *UErrorCode) -> UCurrRegistryKey #foreign libicutu "ucurr_register_73";
+
+ucurr_unregister :: (key: UCurrRegistryKey, status: *UErrorCode) -> UBool #foreign libicutu "ucurr_unregister_73";
+
+ucurr_getName :: (currency: *UChar, locale: *u8, nameStyle: UCurrNameStyle, isChoiceFormat: *UBool, len: *s32, ec: *UErrorCode) -> *UChar #foreign libicutu "ucurr_getName_73";
+
+ucurr_getPluralName :: (currency: *UChar, locale: *u8, isChoiceFormat: *UBool, pluralCount: *u8, len: *s32, ec: *UErrorCode) -> *UChar #foreign libicutu "ucurr_getPluralName_73";
+
+ucurr_getDefaultFractionDigits :: (currency: *UChar, ec: *UErrorCode) -> s32 #foreign libicutu "ucurr_getDefaultFractionDigits_73";
+
+ucurr_getDefaultFractionDigitsForUsage :: (currency: *UChar, usage: UCurrencyUsage, ec: *UErrorCode) -> s32 #foreign libicutu "ucurr_getDefaultFractionDigitsForUsage_73";
+
+ucurr_getRoundingIncrement :: (currency: *UChar, ec: *UErrorCode) -> float64 #foreign libicutu "ucurr_getRoundingIncrement_73";
+
+ucurr_getRoundingIncrementForUsage :: (currency: *UChar, usage: UCurrencyUsage, ec: *UErrorCode) -> float64 #foreign libicutu "ucurr_getRoundingIncrementForUsage_73";
+
+/**
+* Selector constants for ucurr_openCurrencies().
+*
+* @see ucurr_openCurrencies
+* @stable ICU 3.2
+*/
+UCurrCurrencyType :: enum u32 {
+    ALL            :: 2147483647;
+
+    COMMON         :: 1;
+
+    UNCOMMON       :: 2;
+
+    DEPRECATED     :: 4;
+
+    NON_DEPRECATED :: 8;
+}
+
+ucurr_openISOCurrencies :: (currType: u32, pErrorCode: *UErrorCode) -> *UEnumeration #foreign libicutu "ucurr_openISOCurrencies_73";
+
+ucurr_isAvailable :: (isoCode: *UChar, from: UDate, to: UDate, errorCode: *UErrorCode) -> UBool #foreign libicutu "ucurr_isAvailable_73";
+
+ucurr_countCurrencies :: (locale: *u8, date: UDate, ec: *UErrorCode) -> s32 #foreign libicutu "ucurr_countCurrencies_73";
+
+ucurr_forLocaleAndDate :: (locale: *u8, date: UDate, index: s32, buff: *UChar, buffCapacity: s32, ec: *UErrorCode) -> s32 #foreign libicutu "ucurr_forLocaleAndDate_73";
+
+ucurr_getKeywordValuesForLocale :: (key: *u8, locale: *u8, commonlyUsed: UBool, status: *UErrorCode) -> *UEnumeration #foreign libicutu "ucurr_getKeywordValuesForLocale_73";
+
+ucurr_getNumericCode :: (currency: *UChar) -> s32 #foreign libicutu "ucurr_getNumericCode_73";
+
+/** A struct representing a range of text containing a specific field
+*  @stable ICU 2.0
+*/
+UFieldPosition :: struct {
+    /**
+    * The field
+    * @stable ICU 2.0
+    */
+    field:      s32;
+
+    /**
+    * The start of the text range containing field
+    * @stable ICU 2.0
+    */
+    beginIndex: s32;
+
+    /**
+    * The limit of the text range containing field
+    * @stable ICU 2.0
+    */
+    endIndex:   s32;
+}
+
+/**
+* Opaque type returned by registerInstance, registerFactory and unregister for service registration.
+* @stable ICU 2.6
+*/
+URegistryKey :: *void;
+
+/**
+* \file
+* \brief C API: Parse Error Information
+*/
+/**
+* The capacity of the context strings in UParseError.
+* @stable ICU 2.0
+*/
+anon_enum :: enum u32 {
+    U_PARSE_CONTEXT_LEN :: 16;
+}
+
+/**
+* A UParseError struct is used to returned detailed information about
+* parsing errors.  It is used by ICU parsing engines that parse long
+* rules, patterns, or programs, where the text being parsed is long
+* enough that more information than a UErrorCode is needed to
+* localize the error.
+*
+* <p>The line, offset, and context fields are optional; parsing
+* engines may choose not to use to use them.
+*
+* <p>The preContext and postContext strings include some part of the
+* context surrounding the error.  If the source text is "let for=7"
+* and "for" is the error (e.g., because it is a reserved word), then
+* some examples of what a parser might produce are the following:
+*
+* <pre>
+* preContext   postContext
+* ""           ""            The parser does not support context
+* "let "       "=7"          Pre- and post-context only
+* "let "       "for=7"       Pre- and post-context and error text
+* ""           "for"         Error text only
+* </pre>
+*
+* <p>Examples of engines which use UParseError (or may use it in the
+* future) are Transliterator, RuleBasedBreakIterator, and
+* RegexPattern.
+*
+* @stable ICU 2.0
+*/
+UParseError :: struct {
+    /**
+    * The line on which the error occurred.  If the parser uses this
+    * field, it sets it to the line number of the source text line on
+    * which the error appears, which will be a value >= 1.  If the
+    * parse does not support line numbers, the value will be <= 0.
+    * @stable ICU 2.0
+    */
+    line:        s32;
+
+    /**
+    * The character offset to the error.  If the line field is >= 1,
+    * then this is the offset from the start of the line.  Otherwise,
+    * this is the offset from the start of the text.  If the parser
+    * does not support this field, it will have a value < 0.
+    * @stable ICU 2.0
+    */
+    offset:      s32;
+
+    /**
+    * Textual context before the error.  Null-terminated.  The empty
+    * string if not supported by parser.
+    * @stable ICU 2.0
+    */
+    preContext:  [16] UChar;
+
+    /**
+    * The error itself and/or textual context after the error.
+    * Null-terminated.  The empty string if not supported by parser.
+    * @stable ICU 2.0
+    */
+    postContext: [16] UChar;
+}
+
+/**
+* Enum designating the type of a UFormattable instance.
+* Practically, this indicates which of the getters would return without conversion
+* or error.
+* @see icu::Formattable::Type
+* @stable ICU 52
+*/
+UFormattableType :: enum u32 {
+    DATE   :: 0;
+    DOUBLE :: 1;
+    LONG   :: 2;
+    STRING :: 3;
+    ARRAY  :: 4;
+    INT64  :: 5;
+    OBJECT :: 6;
+
+    COUNT  :: 7;
+}
+
+/**
+* Opaque type representing various types of data which may be used for formatting
+* and parsing operations.
+* @see icu::Formattable
+* @stable ICU 52
+*/
+UFormattable :: *void;
+
+ufmt_open :: (status: *UErrorCode) -> *UFormattable #foreign libicutu "ufmt_open_73";
+
+ufmt_close :: (fmt: *UFormattable) -> void #foreign libicutu "ufmt_close_73";
+
+ufmt_getType :: (fmt: *UFormattable, status: *UErrorCode) -> UFormattableType #foreign libicutu "ufmt_getType_73";
+
+ufmt_isNumeric :: (fmt: *UFormattable) -> UBool #foreign libicutu "ufmt_isNumeric_73";
+
+ufmt_getDate :: (fmt: *UFormattable, status: *UErrorCode) -> UDate #foreign libicutu "ufmt_getDate_73";
+
+ufmt_getDouble :: (fmt: *UFormattable, status: *UErrorCode) -> float64 #foreign libicutu "ufmt_getDouble_73";
+
+ufmt_getLong :: (fmt: *UFormattable, status: *UErrorCode) -> s32 #foreign libicutu "ufmt_getLong_73";
+
+ufmt_getInt64 :: (fmt: *UFormattable, status: *UErrorCode) -> s64 #foreign libicutu "ufmt_getInt64_73";
+
+ufmt_getObject :: (fmt: *UFormattable, status: *UErrorCode) -> *void #foreign libicutu "ufmt_getObject_73";
+
+ufmt_getUChars :: (fmt: *UFormattable, len: *s32, status: *UErrorCode) -> *UChar #foreign libicutu "ufmt_getUChars_73";
+
+ufmt_getArrayLength :: (fmt: *UFormattable, status: *UErrorCode) -> s32 #foreign libicutu "ufmt_getArrayLength_73";
+
+ufmt_getArrayItemByIndex :: (fmt: *UFormattable, n: s32, status: *UErrorCode) -> *UFormattable #foreign libicutu "ufmt_getArrayItemByIndex_73";
+
+ufmt_getDecNumChars :: (fmt: *UFormattable, len: *s32, status: *UErrorCode) -> *u8 #foreign libicutu "ufmt_getDecNumChars_73";
+
+/**
+* Display context types, for getting values of a particular setting.
+* Note, the specific numeric values are internal and may change.
+* @stable ICU 51
+*/
+UDisplayContextType :: enum u32 {
+    DIALECT_HANDLING    :: 0;
+
+    CAPITALIZATION      :: 1;
+
+    DISPLAY_LENGTH      :: 2;
+
+    SUBSTITUTE_HANDLING :: 3;
+}
+
+/**
+* Display context settings.
+* Note, the specific numeric values are internal and may change.
+* @stable ICU 51
+*/
+UDisplayContext :: enum u32 {
+    STANDARD_NAMES                           :: 0;
+
+    DIALECT_NAMES                            :: 1;
+
+    CAPITALIZATION_NONE                      :: 256;
+
+    CAPITALIZATION_FOR_MIDDLE_OF_SENTENCE    :: 257;
+
+    CAPITALIZATION_FOR_BEGINNING_OF_SENTENCE :: 258;
+
+    CAPITALIZATION_FOR_UI_LIST_OR_MENU       :: 259;
+
+    CAPITALIZATION_FOR_STANDALONE            :: 260;
+
+    LENGTH_FULL                              :: 512;
+
+    LENGTH_SHORT                             :: 513;
+
+    SUBSTITUTE                               :: 768;
+
+    NO_SUBSTITUTE                            :: 769;
+}
+
+/**
+* Opaque UFieldPositionIterator object for use in C.
+* @stable ICU 55
+*/
+UFieldPositionIterator :: struct {}
+
+ufieldpositer_open :: (status: *UErrorCode) -> *UFieldPositionIterator #foreign libicutu "ufieldpositer_open_73";
+
+ufieldpositer_close :: (fpositer: *UFieldPositionIterator) -> void #foreign libicutu "ufieldpositer_close_73";
+
+ufieldpositer_next :: (fpositer: *UFieldPositionIterator, beginIndex: *s32, endIndex: *s32) -> s32 #foreign libicutu "ufieldpositer_next_73";
+
+/** The possible number format rounding modes.
+*
+* <p>
+* For more detail on rounding modes, see:
+* https://unicode-org.github.io/icu/userguide/format_parse/numbers/rounding-modes
+*
+* @stable ICU 2.0
+*/
+UNumberFormatRoundingMode :: enum u32 {
+    ROUND_CEILING      :: 0;
+    ROUND_FLOOR        :: 1;
+    ROUND_DOWN         :: 2;
+    ROUND_UP           :: 3;
+
+    ROUND_HALFEVEN     :: 4;
+
+    FOUND_HALFEVEN     :: 4;
+
+    ROUND_HALFDOWN     :: 5;
+    ROUND_HALFUP       :: 6;
+
+    ROUND_UNNECESSARY  :: 7;
+
+    ROUND_HALF_ODD     :: 8;
+
+    ROUND_HALF_CEILING :: 9;
+
+    ROUND_HALF_FLOOR   :: 10;
+}
+
+/**
+* An enum declaring the strategy for when and how to display grouping separators (i.e., the
+* separator, often a comma or period, after every 2-3 powers of ten). The choices are several
+* pre-built strategies for different use cases that employ locale data whenever possible. Example
+* outputs for 1234 and 1234567 in <em>en-IN</em>:
+*
+* <ul>
+* <li>OFF: 1234 and 12345
+* <li>MIN2: 1234 and 12,34,567
+* <li>AUTO: 1,234 and 12,34,567
+* <li>ON_ALIGNED: 1,234 and 12,34,567
+* <li>THOUSANDS: 1,234 and 1,234,567
+* </ul>
+*
+* <p>
+* The default is AUTO, which displays grouping separators unless the locale data says that grouping
+* is not customary. To force grouping for all numbers greater than 1000 consistently across locales,
+* use ON_ALIGNED. On the other hand, to display grouping less frequently than the default, use MIN2
+* or OFF. See the docs of each option for details.
+*
+* <p>
+* Note: This enum specifies the strategy for grouping sizes. To set which character to use as the
+* grouping separator, use the "symbols" setter.
+*
+* @stable ICU 63
+*/
+UNumberGroupingStrategy :: enum u32 {
+    OFF        :: 0;
+
+    MIN2       :: 1;
+
+    AUTO       :: 2;
+
+    ON_ALIGNED :: 3;
+
+    THOUSANDS  :: 4;
+
+    COUNT      :: 5;
+}
+
+/** A number formatter.
+*  For usage in C programs.
+*  @stable ICU 2.0
+*/
+UNumberFormat :: *void;
+
+/** The possible number format styles.
+*  @stable ICU 2.0
+*/
+UNumberFormatStyle :: enum u32 {
+    PATTERN_DECIMAL       :: 0;
+
+    DECIMAL               :: 1;
+
+    CURRENCY              :: 2;
+
+    PERCENT               :: 3;
+
+    SCIENTIFIC            :: 4;
+
+    SPELLOUT              :: 5;
+
+    ORDINAL               :: 6;
+
+    DURATION              :: 7;
+
+    NUMBERING_SYSTEM      :: 8;
+
+    PATTERN_RULEBASED     :: 9;
+
+    CURRENCY_ISO          :: 10;
+
+    CURRENCY_PLURAL       :: 11;
+
+    CURRENCY_ACCOUNTING   :: 12;
+
+    CASH_CURRENCY         :: 13;
+
+    DECIMAL_COMPACT_SHORT :: 14;
+
+    DECIMAL_COMPACT_LONG  :: 15;
+
+    CURRENCY_STANDARD     :: 16;
+
+    FORMAT_STYLE_COUNT    :: 17;
+
+    DEFAULT               :: 1;
+
+    IGNORE                :: 0;
+}
+
+/** The possible number format pad positions.
+*  @stable ICU 2.0
+*/
+UNumberFormatPadPosition :: enum u32 {
+    BEFORE_PREFIX :: 0;
+    AFTER_PREFIX  :: 1;
+    BEFORE_SUFFIX :: 2;
+    AFTER_SUFFIX  :: 3;
+}
+
+/**
+* Constants for specifying short or long format.
+* @stable ICU 51
+*/
+UNumberCompactStyle :: enum u32 {
+    SHORT :: 0;
+
+    LONG  :: 1;
+}
+
+/**
+* Constants for specifying currency spacing
+* @stable ICU 4.8
+*/
+UCurrencySpacing :: enum u32 {
+    MATCH             :: 0;
+
+    SURROUNDING_MATCH :: 1;
+
+    INSERT            :: 2;
+
+    SPACING_COUNT     :: 3;
+}
+
+/**
+* FieldPosition and UFieldPosition selectors for format fields
+* defined by NumberFormat and UNumberFormat.
+* @stable ICU 49
+*/
+UNumberFormatFields :: enum u32 {
+    INTEGER_FIELD            :: 0;
+
+    FRACTION_FIELD           :: 1;
+
+    DECIMAL_SEPARATOR_FIELD  :: 2;
+
+    EXPONENT_SYMBOL_FIELD    :: 3;
+
+    EXPONENT_SIGN_FIELD      :: 4;
+
+    EXPONENT_FIELD           :: 5;
+
+    GROUPING_SEPARATOR_FIELD :: 6;
+
+    CURRENCY_FIELD           :: 7;
+
+    PERCENT_FIELD            :: 8;
+
+    PERMILL_FIELD            :: 9;
+
+    SIGN_FIELD               :: 10;
+
+    MEASURE_UNIT_FIELD       :: 11;
+
+    COMPACT_FIELD            :: 12;
+
+    APPROXIMATELY_SIGN_FIELD :: 13;
+
+    FIELD_COUNT              :: 14;
+}
+
+/**
+* Selectors with special numeric values to use locale default minimum grouping
+* digits for the DecimalFormat/UNumberFormat setMinimumGroupingDigits method.
+* Do not use these constants with the [U]NumberFormatter API.
+*
+* @stable ICU 68
+*/
+UNumberFormatMinimumGroupingDigits :: enum s32 {
+    AUTO :: -2;
+
+    MIN2 :: -3;
+}
+
+unum_open :: (style: UNumberFormatStyle, pattern: *UChar, patternLength: s32, locale: *u8, parseErr: *UParseError, status: *UErrorCode) -> *UNumberFormat #foreign libicutu "unum_open_73";
+
+unum_close :: (fmt: *UNumberFormat) -> void #foreign libicutu "unum_close_73";
+
+unum_clone :: (fmt: *UNumberFormat, status: *UErrorCode) -> *UNumberFormat #foreign libicutu "unum_clone_73";
+
+unum_format :: (fmt: *UNumberFormat, number: s32, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicutu "unum_format_73";
+
+unum_formatInt64 :: (fmt: *UNumberFormat, number: s64, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicutu "unum_formatInt64_73";
+
+unum_formatDouble :: (fmt: *UNumberFormat, number: float64, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicutu "unum_formatDouble_73";
+
+unum_formatDoubleForFields :: (format: *UNumberFormat, number: float64, result: *UChar, resultLength: s32, fpositer: *UFieldPositionIterator, status: *UErrorCode) -> s32 #foreign libicutu "unum_formatDoubleForFields_73";
+
+unum_formatDecimal :: (fmt: *UNumberFormat, number: *u8, length: s32, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicutu "unum_formatDecimal_73";
+
+unum_formatDoubleCurrency :: (fmt: *UNumberFormat, number: float64, currency: *UChar, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicutu "unum_formatDoubleCurrency_73";
+
+unum_formatUFormattable :: (fmt: *UNumberFormat, number: *UFormattable, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicutu "unum_formatUFormattable_73";
+
+unum_parse :: (fmt: *UNumberFormat, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> s32 #foreign libicutu "unum_parse_73";
+
+unum_parseInt64 :: (fmt: *UNumberFormat, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> s64 #foreign libicutu "unum_parseInt64_73";
+
+unum_parseDouble :: (fmt: *UNumberFormat, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> float64 #foreign libicutu "unum_parseDouble_73";
+
+unum_parseDecimal :: (fmt: *UNumberFormat, text: *UChar, textLength: s32, parsePos: *s32, outBuf: *u8, outBufLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "unum_parseDecimal_73";
+
+unum_parseDoubleCurrency :: (fmt: *UNumberFormat, text: *UChar, textLength: s32, parsePos: *s32, currency: *UChar, status: *UErrorCode) -> float64 #foreign libicutu "unum_parseDoubleCurrency_73";
+
+unum_parseToUFormattable :: (fmt: *UNumberFormat, result: *UFormattable, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> *UFormattable #foreign libicutu "unum_parseToUFormattable_73";
+
+unum_applyPattern :: (format: *UNumberFormat, localized: UBool, pattern: *UChar, patternLength: s32, parseError: *UParseError, status: *UErrorCode) -> void #foreign libicutu "unum_applyPattern_73";
+
+unum_getAvailable :: (localeIndex: s32) -> *u8 #foreign libicutu "unum_getAvailable_73";
+
+unum_countAvailable :: () -> s32 #foreign libicutu "unum_countAvailable_73";
+
+/* The UNumberFormatAttributeValue type cannot be #ifndef U_HIDE_INTERNAL_API, needed for .h variable declaration */
+/**
+* @internal
+*/
+UNumberFormatAttributeValue :: enum u32 {
+    NO    :: 0;
+
+    YES   :: 1;
+
+    MAYBE :: 2;
+}
+
+/** The possible UNumberFormat numeric attributes @stable ICU 2.0 */
+UNumberFormatAttribute :: enum u32 {
+    PARSE_INT_ONLY                      :: 0;
+
+    GROUPING_USED                       :: 1;
+
+    DECIMAL_ALWAYS_SHOWN                :: 2;
+
+    MAX_INTEGER_DIGITS                  :: 3;
+
+    MIN_INTEGER_DIGITS                  :: 4;
+
+    INTEGER_DIGITS                      :: 5;
+
+    MAX_FRACTION_DIGITS                 :: 6;
+
+    MIN_FRACTION_DIGITS                 :: 7;
+
+    FRACTION_DIGITS                     :: 8;
+
+    MULTIPLIER                          :: 9;
+
+    GROUPING_SIZE                       :: 10;
+
+    ROUNDING_MODE                       :: 11;
+
+    ROUNDING_INCREMENT                  :: 12;
+
+    FORMAT_WIDTH                        :: 13;
+
+    PADDING_POSITION                    :: 14;
+
+    SECONDARY_GROUPING_SIZE             :: 15;
+
+    SIGNIFICANT_DIGITS_USED             :: 16;
+
+    MIN_SIGNIFICANT_DIGITS              :: 17;
+
+    MAX_SIGNIFICANT_DIGITS              :: 18;
+
+    LENIENT_PARSE                       :: 19;
+
+    PARSE_ALL_INPUT                     :: 20;
+
+    SCALE                               :: 21;
+
+    MINIMUM_GROUPING_DIGITS             :: 22;
+
+    CURRENCY_USAGE                      :: 23;
+
+    MAX_NONBOOLEAN_ATTRIBUTE            :: 4095;
+
+    FORMAT_FAIL_IF_MORE_THAN_MAX_DIGITS :: 4096;
+
+    PARSE_NO_EXPONENT                   :: 4097;
+
+    PARSE_DECIMAL_MARK_REQUIRED         :: 4098;
+
+    PARSE_CASE_SENSITIVE                :: 4099;
+
+    SIGN_ALWAYS_SHOWN                   :: 4100;
+
+    LIMIT_BOOLEAN_ATTRIBUTE             :: 4101;
+}
+
+unum_hasAttribute :: (fmt: *UNumberFormat, attr: UNumberFormatAttribute) -> bool #foreign libicutu "unum_hasAttribute_73";
+
+unum_getAttribute :: (fmt: *UNumberFormat, attr: UNumberFormatAttribute) -> s32 #foreign libicutu "unum_getAttribute_73";
+
+unum_setAttribute :: (fmt: *UNumberFormat, attr: UNumberFormatAttribute, newValue: s32) -> void #foreign libicutu "unum_setAttribute_73";
+
+unum_getDoubleAttribute :: (fmt: *UNumberFormat, attr: UNumberFormatAttribute) -> float64 #foreign libicutu "unum_getDoubleAttribute_73";
+
+unum_setDoubleAttribute :: (fmt: *UNumberFormat, attr: UNumberFormatAttribute, newValue: float64) -> void #foreign libicutu "unum_setDoubleAttribute_73";
+
+/** The possible UNumberFormat text attributes @stable ICU 2.0*/
+UNumberFormatTextAttribute :: enum u32 {
+    POSITIVE_PREFIX   :: 0;
+
+    POSITIVE_SUFFIX   :: 1;
+
+    NEGATIVE_PREFIX   :: 2;
+
+    NEGATIVE_SUFFIX   :: 3;
+
+    PADDING_CHARACTER :: 4;
+
+    CURRENCY_CODE     :: 5;
+
+    DEFAULT_RULESET   :: 6;
+
+    PUBLIC_RULESETS   :: 7;
+}
+
+unum_getTextAttribute :: (fmt: *UNumberFormat, tag: UNumberFormatTextAttribute, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "unum_getTextAttribute_73";
+
+unum_setTextAttribute :: (fmt: *UNumberFormat, tag: UNumberFormatTextAttribute, newValue: *UChar, newValueLength: s32, status: *UErrorCode) -> void #foreign libicutu "unum_setTextAttribute_73";
+
+unum_toPattern :: (fmt: *UNumberFormat, isPatternLocalized: UBool, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "unum_toPattern_73";
+
+/**
+* Constants for specifying a number format symbol.
+* @stable ICU 2.0
+*/
+UNumberFormatSymbol :: enum u32 {
+    DECIMAL_SEPARATOR_SYMBOL           :: 0;
+
+    GROUPING_SEPARATOR_SYMBOL          :: 1;
+
+    PATTERN_SEPARATOR_SYMBOL           :: 2;
+
+    PERCENT_SYMBOL                     :: 3;
+
+    ZERO_DIGIT_SYMBOL                  :: 4;
+
+    DIGIT_SYMBOL                       :: 5;
+
+    MINUS_SIGN_SYMBOL                  :: 6;
+
+    PLUS_SIGN_SYMBOL                   :: 7;
+
+    CURRENCY_SYMBOL                    :: 8;
+
+    INTL_CURRENCY_SYMBOL               :: 9;
+
+    MONETARY_SEPARATOR_SYMBOL          :: 10;
+
+    EXPONENTIAL_SYMBOL                 :: 11;
+
+    PERMILL_SYMBOL                     :: 12;
+
+    PAD_ESCAPE_SYMBOL                  :: 13;
+
+    INFINITY_SYMBOL                    :: 14;
+
+    NAN_SYMBOL                         :: 15;
+
+    SIGNIFICANT_DIGIT_SYMBOL           :: 16;
+
+    MONETARY_GROUPING_SEPARATOR_SYMBOL :: 17;
+
+    ONE_DIGIT_SYMBOL                   :: 18;
+
+    TWO_DIGIT_SYMBOL                   :: 19;
+
+    THREE_DIGIT_SYMBOL                 :: 20;
+
+    FOUR_DIGIT_SYMBOL                  :: 21;
+
+    FIVE_DIGIT_SYMBOL                  :: 22;
+
+    SIX_DIGIT_SYMBOL                   :: 23;
+
+    SEVEN_DIGIT_SYMBOL                 :: 24;
+
+    EIGHT_DIGIT_SYMBOL                 :: 25;
+
+    NINE_DIGIT_SYMBOL                  :: 26;
+
+    EXPONENT_MULTIPLICATION_SYMBOL     :: 27;
+
+    APPROXIMATELY_SIGN_SYMBOL          :: 28;
+
+    FORMAT_SYMBOL_COUNT                :: 29;
+}
+
+unum_getSymbol :: (fmt: *UNumberFormat, symbol: UNumberFormatSymbol, buffer: *UChar, size: s32, status: *UErrorCode) -> s32 #foreign libicutu "unum_getSymbol_73";
+
+unum_setSymbol :: (fmt: *UNumberFormat, symbol: UNumberFormatSymbol, value: *UChar, length: s32, status: *UErrorCode) -> void #foreign libicutu "unum_setSymbol_73";
+
+unum_getLocaleByType :: (fmt: *UNumberFormat, type: ULocDataLocaleType, status: *UErrorCode) -> *u8 #foreign libicutu "unum_getLocaleByType_73";
+
+unum_setContext :: (fmt: *UNumberFormat, value: UDisplayContext, status: *UErrorCode) -> void #foreign libicutu "unum_setContext_73";
+
+unum_getContext :: (fmt: *UNumberFormat, type: UDisplayContextType, status: *UErrorCode) -> UDisplayContext #foreign libicutu "unum_getContext_73";
 
 u_getDataDirectory :: () -> *u8 #foreign libicutu "u_getDataDirectory_73";
 
@@ -1528,15 +1860,10 @@ UCharIteratorOrigin :: enum u32 {
     LIMIT   :: 2;
     ZERO    :: 3;
     LENGTH  :: 4;
-    UITER_START   :: START;
-    UITER_CURRENT :: CURRENT;
-    UITER_LIMIT   :: LIMIT;
-    UITER_ZERO    :: ZERO;
-    UITER_LENGTH  :: LENGTH;
 }
 
 /** Constants for UCharIterator. @stable ICU 2.6 */
-anon_enum :: enum s32 {
+anon_enum_1 :: enum s32 {
     UITER_UNKNOWN_INDEX :: -2;
 }
 
@@ -2078,6 +2405,30 @@ u_strFromJavaModifiedUTF8WithSub :: (dest: *UChar, destCapacity: s32, pDestLengt
 
 
 #run {
+    {
+        instance: UFieldPosition;
+        assert(((cast(*void)(*instance.field)) - cast(*void)(*instance)) == 0, "UFieldPosition.field has unexpected offset % instead of 0", ((cast(*void)(*instance.field)) - cast(*void)(*instance)));
+        assert(size_of(type_of(UFieldPosition.field)) == 4, "UFieldPosition.field has unexpected size % instead of 4", size_of(type_of(UFieldPosition.field)));
+        assert(((cast(*void)(*instance.beginIndex)) - cast(*void)(*instance)) == 4, "UFieldPosition.beginIndex has unexpected offset % instead of 4", ((cast(*void)(*instance.beginIndex)) - cast(*void)(*instance)));
+        assert(size_of(type_of(UFieldPosition.beginIndex)) == 4, "UFieldPosition.beginIndex has unexpected size % instead of 4", size_of(type_of(UFieldPosition.beginIndex)));
+        assert(((cast(*void)(*instance.endIndex)) - cast(*void)(*instance)) == 8, "UFieldPosition.endIndex has unexpected offset % instead of 8", ((cast(*void)(*instance.endIndex)) - cast(*void)(*instance)));
+        assert(size_of(type_of(UFieldPosition.endIndex)) == 4, "UFieldPosition.endIndex has unexpected size % instead of 4", size_of(type_of(UFieldPosition.endIndex)));
+        assert(size_of(UFieldPosition) == 12, "UFieldPosition has size % instead of 12", size_of(UFieldPosition));
+    }
+
+    {
+        instance: UParseError;
+        assert(((cast(*void)(*instance.line)) - cast(*void)(*instance)) == 0, "UParseError.line has unexpected offset % instead of 0", ((cast(*void)(*instance.line)) - cast(*void)(*instance)));
+        assert(size_of(type_of(UParseError.line)) == 4, "UParseError.line has unexpected size % instead of 4", size_of(type_of(UParseError.line)));
+        assert(((cast(*void)(*instance.offset)) - cast(*void)(*instance)) == 4, "UParseError.offset has unexpected offset % instead of 4", ((cast(*void)(*instance.offset)) - cast(*void)(*instance)));
+        assert(size_of(type_of(UParseError.offset)) == 4, "UParseError.offset has unexpected size % instead of 4", size_of(type_of(UParseError.offset)));
+        assert(((cast(*void)(*instance.preContext)) - cast(*void)(*instance)) == 8, "UParseError.preContext has unexpected offset % instead of 8", ((cast(*void)(*instance.preContext)) - cast(*void)(*instance)));
+        assert(size_of(type_of(UParseError.preContext)) == 32, "UParseError.preContext has unexpected size % instead of 32", size_of(type_of(UParseError.preContext)));
+        assert(((cast(*void)(*instance.postContext)) - cast(*void)(*instance)) == 40, "UParseError.postContext has unexpected offset % instead of 40", ((cast(*void)(*instance.postContext)) - cast(*void)(*instance)));
+        assert(size_of(type_of(UParseError.postContext)) == 32, "UParseError.postContext has unexpected size % instead of 32", size_of(type_of(UParseError.postContext)));
+        assert(size_of(UParseError) == 72, "UParseError has size % instead of 72", size_of(UParseError));
+    }
+
     {
         instance: UCharIterator;
         assert(((cast(*void)(*instance._context)) - cast(*void)(*instance)) == 0, "UCharIterator._context has unexpected offset % instead of 0", ((cast(*void)(*instance._context)) - cast(*void)(*instance)));

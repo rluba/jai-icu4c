@@ -49,9 +49,13 @@ generate_bindings :: () -> bool {
 
         array_add(*include_paths, "./src");
         array_add(*source_files,  "unicode/ucal.h");
+        array_add(*source_files,  "unicode/uloc.h");
+        array_add(*source_files,  "unicode/unum.h");
         array_add(*source_files,  "unicode/ustring.h");
         array_add(*extra_clang_arguments, "-x", "c");
 
+        // array_add(*generate_enums_from_macros_with_prefixes, "ULOC_");
+        alias_original_enum_names = false;
         generate_library_declarations = false;
 
         visitor = icu_visitor;

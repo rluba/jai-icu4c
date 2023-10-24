@@ -1,6 +1,31 @@
 main :: () {
+    utf_roundtrip();
+    available_locales();
     time_in_timezone_to_utc();
     serial_in_timezone_to_utc();
+    number_formats();
+}
+
+utf_roundtrip :: () {
+    original := "Hello, Sailor!";
+    utf16_string, success := utf16_from_utf8(original);
+    assert(success);
+    log("UTF-16 version of \"%\" is %", original, utf16_string);
+    utf8_string, success= := utf8_from_utf16(utf16_string);
+    assert(success);
+    log("Converted back to UTF-8: \"%\"", utf8_string);
+    assert(utf8_string == original);
+}
+
+available_locales :: () {
+    default_locale := uloc_getDefault();
+    log("Default locale: %", to_string(default_locale));
+
+    count := uloc_countAvailable();
+    for i: 0..count-1 {
+        locale := uloc_getAvailable(i);
+        log("Locale %: %", i, to_string(locale));
+    }
 }
 
 time_in_timezone_to_utc :: () {
@@ -74,6 +99,43 @@ serial_in_timezone_to_utc :: () {
     apollo_time := APOLLO_TIME_FOR_JAN_1_1970 + milliseconds_to_apollo(cast(s64) ms_since_unix_epoch_start);
     apollo_cal := to_calendar(apollo_time);
     log("as an apollo calendar: %", apollo_cal);
+}
+
+number_formats :: () {
+    do_locale :: (locale: string) {
+        open_format :: (style: UNumberFormatStyle) -> *UNumberFormat #expand {
+            status := UErrorCode.ZERO_ERROR;
+            result := unum_open(style, null, 0, temp_c_string(locale), null, *status);
+            if !is_format_success(status) {
+                log_error("Could not open % number format \"%\": %", style, locale, status);
+                exit(1);
+            }
+
+            return result;
+        }
+
+        decimal_format := open_format(.DECIMAL);
+        currency_format := open_format(.CURRENCY);
+        percent_format := open_format(.PERCENT);
+        defer unum_close(decimal_format);
+        defer unum_close(currency_format);
+        defer unum_close(percent_format);
+
+        number := 42.123;
+        decimal, success := format_float64(decimal_format, number);
+        assert(success);
+        currency, success= := format_float64(currency_format, number);
+        assert(success);
+        // Careful: percent formatting assumes that 1.00 == 100%!!
+        percent, success= := format_float64(percent_format, number);
+        assert(success);
+        log("% formatted for \"%\" is \"%\", \"%\", \"%\"", number, locale, decimal, currency, percent);
+    }
+
+    do_locale("en_US");
+    do_locale("de_AT");
+    do_locale("de_AT@currency=USD"); // AT, but with a custom currency
+    do_locale("cs_CZ");
 }
 
 #import "Basic";
