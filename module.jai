@@ -47,6 +47,31 @@ utf8_from_utf16 :: (w_str: [] u16) -> result: string, success: bool {
     return str, true;
 }
 
+format_date :: (format: *UDateFormat, date: Apollo_Time) -> string, success: bool {
+    result, success := format_date(format, cast(UDate) to_milliseconds(date - APOLLO_TIME_FOR_JAN_1_1970));
+    return result, success;
+}
+
+format_date :: (format: *UDateFormat, date: UDate) -> string, success: bool {
+    status := UErrorCode.ZERO_ERROR;
+    preflight_count := udat_format(format, date, null, 0, null, *status);
+    assert(status == .BUFFER_OVERFLOW_ERROR);
+
+    status = .ZERO_ERROR;
+    buffer := NewArray(preflight_count + 1, u16, initialized = false, allocator = temp); // + 1 for zero-termination
+    count := udat_format(format, date, buffer.data, cast(s32) buffer.count, null, *status);
+    if status != .ZERO_ERROR {
+        log_error("Could not format date %: %", date, status);
+        return "", false;
+    }
+
+    assert(count == preflight_count);
+
+    result_utf16 := array_view(buffer, 0, count);
+    result_string, success := utf8_from_utf16(result_utf16);
+    assert(success);
+    return result_string, success;
+}
 
 format_float64 :: (format: *UNumberFormat, value: float64) -> string, success: bool {
     status := UErrorCode.ZERO_ERROR;
@@ -70,7 +95,7 @@ format_float64 :: (format: *UNumberFormat, value: float64) -> string, success: b
 }
 
 is_format_success :: (status: UErrorCode) -> bool {
-    // For some reason, we ALWAYS get USING_DEFAULT_WARNING, even when it seems to work!?
+    // For some reason, we ALWAYS get USING_DEFAULT_WARNING when calling unum_open(), even when it seems to work!?
     return status == .ZERO_ERROR || status == .USING_DEFAULT_WARNING;
 }
 

@@ -4,6 +4,7 @@ main :: () {
     time_in_timezone_to_utc();
     serial_in_timezone_to_utc();
     number_formats();
+    date_formats();
 }
 
 utf_roundtrip :: () {
@@ -136,6 +137,38 @@ number_formats :: () {
     do_locale("de_AT");
     do_locale("de_AT@currency=USD"); // AT, but with a custom currency
     do_locale("cs_CZ");
+}
+
+date_formats :: () {
+    do_locale :: (time: Apollo_Time, locale: string, date_style: UDateFormatStyle, time_style: UDateFormatStyle) {
+        status := UErrorCode.ZERO_ERROR;
+        date_format := udat_open(time_style, date_style, temp_c_string(locale), null, 0, null, 0, *status);
+        if status != .ZERO_ERROR {
+            log_error("Could not open date format \"%\": %", locale, status);
+            exit(1);
+        }
+
+        defer udat_close(date_format);
+
+        udate := cast(UDate) to_milliseconds(time - APOLLO_TIME_FOR_JAN_1_1970);
+
+        result, success := format_date(date_format, udate);
+        assert(success);
+        log("\"%\" formatted for \"%\" is \"%\"", calendar_to_iso_string(to_calendar(time)), locale, result);
+    }
+
+    now := current_time_consensus();
+    do_locale(now, "en_US", .FULL, .FULL);
+    do_locale(now, "en_US", .SHORT, .SHORT);
+    do_locale(now, "de_AT", .FULL, .FULL);
+    do_locale(now, "de_AT", .SHORT, .SHORT);
+
+    time := calendar_to_apollo(Calendar_Time.{year = 2001, month_starting_at_0 = 9, day_of_month_starting_at_0 = 23});
+    formats := UDateFormatStyle.[.FULL, .LONG, .MEDIUM, .SHORT, .DEFAULT, .RELATIVE, .MEDIUM_RELATIVE];
+    for formats {
+        do_locale(time, "en_US", it, .NONE);
+        do_locale(time, "de_AT", it, .NONE);
+    }
 }
 
 #import "Basic";

@@ -284,6 +284,108 @@ ULOC_KEYWORD_ITEM_SEPARATOR_UNICODE :: 0x3B;
 
 UCAL_UNKNOWN_ZONE_ID :: "Etc/Unknown";
 
+UDAT_YEAR :: "y";
+
+UDAT_QUARTER :: "QQQQ";
+
+UDAT_ABBR_QUARTER :: "QQQ";
+
+UDAT_YEAR_QUARTER :: "yQQQQ";
+
+UDAT_YEAR_ABBR_QUARTER :: "yQQQ";
+
+UDAT_MONTH :: "MMMM";
+
+UDAT_ABBR_MONTH :: "MMM";
+
+UDAT_NUM_MONTH :: "M";
+
+UDAT_YEAR_MONTH :: "yMMMM";
+
+UDAT_YEAR_ABBR_MONTH :: "yMMM";
+
+UDAT_YEAR_NUM_MONTH :: "yM";
+
+UDAT_DAY :: "d";
+
+UDAT_YEAR_MONTH_DAY :: "yMMMMd";
+
+UDAT_YEAR_ABBR_MONTH_DAY :: "yMMMd";
+
+UDAT_YEAR_NUM_MONTH_DAY :: "yMd";
+
+UDAT_WEEKDAY :: "EEEE";
+
+UDAT_ABBR_WEEKDAY :: "E";
+
+UDAT_YEAR_MONTH_WEEKDAY_DAY :: "yMMMMEEEEd";
+
+UDAT_YEAR_ABBR_MONTH_WEEKDAY_DAY :: "yMMMEd";
+
+UDAT_YEAR_NUM_MONTH_WEEKDAY_DAY :: "yMEd";
+
+UDAT_MONTH_DAY :: "MMMMd";
+
+UDAT_ABBR_MONTH_DAY :: "MMMd";
+
+UDAT_NUM_MONTH_DAY :: "Md";
+
+UDAT_MONTH_WEEKDAY_DAY :: "MMMMEEEEd";
+
+UDAT_ABBR_MONTH_WEEKDAY_DAY :: "MMMEd";
+
+UDAT_NUM_MONTH_WEEKDAY_DAY :: "MEd";
+
+UDAT_HOUR :: "j";
+
+UDAT_HOUR24 :: "H";
+
+UDAT_MINUTE :: "m";
+
+UDAT_HOUR_MINUTE :: "jm";
+
+UDAT_HOUR24_MINUTE :: "Hm";
+
+UDAT_SECOND :: "s";
+
+UDAT_HOUR_MINUTE_SECOND :: "jms";
+
+UDAT_HOUR24_MINUTE_SECOND :: "Hms";
+
+UDAT_MINUTE_SECOND :: "ms";
+
+UDAT_LOCATION_TZ :: "VVVV";
+
+UDAT_GENERIC_TZ :: "vvvv";
+
+UDAT_ABBR_GENERIC_TZ :: "v";
+
+UDAT_SPECIFIC_TZ :: "zzzz";
+
+UDAT_ABBR_SPECIFIC_TZ :: "z";
+
+UDAT_ABBR_UTC_TZ :: "ZZZZ";
+
+UDAT_STANDALONE_MONTH :: "LLLL";
+
+UDAT_ABBR_STANDALONE_MONTH :: "LLL";
+
+UDAT_HOUR_MINUTE_GENERIC_TZ :: "jmv";
+
+UDAT_HOUR_MINUTE_TZ :: "jmz";
+
+UDAT_HOUR_GENERIC_TZ :: "jv";
+
+UDAT_HOUR_TZ :: "jz";
+
+JP_ERA_2019_ROOT :: "Reiwa";
+
+JP_ERA_2019_JA :: "\\u4EE4\\u548C";
+
+JP_ERA_2019_NARROW :: "R";
+
+UDAT_HAS_PATTERN_CHAR_FOR_TIME_SEPARATOR :: 0;
+
 U_FILE_SEP_STRING :: "/";
 U_FILE_ALT_SEP_STRING :: "/";
 U_PATH_SEP_STRING :: ":";
@@ -1835,6 +1937,306 @@ unum_getLocaleByType :: (fmt: *UNumberFormat, type: ULocDataLocaleType, status: 
 unum_setContext :: (fmt: *UNumberFormat, value: UDisplayContext, status: *UErrorCode) -> void #foreign libicutu "unum_setContext_73";
 
 unum_getContext :: (fmt: *UNumberFormat, type: UDisplayContextType, status: *UErrorCode) -> UDisplayContext #foreign libicutu "unum_getContext_73";
+
+/** A date formatter.
+*  For usage in C programs.
+*  @stable ICU 2.6
+*/
+UDateFormat :: *void;
+
+/** The possible date/time format styles
+*  @stable ICU 2.6
+*/
+UDateFormatStyle :: enum s32 {
+    FULL            :: 0;
+
+    LONG            :: 1;
+
+    MEDIUM          :: 2;
+
+    SHORT           :: 3;
+
+    DEFAULT         :: 2;
+
+    RELATIVE        :: 128;
+
+    FULL_RELATIVE   :: 128;
+
+    LONG_RELATIVE   :: 129;
+
+    MEDIUM_RELATIVE :: 130;
+
+    SHORT_RELATIVE  :: 131;
+
+    NONE            :: -1;
+
+    PATTERN         :: -2;
+
+    IGNORE          :: -2;
+}
+
+/**
+* FieldPosition and UFieldPosition selectors for format fields
+* defined by DateFormat and UDateFormat.
+* @stable ICU 3.0
+*/
+UDateFormatField :: enum u32 {
+    ERA_FIELD                           :: 0;
+
+    YEAR_FIELD                          :: 1;
+
+    MONTH_FIELD                         :: 2;
+
+    DATE_FIELD                          :: 3;
+
+    HOUR_OF_DAY1_FIELD                  :: 4;
+
+    HOUR_OF_DAY0_FIELD                  :: 5;
+
+    MINUTE_FIELD                        :: 6;
+
+    SECOND_FIELD                        :: 7;
+
+    FRACTIONAL_SECOND_FIELD             :: 8;
+
+    DAY_OF_WEEK_FIELD                   :: 9;
+
+    DAY_OF_YEAR_FIELD                   :: 10;
+
+    DAY_OF_WEEK_IN_MONTH_FIELD          :: 11;
+
+    WEEK_OF_YEAR_FIELD                  :: 12;
+
+    WEEK_OF_MONTH_FIELD                 :: 13;
+
+    AM_PM_FIELD                         :: 14;
+
+    HOUR1_FIELD                         :: 15;
+
+    HOUR0_FIELD                         :: 16;
+
+    TIMEZONE_FIELD                      :: 17;
+
+    YEAR_WOY_FIELD                      :: 18;
+
+    DOW_LOCAL_FIELD                     :: 19;
+
+    EXTENDED_YEAR_FIELD                 :: 20;
+
+    JULIAN_DAY_FIELD                    :: 21;
+
+    MILLISECONDS_IN_DAY_FIELD           :: 22;
+
+    TIMEZONE_RFC_FIELD                  :: 23;
+
+    TIMEZONE_GENERIC_FIELD              :: 24;
+
+    STANDALONE_DAY_FIELD                :: 25;
+
+    STANDALONE_MONTH_FIELD              :: 26;
+
+    QUARTER_FIELD                       :: 27;
+
+    STANDALONE_QUARTER_FIELD            :: 28;
+
+    TIMEZONE_SPECIAL_FIELD              :: 29;
+
+    YEAR_NAME_FIELD                     :: 30;
+
+    TIMEZONE_LOCALIZED_GMT_OFFSET_FIELD :: 31;
+
+    TIMEZONE_ISO_FIELD                  :: 32;
+
+    TIMEZONE_ISO_LOCAL_FIELD            :: 33;
+
+    RELATED_YEAR_FIELD                  :: 34;
+
+    AM_PM_MIDNIGHT_NOON_FIELD           :: 35;
+
+    FLEXIBLE_DAY_PERIOD_FIELD           :: 36;
+
+    TIME_SEPARATOR_FIELD                :: 37;
+
+    FIELD_COUNT                         :: 38;
+}
+
+udat_toCalendarDateField :: (field: UDateFormatField) -> UCalendarDateFields #foreign libicutu "udat_toCalendarDateField_73";
+
+udat_open :: (timeStyle: UDateFormatStyle, dateStyle: UDateFormatStyle, locale: *u8, tzID: *UChar, tzIDLength: s32, pattern: *UChar, patternLength: s32, status: *UErrorCode) -> *UDateFormat #foreign libicutu "udat_open_73";
+
+udat_close :: (format: *UDateFormat) -> void #foreign libicutu "udat_close_73";
+
+/**
+* DateFormat boolean attributes
+*
+* @stable ICU 53
+*/
+UDateFormatBooleanAttribute :: enum u32 {
+    PARSE_ALLOW_WHITESPACE            :: 0;
+
+    PARSE_ALLOW_NUMERIC               :: 1;
+
+    PARSE_PARTIAL_LITERAL_MATCH       :: 2;
+
+    PARSE_MULTIPLE_PATTERNS_FOR_MATCH :: 3;
+
+    BOOLEAN_ATTRIBUTE_COUNT           :: 4;
+}
+
+udat_getBooleanAttribute :: (fmt: *UDateFormat, attr: UDateFormatBooleanAttribute, status: *UErrorCode) -> UBool #foreign libicutu "udat_getBooleanAttribute_73";
+
+udat_setBooleanAttribute :: (fmt: *UDateFormat, attr: UDateFormatBooleanAttribute, newValue: UBool, status: *UErrorCode) -> void #foreign libicutu "udat_setBooleanAttribute_73";
+
+/**
+* Hour Cycle.
+* @stable ICU 67
+*/
+UDateFormatHourCycle :: enum u32 {
+    _11 :: 0;
+
+    _12 :: 1;
+
+    _23 :: 2;
+
+    _24 :: 3;
+}
+
+udat_clone :: (fmt: *UDateFormat, status: *UErrorCode) -> *UDateFormat #foreign libicutu "udat_clone_73";
+
+udat_format :: (format: *UDateFormat, dateToFormat: UDate, result: *UChar, resultLength: s32, position: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicutu "udat_format_73";
+
+udat_formatCalendar :: (format: *UDateFormat, calendar: *UCalendar, result: *UChar, capacity: s32, position: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicutu "udat_formatCalendar_73";
+
+udat_formatForFields :: (format: *UDateFormat, dateToFormat: UDate, result: *UChar, resultLength: s32, fpositer: *UFieldPositionIterator, status: *UErrorCode) -> s32 #foreign libicutu "udat_formatForFields_73";
+
+udat_formatCalendarForFields :: (format: *UDateFormat, calendar: *UCalendar, result: *UChar, capacity: s32, fpositer: *UFieldPositionIterator, status: *UErrorCode) -> s32 #foreign libicutu "udat_formatCalendarForFields_73";
+
+udat_parse :: (format: *UDateFormat, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> UDate #foreign libicutu "udat_parse_73";
+
+udat_parseCalendar :: (format: *UDateFormat, calendar: *UCalendar, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> void #foreign libicutu "udat_parseCalendar_73";
+
+udat_isLenient :: (fmt: *UDateFormat) -> UBool #foreign libicutu "udat_isLenient_73";
+
+udat_setLenient :: (fmt: *UDateFormat, isLenient: UBool) -> void #foreign libicutu "udat_setLenient_73";
+
+udat_getCalendar :: (fmt: *UDateFormat) -> *UCalendar #foreign libicutu "udat_getCalendar_73";
+
+udat_setCalendar :: (fmt: *UDateFormat, calendarToSet: *UCalendar) -> void #foreign libicutu "udat_setCalendar_73";
+
+udat_getNumberFormat :: (fmt: *UDateFormat) -> *UNumberFormat #foreign libicutu "udat_getNumberFormat_73";
+
+udat_getNumberFormatForField :: (fmt: *UDateFormat, field: UChar) -> *UNumberFormat #foreign libicutu "udat_getNumberFormatForField_73";
+
+udat_adoptNumberFormatForFields :: (fmt: *UDateFormat, fields: *UChar, numberFormatToSet: *UNumberFormat, status: *UErrorCode) -> void #foreign libicutu "udat_adoptNumberFormatForFields_73";
+
+udat_setNumberFormat :: (fmt: *UDateFormat, numberFormatToSet: *UNumberFormat) -> void #foreign libicutu "udat_setNumberFormat_73";
+
+udat_adoptNumberFormat :: (fmt: *UDateFormat, numberFormatToAdopt: *UNumberFormat) -> void #foreign libicutu "udat_adoptNumberFormat_73";
+
+udat_getAvailable :: (localeIndex: s32) -> *u8 #foreign libicutu "udat_getAvailable_73";
+
+udat_countAvailable :: () -> s32 #foreign libicutu "udat_countAvailable_73";
+
+udat_get2DigitYearStart :: (fmt: *UDateFormat, status: *UErrorCode) -> UDate #foreign libicutu "udat_get2DigitYearStart_73";
+
+udat_set2DigitYearStart :: (fmt: *UDateFormat, d: UDate, status: *UErrorCode) -> void #foreign libicutu "udat_set2DigitYearStart_73";
+
+udat_toPattern :: (fmt: *UDateFormat, localized: UBool, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "udat_toPattern_73";
+
+udat_applyPattern :: (format: *UDateFormat, localized: UBool, pattern: *UChar, patternLength: s32) -> void #foreign libicutu "udat_applyPattern_73";
+
+/**
+* The possible types of date format symbols
+* @stable ICU 2.6
+*/
+UDateFormatSymbolType :: enum u32 {
+    ERAS                        :: 0;
+
+    MONTHS                      :: 1;
+
+    SHORT_MONTHS                :: 2;
+
+    WEEKDAYS                    :: 3;
+
+    SHORT_WEEKDAYS              :: 4;
+
+    AM_PMS                      :: 5;
+
+    LOCALIZED_CHARS             :: 6;
+
+    ERA_NAMES                   :: 7;
+
+    NARROW_MONTHS               :: 8;
+
+    NARROW_WEEKDAYS             :: 9;
+
+    STANDALONE_MONTHS           :: 10;
+    STANDALONE_SHORT_MONTHS     :: 11;
+    STANDALONE_NARROW_MONTHS    :: 12;
+
+    STANDALONE_WEEKDAYS         :: 13;
+
+    STANDALONE_SHORT_WEEKDAYS   :: 14;
+
+    STANDALONE_NARROW_WEEKDAYS  :: 15;
+
+    QUARTERS                    :: 16;
+
+    SHORT_QUARTERS              :: 17;
+
+    STANDALONE_QUARTERS         :: 18;
+    STANDALONE_SHORT_QUARTERS   :: 19;
+
+    SHORTER_WEEKDAYS            :: 20;
+
+    STANDALONE_SHORTER_WEEKDAYS :: 21;
+
+    CYCLIC_YEARS_WIDE           :: 22;
+
+    CYCLIC_YEARS_ABBREVIATED    :: 23;
+
+    CYCLIC_YEARS_NARROW         :: 24;
+
+    ZODIAC_NAMES_WIDE           :: 25;
+
+    ZODIAC_NAMES_ABBREVIATED    :: 26;
+
+    ZODIAC_NAMES_NARROW         :: 27;
+
+    NARROW_QUARTERS             :: 28;
+
+    STANDALONE_NARROW_QUARTERS  :: 29;
+}
+
+UDateFormatSymbols :: struct {}
+
+udat_getSymbols :: (fmt: *UDateFormat, type: UDateFormatSymbolType, symbolIndex: s32, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "udat_getSymbols_73";
+
+udat_countSymbols :: (fmt: *UDateFormat, type: UDateFormatSymbolType) -> s32 #foreign libicutu "udat_countSymbols_73";
+
+udat_setSymbols :: (format: *UDateFormat, type: UDateFormatSymbolType, symbolIndex: s32, value: *UChar, valueLength: s32, status: *UErrorCode) -> void #foreign libicutu "udat_setSymbols_73";
+
+udat_getLocaleByType :: (fmt: *UDateFormat, type: ULocDataLocaleType, status: *UErrorCode) -> *u8 #foreign libicutu "udat_getLocaleByType_73";
+
+udat_setContext :: (fmt: *UDateFormat, value: UDisplayContext, status: *UErrorCode) -> void #foreign libicutu "udat_setContext_73";
+
+udat_getContext :: (fmt: *UDateFormat, type: UDisplayContextType, status: *UErrorCode) -> UDisplayContext #foreign libicutu "udat_getContext_73";
+
+udat_toPatternRelativeDate :: (fmt: *UDateFormat, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "udat_toPatternRelativeDate_73";
+
+udat_toPatternRelativeTime :: (fmt: *UDateFormat, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "udat_toPatternRelativeTime_73";
+
+udat_applyPatternRelative :: (format: *UDateFormat, datePattern: *UChar, datePatternLength: s32, timePattern: *UChar, timePatternLength: s32, status: *UErrorCode) -> void #foreign libicutu "udat_applyPatternRelative_73";
+
+/**
+* @internal
+* @see udat_open
+*/
+UDateFormatOpener :: #type (timeStyle: UDateFormatStyle, dateStyle: UDateFormatStyle, locale: *u8, tzID: *UChar, tzIDLength: s32, pattern: *UChar, patternLength: s32, status: *UErrorCode) -> *UDateFormat #c_call;
+
+udat_registerOpener :: (opener: UDateFormatOpener, status: *UErrorCode) -> void #foreign libicutu "udat_registerOpener_73";
+
+udat_unregisterOpener :: (opener: UDateFormatOpener, status: *UErrorCode) -> UDateFormatOpener #foreign libicutu "udat_unregisterOpener_73";
 
 u_getDataDirectory :: () -> *u8 #foreign libicutu "u_getDataDirectory_73";
 

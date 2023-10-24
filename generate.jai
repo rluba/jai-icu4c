@@ -49,6 +49,7 @@ generate_bindings :: () -> bool {
 
         array_add(*include_paths, "./src");
         array_add(*source_files,  "unicode/ucal.h");
+        array_add(*source_files,  "unicode/udat.h");
         array_add(*source_files,  "unicode/uloc.h");
         array_add(*source_files,  "unicode/unum.h");
         array_add(*source_files,  "unicode/ustring.h");
