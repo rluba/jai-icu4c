@@ -6,6 +6,6 @@ I haven’t yet tested them on Linux and have made zero effort to prepare them f
 
 ## Usage
 
-*Important:* You need to call `icu_init()` before calling any ICU functions to set the path to the ICU data file (located at `data/icudt73l.dat`).
+*Important:* You need to call `init_icu()` before calling any ICU functions to set the path to the ICU data file (located at `data/icudt73l.dat`).
 
 See [example/example.jai](./example/example.jai) for how to convert between timezones, do date formatting, number formatting, ….
