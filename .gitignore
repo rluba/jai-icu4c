@@ -13,3 +13,8 @@
 .DS_Store
 *.dSYM
 /example/example
+/macos/bin
+/macos/sbin
+/macos/share
+/icu-*/
+/*_build/

@@ -431,23 +431,23 @@ UChar32 :: s32;
 */
 UVersionInfo :: [4] u8;
 
-u_versionFromString :: (versionArray: *UVersionInfo, versionString: *u8) -> void #foreign libicutu "u_versionFromString_73";
+u_versionFromString :: (versionArray: *UVersionInfo, versionString: *u8) -> void #foreign libicuuc "u_versionFromString_73";
 
-u_versionFromUString :: (versionArray: *UVersionInfo, versionString: *UChar) -> void #foreign libicutu "u_versionFromUString_73";
+u_versionFromUString :: (versionArray: *UVersionInfo, versionString: *UChar) -> void #foreign libicuuc "u_versionFromUString_73";
 
-u_versionToString :: (versionArray: *UVersionInfo, versionString: *u8) -> void #foreign libicutu "u_versionToString_73";
+u_versionToString :: (versionArray: *UVersionInfo, versionString: *u8) -> void #foreign libicuuc "u_versionToString_73";
 
-u_getVersion :: (versionArray: *UVersionInfo) -> void #foreign libicutu "u_getVersion_73";
+u_getVersion :: (versionArray: *UVersionInfo) -> void #foreign libicuuc "u_getVersion_73";
 
-utf8_nextCharSafeBody :: (s: *u8, pi: *s32, length: s32, c: UChar32, strict: UBool) -> UChar32 #foreign libicutu "utf8_nextCharSafeBody_73";
+utf8_nextCharSafeBody :: (s: *u8, pi: *s32, length: s32, c: UChar32, strict: UBool) -> UChar32 #foreign libicuuc "utf8_nextCharSafeBody_73";
 
-utf8_appendCharSafeBody :: (s: *u8, i: s32, length: s32, c: UChar32, pIsError: *UBool) -> s32 #foreign libicutu "utf8_appendCharSafeBody_73";
+utf8_appendCharSafeBody :: (s: *u8, i: s32, length: s32, c: UChar32, pIsError: *UBool) -> s32 #foreign libicuuc "utf8_appendCharSafeBody_73";
 
-utf8_prevCharSafeBody :: (s: *u8, start: s32, pi: *s32, c: UChar32, strict: UBool) -> UChar32 #foreign libicutu "utf8_prevCharSafeBody_73";
+utf8_prevCharSafeBody :: (s: *u8, start: s32, pi: *s32, c: UChar32, strict: UBool) -> UChar32 #foreign libicuuc "utf8_prevCharSafeBody_73";
 
-utf8_back1SafeBody :: (s: *u8, start: s32, i: s32) -> s32 #foreign libicutu "utf8_back1SafeBody_73";
+utf8_back1SafeBody :: (s: *u8, start: s32, i: s32) -> s32 #foreign libicuuc "utf8_back1SafeBody_73";
 
-utf8_countTrailBytes: *u8 #elsewhere libicutu "utf8_countTrailBytes_73";
+utf8_countTrailBytes: *u8 #elsewhere libicuuc "utf8_countTrailBytes_73";
 
 /**
 * Date and Time data type.
@@ -683,7 +683,7 @@ UErrorCode :: enum s32 {
     ERROR_LIMIT                      :: 66818;
 }
 
-u_errorName :: (code: UErrorCode) -> *u8 #foreign libicutu "u_errorName_73";
+u_errorName :: (code: UErrorCode) -> *u8 #foreign libicuuc "u_errorName_73";
 
 /**
 * An enumeration object.
@@ -692,19 +692,19 @@ u_errorName :: (code: UErrorCode) -> *u8 #foreign libicutu "u_errorName_73";
 */
 UEnumeration :: struct {}
 
-uenum_close :: (en: *UEnumeration) -> void #foreign libicutu "uenum_close_73";
+uenum_close :: (en: *UEnumeration) -> void #foreign libicuuc "uenum_close_73";
 
-uenum_count :: (en: *UEnumeration, status: *UErrorCode) -> s32 #foreign libicutu "uenum_count_73";
+uenum_count :: (en: *UEnumeration, status: *UErrorCode) -> s32 #foreign libicuuc "uenum_count_73";
 
-uenum_unext :: (en: *UEnumeration, resultLength: *s32, status: *UErrorCode) -> *UChar #foreign libicutu "uenum_unext_73";
+uenum_unext :: (en: *UEnumeration, resultLength: *s32, status: *UErrorCode) -> *UChar #foreign libicuuc "uenum_unext_73";
 
-uenum_next :: (en: *UEnumeration, resultLength: *s32, status: *UErrorCode) -> *u8 #foreign libicutu "uenum_next_73";
+uenum_next :: (en: *UEnumeration, resultLength: *s32, status: *UErrorCode) -> *u8 #foreign libicuuc "uenum_next_73";
 
-uenum_reset :: (en: *UEnumeration, status: *UErrorCode) -> void #foreign libicutu "uenum_reset_73";
+uenum_reset :: (en: *UEnumeration, status: *UErrorCode) -> void #foreign libicuuc "uenum_reset_73";
 
-uenum_openUCharStringsEnumeration :: (strings: **UChar, count: s32, ec: *UErrorCode) -> *UEnumeration #foreign libicutu "uenum_openUCharStringsEnumeration_73";
+uenum_openUCharStringsEnumeration :: (strings: **UChar, count: s32, ec: *UErrorCode) -> *UEnumeration #foreign libicuuc "uenum_openUCharStringsEnumeration_73";
 
-uenum_openCharStringsEnumeration :: (strings: **u8, count: s32, ec: *UErrorCode) -> *UEnumeration #foreign libicutu "uenum_openCharStringsEnumeration_73";
+uenum_openCharStringsEnumeration :: (strings: **u8, count: s32, ec: *UErrorCode) -> *UEnumeration #foreign libicuuc "uenum_openCharStringsEnumeration_73";
 
 /**
 * Constants for *_getLocale()
@@ -730,45 +730,45 @@ ULocDataLocaleType :: enum u32 {
     DATA_LOCALE_TYPE_LIMIT :: 3;
 }
 
-uloc_getDefault :: () -> *u8 #foreign libicutu "uloc_getDefault_73";
+uloc_getDefault :: () -> *u8 #foreign libicuuc "uloc_getDefault_73";
 
-uloc_setDefault :: (localeID: *u8, status: *UErrorCode) -> void #foreign libicutu "uloc_setDefault_73";
+uloc_setDefault :: (localeID: *u8, status: *UErrorCode) -> void #foreign libicuuc "uloc_setDefault_73";
 
-uloc_getLanguage :: (localeID: *u8, language: *u8, languageCapacity: s32, err: *UErrorCode) -> s32 #foreign libicutu "uloc_getLanguage_73";
+uloc_getLanguage :: (localeID: *u8, language: *u8, languageCapacity: s32, err: *UErrorCode) -> s32 #foreign libicuuc "uloc_getLanguage_73";
 
-uloc_getScript :: (localeID: *u8, script: *u8, scriptCapacity: s32, err: *UErrorCode) -> s32 #foreign libicutu "uloc_getScript_73";
+uloc_getScript :: (localeID: *u8, script: *u8, scriptCapacity: s32, err: *UErrorCode) -> s32 #foreign libicuuc "uloc_getScript_73";
 
-uloc_getCountry :: (localeID: *u8, country: *u8, countryCapacity: s32, err: *UErrorCode) -> s32 #foreign libicutu "uloc_getCountry_73";
+uloc_getCountry :: (localeID: *u8, country: *u8, countryCapacity: s32, err: *UErrorCode) -> s32 #foreign libicuuc "uloc_getCountry_73";
 
-uloc_getVariant :: (localeID: *u8, variant: *u8, variantCapacity: s32, err: *UErrorCode) -> s32 #foreign libicutu "uloc_getVariant_73";
+uloc_getVariant :: (localeID: *u8, variant: *u8, variantCapacity: s32, err: *UErrorCode) -> s32 #foreign libicuuc "uloc_getVariant_73";
 
-uloc_getName :: (localeID: *u8, name: *u8, nameCapacity: s32, err: *UErrorCode) -> s32 #foreign libicutu "uloc_getName_73";
+uloc_getName :: (localeID: *u8, name: *u8, nameCapacity: s32, err: *UErrorCode) -> s32 #foreign libicuuc "uloc_getName_73";
 
-uloc_canonicalize :: (localeID: *u8, name: *u8, nameCapacity: s32, err: *UErrorCode) -> s32 #foreign libicutu "uloc_canonicalize_73";
+uloc_canonicalize :: (localeID: *u8, name: *u8, nameCapacity: s32, err: *UErrorCode) -> s32 #foreign libicuuc "uloc_canonicalize_73";
 
-uloc_getISO3Language :: (localeID: *u8) -> *u8 #foreign libicutu "uloc_getISO3Language_73";
+uloc_getISO3Language :: (localeID: *u8) -> *u8 #foreign libicuuc "uloc_getISO3Language_73";
 
-uloc_getISO3Country :: (localeID: *u8) -> *u8 #foreign libicutu "uloc_getISO3Country_73";
+uloc_getISO3Country :: (localeID: *u8) -> *u8 #foreign libicuuc "uloc_getISO3Country_73";
 
-uloc_getLCID :: (localeID: *u8) -> u32 #foreign libicutu "uloc_getLCID_73";
+uloc_getLCID :: (localeID: *u8) -> u32 #foreign libicuuc "uloc_getLCID_73";
 
-uloc_getDisplayLanguage :: (locale: *u8, displayLocale: *u8, language: *UChar, languageCapacity: s32, status: *UErrorCode) -> s32 #foreign libicutu "uloc_getDisplayLanguage_73";
+uloc_getDisplayLanguage :: (locale: *u8, displayLocale: *u8, language: *UChar, languageCapacity: s32, status: *UErrorCode) -> s32 #foreign libicuuc "uloc_getDisplayLanguage_73";
 
-uloc_getDisplayScript :: (locale: *u8, displayLocale: *u8, script: *UChar, scriptCapacity: s32, status: *UErrorCode) -> s32 #foreign libicutu "uloc_getDisplayScript_73";
+uloc_getDisplayScript :: (locale: *u8, displayLocale: *u8, script: *UChar, scriptCapacity: s32, status: *UErrorCode) -> s32 #foreign libicuuc "uloc_getDisplayScript_73";
 
-uloc_getDisplayCountry :: (locale: *u8, displayLocale: *u8, country: *UChar, countryCapacity: s32, status: *UErrorCode) -> s32 #foreign libicutu "uloc_getDisplayCountry_73";
+uloc_getDisplayCountry :: (locale: *u8, displayLocale: *u8, country: *UChar, countryCapacity: s32, status: *UErrorCode) -> s32 #foreign libicuuc "uloc_getDisplayCountry_73";
 
-uloc_getDisplayVariant :: (locale: *u8, displayLocale: *u8, variant: *UChar, variantCapacity: s32, status: *UErrorCode) -> s32 #foreign libicutu "uloc_getDisplayVariant_73";
+uloc_getDisplayVariant :: (locale: *u8, displayLocale: *u8, variant: *UChar, variantCapacity: s32, status: *UErrorCode) -> s32 #foreign libicuuc "uloc_getDisplayVariant_73";
 
-uloc_getDisplayKeyword :: (keyword: *u8, displayLocale: *u8, dest: *UChar, destCapacity: s32, status: *UErrorCode) -> s32 #foreign libicutu "uloc_getDisplayKeyword_73";
+uloc_getDisplayKeyword :: (keyword: *u8, displayLocale: *u8, dest: *UChar, destCapacity: s32, status: *UErrorCode) -> s32 #foreign libicuuc "uloc_getDisplayKeyword_73";
 
-uloc_getDisplayKeywordValue :: (locale: *u8, keyword: *u8, displayLocale: *u8, dest: *UChar, destCapacity: s32, status: *UErrorCode) -> s32 #foreign libicutu "uloc_getDisplayKeywordValue_73";
+uloc_getDisplayKeywordValue :: (locale: *u8, keyword: *u8, displayLocale: *u8, dest: *UChar, destCapacity: s32, status: *UErrorCode) -> s32 #foreign libicuuc "uloc_getDisplayKeywordValue_73";
 
-uloc_getDisplayName :: (localeID: *u8, inLocaleID: *u8, result: *UChar, maxResultSize: s32, err: *UErrorCode) -> s32 #foreign libicutu "uloc_getDisplayName_73";
+uloc_getDisplayName :: (localeID: *u8, inLocaleID: *u8, result: *UChar, maxResultSize: s32, err: *UErrorCode) -> s32 #foreign libicuuc "uloc_getDisplayName_73";
 
-uloc_getAvailable :: (n: s32) -> *u8 #foreign libicutu "uloc_getAvailable_73";
+uloc_getAvailable :: (n: s32) -> *u8 #foreign libicuuc "uloc_getAvailable_73";
 
-uloc_countAvailable :: () -> s32 #foreign libicutu "uloc_countAvailable_73";
+uloc_countAvailable :: () -> s32 #foreign libicuuc "uloc_countAvailable_73";
 
 /**
 * Types for uloc_getAvailableByType and uloc_countAvailableByType.
@@ -785,23 +785,23 @@ ULocAvailableType :: enum u32 {
     COUNT               :: 3;
 }
 
-uloc_openAvailableByType :: (type: ULocAvailableType, status: *UErrorCode) -> *UEnumeration #foreign libicutu "uloc_openAvailableByType_73";
+uloc_openAvailableByType :: (type: ULocAvailableType, status: *UErrorCode) -> *UEnumeration #foreign libicuuc "uloc_openAvailableByType_73";
 
-uloc_getISOLanguages :: () -> **u8 #foreign libicutu "uloc_getISOLanguages_73";
+uloc_getISOLanguages :: () -> **u8 #foreign libicuuc "uloc_getISOLanguages_73";
 
-uloc_getISOCountries :: () -> **u8 #foreign libicutu "uloc_getISOCountries_73";
+uloc_getISOCountries :: () -> **u8 #foreign libicuuc "uloc_getISOCountries_73";
 
-uloc_getParent :: (localeID: *u8, parent: *u8, parentCapacity: s32, err: *UErrorCode) -> s32 #foreign libicutu "uloc_getParent_73";
+uloc_getParent :: (localeID: *u8, parent: *u8, parentCapacity: s32, err: *UErrorCode) -> s32 #foreign libicuuc "uloc_getParent_73";
 
-uloc_getBaseName :: (localeID: *u8, name: *u8, nameCapacity: s32, err: *UErrorCode) -> s32 #foreign libicutu "uloc_getBaseName_73";
+uloc_getBaseName :: (localeID: *u8, name: *u8, nameCapacity: s32, err: *UErrorCode) -> s32 #foreign libicuuc "uloc_getBaseName_73";
 
-uloc_openKeywords :: (localeID: *u8, status: *UErrorCode) -> *UEnumeration #foreign libicutu "uloc_openKeywords_73";
+uloc_openKeywords :: (localeID: *u8, status: *UErrorCode) -> *UEnumeration #foreign libicuuc "uloc_openKeywords_73";
 
-uloc_getKeywordValue :: (localeID: *u8, keywordName: *u8, buffer: *u8, bufferCapacity: s32, status: *UErrorCode) -> s32 #foreign libicutu "uloc_getKeywordValue_73";
+uloc_getKeywordValue :: (localeID: *u8, keywordName: *u8, buffer: *u8, bufferCapacity: s32, status: *UErrorCode) -> s32 #foreign libicuuc "uloc_getKeywordValue_73";
 
-uloc_setKeywordValue :: (keywordName: *u8, keywordValue: *u8, buffer: *u8, bufferCapacity: s32, status: *UErrorCode) -> s32 #foreign libicutu "uloc_setKeywordValue_73";
+uloc_setKeywordValue :: (keywordName: *u8, keywordValue: *u8, buffer: *u8, bufferCapacity: s32, status: *UErrorCode) -> s32 #foreign libicuuc "uloc_setKeywordValue_73";
 
-uloc_isRightToLeft :: (locale: *u8) -> UBool #foreign libicutu "uloc_isRightToLeft_73";
+uloc_isRightToLeft :: (locale: *u8) -> UBool #foreign libicuuc "uloc_isRightToLeft_73";
 
 /**
 * enums for the  return value for the character and line orientation
@@ -816,9 +816,9 @@ ULayoutType :: enum u32 {
     UNKNOWN :: 4;
 }
 
-uloc_getCharacterOrientation :: (localeId: *u8, status: *UErrorCode) -> ULayoutType #foreign libicutu "uloc_getCharacterOrientation_73";
+uloc_getCharacterOrientation :: (localeId: *u8, status: *UErrorCode) -> ULayoutType #foreign libicuuc "uloc_getCharacterOrientation_73";
 
-uloc_getLineOrientation :: (localeId: *u8, status: *UErrorCode) -> ULayoutType #foreign libicutu "uloc_getLineOrientation_73";
+uloc_getLineOrientation :: (localeId: *u8, status: *UErrorCode) -> ULayoutType #foreign libicuuc "uloc_getLineOrientation_73";
 
 /**
 * Output values which uloc_acceptLanguage() writes to the 'outResult' parameter.
@@ -835,27 +835,27 @@ UAcceptResult :: enum u32 {
     FALLBACK :: 2;
 }
 
-uloc_acceptLanguageFromHTTP :: (result: *u8, resultAvailable: s32, outResult: *UAcceptResult, httpAcceptLanguage: *u8, availableLocales: *UEnumeration, status: *UErrorCode) -> s32 #foreign libicutu "uloc_acceptLanguageFromHTTP_73";
+uloc_acceptLanguageFromHTTP :: (result: *u8, resultAvailable: s32, outResult: *UAcceptResult, httpAcceptLanguage: *u8, availableLocales: *UEnumeration, status: *UErrorCode) -> s32 #foreign libicuuc "uloc_acceptLanguageFromHTTP_73";
 
-uloc_acceptLanguage :: (result: *u8, resultAvailable: s32, outResult: *UAcceptResult, acceptList: **u8, acceptListCount: s32, availableLocales: *UEnumeration, status: *UErrorCode) -> s32 #foreign libicutu "uloc_acceptLanguage_73";
+uloc_acceptLanguage :: (result: *u8, resultAvailable: s32, outResult: *UAcceptResult, acceptList: **u8, acceptListCount: s32, availableLocales: *UEnumeration, status: *UErrorCode) -> s32 #foreign libicuuc "uloc_acceptLanguage_73";
 
-uloc_getLocaleForLCID :: (hostID: u32, locale: *u8, localeCapacity: s32, status: *UErrorCode) -> s32 #foreign libicutu "uloc_getLocaleForLCID_73";
+uloc_getLocaleForLCID :: (hostID: u32, locale: *u8, localeCapacity: s32, status: *UErrorCode) -> s32 #foreign libicuuc "uloc_getLocaleForLCID_73";
 
-uloc_addLikelySubtags :: (localeID: *u8, maximizedLocaleID: *u8, maximizedLocaleIDCapacity: s32, err: *UErrorCode) -> s32 #foreign libicutu "uloc_addLikelySubtags_73";
+uloc_addLikelySubtags :: (localeID: *u8, maximizedLocaleID: *u8, maximizedLocaleIDCapacity: s32, err: *UErrorCode) -> s32 #foreign libicuuc "uloc_addLikelySubtags_73";
 
-uloc_minimizeSubtags :: (localeID: *u8, minimizedLocaleID: *u8, minimizedLocaleIDCapacity: s32, err: *UErrorCode) -> s32 #foreign libicutu "uloc_minimizeSubtags_73";
+uloc_minimizeSubtags :: (localeID: *u8, minimizedLocaleID: *u8, minimizedLocaleIDCapacity: s32, err: *UErrorCode) -> s32 #foreign libicuuc "uloc_minimizeSubtags_73";
 
-uloc_forLanguageTag :: (langtag: *u8, localeID: *u8, localeIDCapacity: s32, parsedLength: *s32, err: *UErrorCode) -> s32 #foreign libicutu "uloc_forLanguageTag_73";
+uloc_forLanguageTag :: (langtag: *u8, localeID: *u8, localeIDCapacity: s32, parsedLength: *s32, err: *UErrorCode) -> s32 #foreign libicuuc "uloc_forLanguageTag_73";
 
-uloc_toLanguageTag :: (localeID: *u8, langtag: *u8, langtagCapacity: s32, strict: UBool, err: *UErrorCode) -> s32 #foreign libicutu "uloc_toLanguageTag_73";
+uloc_toLanguageTag :: (localeID: *u8, langtag: *u8, langtagCapacity: s32, strict: UBool, err: *UErrorCode) -> s32 #foreign libicuuc "uloc_toLanguageTag_73";
 
-uloc_toUnicodeLocaleKey :: (keyword: *u8) -> *u8 #foreign libicutu "uloc_toUnicodeLocaleKey_73";
+uloc_toUnicodeLocaleKey :: (keyword: *u8) -> *u8 #foreign libicuuc "uloc_toUnicodeLocaleKey_73";
 
-uloc_toUnicodeLocaleType :: (keyword: *u8, value: *u8) -> *u8 #foreign libicutu "uloc_toUnicodeLocaleType_73";
+uloc_toUnicodeLocaleType :: (keyword: *u8, value: *u8) -> *u8 #foreign libicuuc "uloc_toUnicodeLocaleType_73";
 
-uloc_toLegacyKey :: (keyword: *u8) -> *u8 #foreign libicutu "uloc_toLegacyKey_73";
+uloc_toLegacyKey :: (keyword: *u8) -> *u8 #foreign libicuuc "uloc_toLegacyKey_73";
 
-uloc_toLegacyType :: (keyword: *u8, value: *u8) -> *u8 #foreign libicutu "uloc_toLegacyType_73";
+uloc_toLegacyType :: (keyword: *u8, value: *u8) -> *u8 #foreign libicuuc "uloc_toLegacyType_73";
 
 /** A calendar.
 *  For usage in C programs.
@@ -1009,31 +1009,31 @@ USystemTimeZoneType :: enum u32 {
     CANONICAL_LOCATION :: 2;
 }
 
-ucal_openTimeZoneIDEnumeration :: (zoneType: USystemTimeZoneType, region: *u8, rawOffset: *s32, ec: *UErrorCode) -> *UEnumeration #foreign libicutu "ucal_openTimeZoneIDEnumeration_73";
+ucal_openTimeZoneIDEnumeration :: (zoneType: USystemTimeZoneType, region: *u8, rawOffset: *s32, ec: *UErrorCode) -> *UEnumeration #foreign libicui18n "ucal_openTimeZoneIDEnumeration_73";
 
-ucal_openTimeZones :: (ec: *UErrorCode) -> *UEnumeration #foreign libicutu "ucal_openTimeZones_73";
+ucal_openTimeZones :: (ec: *UErrorCode) -> *UEnumeration #foreign libicui18n "ucal_openTimeZones_73";
 
-ucal_openCountryTimeZones :: (country: *u8, ec: *UErrorCode) -> *UEnumeration #foreign libicutu "ucal_openCountryTimeZones_73";
+ucal_openCountryTimeZones :: (country: *u8, ec: *UErrorCode) -> *UEnumeration #foreign libicui18n "ucal_openCountryTimeZones_73";
 
-ucal_getDefaultTimeZone :: (result: *UChar, resultCapacity: s32, ec: *UErrorCode) -> s32 #foreign libicutu "ucal_getDefaultTimeZone_73";
+ucal_getDefaultTimeZone :: (result: *UChar, resultCapacity: s32, ec: *UErrorCode) -> s32 #foreign libicui18n "ucal_getDefaultTimeZone_73";
 
-ucal_setDefaultTimeZone :: (zoneID: *UChar, ec: *UErrorCode) -> void #foreign libicutu "ucal_setDefaultTimeZone_73";
+ucal_setDefaultTimeZone :: (zoneID: *UChar, ec: *UErrorCode) -> void #foreign libicui18n "ucal_setDefaultTimeZone_73";
 
-ucal_getHostTimeZone :: (result: *UChar, resultCapacity: s32, ec: *UErrorCode) -> s32 #foreign libicutu "ucal_getHostTimeZone_73";
+ucal_getHostTimeZone :: (result: *UChar, resultCapacity: s32, ec: *UErrorCode) -> s32 #foreign libicui18n "ucal_getHostTimeZone_73";
 
-ucal_getDSTSavings :: (zoneID: *UChar, ec: *UErrorCode) -> s32 #foreign libicutu "ucal_getDSTSavings_73";
+ucal_getDSTSavings :: (zoneID: *UChar, ec: *UErrorCode) -> s32 #foreign libicui18n "ucal_getDSTSavings_73";
 
-ucal_getNow :: () -> UDate #foreign libicutu "ucal_getNow_73";
+ucal_getNow :: () -> UDate #foreign libicui18n "ucal_getNow_73";
 
-ucal_open :: (zoneID: *UChar, len: s32, locale: *u8, type: UCalendarType, status: *UErrorCode) -> *UCalendar #foreign libicutu "ucal_open_73";
+ucal_open :: (zoneID: *UChar, len: s32, locale: *u8, type: UCalendarType, status: *UErrorCode) -> *UCalendar #foreign libicui18n "ucal_open_73";
 
-ucal_close :: (cal: *UCalendar) -> void #foreign libicutu "ucal_close_73";
+ucal_close :: (cal: *UCalendar) -> void #foreign libicui18n "ucal_close_73";
 
-ucal_clone :: (cal: *UCalendar, status: *UErrorCode) -> *UCalendar #foreign libicutu "ucal_clone_73";
+ucal_clone :: (cal: *UCalendar, status: *UErrorCode) -> *UCalendar #foreign libicui18n "ucal_clone_73";
 
-ucal_setTimeZone :: (cal: *UCalendar, zoneID: *UChar, len: s32, status: *UErrorCode) -> void #foreign libicutu "ucal_setTimeZone_73";
+ucal_setTimeZone :: (cal: *UCalendar, zoneID: *UChar, len: s32, status: *UErrorCode) -> void #foreign libicui18n "ucal_setTimeZone_73";
 
-ucal_getTimeZoneID :: (cal: *UCalendar, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "ucal_getTimeZoneID_73";
+ucal_getTimeZoneID :: (cal: *UCalendar, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicui18n "ucal_getTimeZoneID_73";
 
 /**
 * Possible formats for a UCalendar's display name
@@ -1049,13 +1049,13 @@ UCalendarDisplayNameType :: enum u32 {
     SHORT_DST      :: 3;
 }
 
-ucal_getTimeZoneDisplayName :: (cal: *UCalendar, type: UCalendarDisplayNameType, locale: *u8, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "ucal_getTimeZoneDisplayName_73";
+ucal_getTimeZoneDisplayName :: (cal: *UCalendar, type: UCalendarDisplayNameType, locale: *u8, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicui18n "ucal_getTimeZoneDisplayName_73";
 
-ucal_inDaylightTime :: (cal: *UCalendar, status: *UErrorCode) -> UBool #foreign libicutu "ucal_inDaylightTime_73";
+ucal_inDaylightTime :: (cal: *UCalendar, status: *UErrorCode) -> UBool #foreign libicui18n "ucal_inDaylightTime_73";
 
-ucal_setGregorianChange :: (cal: *UCalendar, date: UDate, pErrorCode: *UErrorCode) -> void #foreign libicutu "ucal_setGregorianChange_73";
+ucal_setGregorianChange :: (cal: *UCalendar, date: UDate, pErrorCode: *UErrorCode) -> void #foreign libicui18n "ucal_setGregorianChange_73";
 
-ucal_getGregorianChange :: (cal: *UCalendar, pErrorCode: *UErrorCode) -> UDate #foreign libicutu "ucal_getGregorianChange_73";
+ucal_getGregorianChange :: (cal: *UCalendar, pErrorCode: *UErrorCode) -> UDate #foreign libicui18n "ucal_getGregorianChange_73";
 
 /**
 * Types of UCalendar attributes
@@ -1086,37 +1086,37 @@ UCalendarWallTimeOption :: enum u32 {
     NEXT_VALID :: 2;
 }
 
-ucal_getAttribute :: (cal: *UCalendar, attr: UCalendarAttribute) -> s32 #foreign libicutu "ucal_getAttribute_73";
+ucal_getAttribute :: (cal: *UCalendar, attr: UCalendarAttribute) -> s32 #foreign libicui18n "ucal_getAttribute_73";
 
-ucal_setAttribute :: (cal: *UCalendar, attr: UCalendarAttribute, newValue: s32) -> void #foreign libicutu "ucal_setAttribute_73";
+ucal_setAttribute :: (cal: *UCalendar, attr: UCalendarAttribute, newValue: s32) -> void #foreign libicui18n "ucal_setAttribute_73";
 
-ucal_getAvailable :: (localeIndex: s32) -> *u8 #foreign libicutu "ucal_getAvailable_73";
+ucal_getAvailable :: (localeIndex: s32) -> *u8 #foreign libicui18n "ucal_getAvailable_73";
 
-ucal_countAvailable :: () -> s32 #foreign libicutu "ucal_countAvailable_73";
+ucal_countAvailable :: () -> s32 #foreign libicui18n "ucal_countAvailable_73";
 
-ucal_getMillis :: (cal: *UCalendar, status: *UErrorCode) -> UDate #foreign libicutu "ucal_getMillis_73";
+ucal_getMillis :: (cal: *UCalendar, status: *UErrorCode) -> UDate #foreign libicui18n "ucal_getMillis_73";
 
-ucal_setMillis :: (cal: *UCalendar, dateTime: UDate, status: *UErrorCode) -> void #foreign libicutu "ucal_setMillis_73";
+ucal_setMillis :: (cal: *UCalendar, dateTime: UDate, status: *UErrorCode) -> void #foreign libicui18n "ucal_setMillis_73";
 
-ucal_setDate :: (cal: *UCalendar, year: s32, month: s32, date: s32, status: *UErrorCode) -> void #foreign libicutu "ucal_setDate_73";
+ucal_setDate :: (cal: *UCalendar, year: s32, month: s32, date: s32, status: *UErrorCode) -> void #foreign libicui18n "ucal_setDate_73";
 
-ucal_setDateTime :: (cal: *UCalendar, year: s32, month: s32, date: s32, hour: s32, minute: s32, second: s32, status: *UErrorCode) -> void #foreign libicutu "ucal_setDateTime_73";
+ucal_setDateTime :: (cal: *UCalendar, year: s32, month: s32, date: s32, hour: s32, minute: s32, second: s32, status: *UErrorCode) -> void #foreign libicui18n "ucal_setDateTime_73";
 
-ucal_equivalentTo :: (cal1: *UCalendar, cal2: *UCalendar) -> UBool #foreign libicutu "ucal_equivalentTo_73";
+ucal_equivalentTo :: (cal1: *UCalendar, cal2: *UCalendar) -> UBool #foreign libicui18n "ucal_equivalentTo_73";
 
-ucal_add :: (cal: *UCalendar, field: UCalendarDateFields, amount: s32, status: *UErrorCode) -> void #foreign libicutu "ucal_add_73";
+ucal_add :: (cal: *UCalendar, field: UCalendarDateFields, amount: s32, status: *UErrorCode) -> void #foreign libicui18n "ucal_add_73";
 
-ucal_roll :: (cal: *UCalendar, field: UCalendarDateFields, amount: s32, status: *UErrorCode) -> void #foreign libicutu "ucal_roll_73";
+ucal_roll :: (cal: *UCalendar, field: UCalendarDateFields, amount: s32, status: *UErrorCode) -> void #foreign libicui18n "ucal_roll_73";
 
-ucal_get :: (cal: *UCalendar, field: UCalendarDateFields, status: *UErrorCode) -> s32 #foreign libicutu "ucal_get_73";
+ucal_get :: (cal: *UCalendar, field: UCalendarDateFields, status: *UErrorCode) -> s32 #foreign libicui18n "ucal_get_73";
 
-ucal_set :: (cal: *UCalendar, field: UCalendarDateFields, value: s32) -> void #foreign libicutu "ucal_set_73";
+ucal_set :: (cal: *UCalendar, field: UCalendarDateFields, value: s32) -> void #foreign libicui18n "ucal_set_73";
 
-ucal_isSet :: (cal: *UCalendar, field: UCalendarDateFields) -> UBool #foreign libicutu "ucal_isSet_73";
+ucal_isSet :: (cal: *UCalendar, field: UCalendarDateFields) -> UBool #foreign libicui18n "ucal_isSet_73";
 
-ucal_clearField :: (cal: *UCalendar, field: UCalendarDateFields) -> void #foreign libicutu "ucal_clearField_73";
+ucal_clearField :: (cal: *UCalendar, field: UCalendarDateFields) -> void #foreign libicui18n "ucal_clearField_73";
 
-ucal_clear :: (calendar: *UCalendar) -> void #foreign libicutu "ucal_clear_73";
+ucal_clear :: (calendar: *UCalendar) -> void #foreign libicui18n "ucal_clear_73";
 
 /**
 * Possible limit values for a UCalendar
@@ -1136,17 +1136,17 @@ UCalendarLimitType :: enum u32 {
     ACTUAL_MAXIMUM   :: 5;
 }
 
-ucal_getLimit :: (cal: *UCalendar, field: UCalendarDateFields, type: UCalendarLimitType, status: *UErrorCode) -> s32 #foreign libicutu "ucal_getLimit_73";
+ucal_getLimit :: (cal: *UCalendar, field: UCalendarDateFields, type: UCalendarLimitType, status: *UErrorCode) -> s32 #foreign libicui18n "ucal_getLimit_73";
 
-ucal_getLocaleByType :: (cal: *UCalendar, type: ULocDataLocaleType, status: *UErrorCode) -> *u8 #foreign libicutu "ucal_getLocaleByType_73";
+ucal_getLocaleByType :: (cal: *UCalendar, type: ULocDataLocaleType, status: *UErrorCode) -> *u8 #foreign libicui18n "ucal_getLocaleByType_73";
 
-ucal_getTZDataVersion :: (status: *UErrorCode) -> *u8 #foreign libicutu "ucal_getTZDataVersion_73";
+ucal_getTZDataVersion :: (status: *UErrorCode) -> *u8 #foreign libicui18n "ucal_getTZDataVersion_73";
 
-ucal_getCanonicalTimeZoneID :: (id: *UChar, len: s32, result: *UChar, resultCapacity: s32, isSystemID: *UBool, status: *UErrorCode) -> s32 #foreign libicutu "ucal_getCanonicalTimeZoneID_73";
+ucal_getCanonicalTimeZoneID :: (id: *UChar, len: s32, result: *UChar, resultCapacity: s32, isSystemID: *UBool, status: *UErrorCode) -> s32 #foreign libicui18n "ucal_getCanonicalTimeZoneID_73";
 
-ucal_getType :: (cal: *UCalendar, status: *UErrorCode) -> *u8 #foreign libicutu "ucal_getType_73";
+ucal_getType :: (cal: *UCalendar, status: *UErrorCode) -> *u8 #foreign libicui18n "ucal_getType_73";
 
-ucal_getKeywordValuesForLocale :: (key: *u8, locale: *u8, commonlyUsed: UBool, status: *UErrorCode) -> *UEnumeration #foreign libicutu "ucal_getKeywordValuesForLocale_73";
+ucal_getKeywordValuesForLocale :: (key: *u8, locale: *u8, commonlyUsed: UBool, status: *UErrorCode) -> *UEnumeration #foreign libicui18n "ucal_getKeywordValuesForLocale_73";
 
 /** Weekday types, as returned by ucal_getDayOfWeekType().
 * @stable ICU 4.4
@@ -1161,13 +1161,13 @@ UCalendarWeekdayType :: enum u32 {
     WEEKEND_CEASE :: 3;
 }
 
-ucal_getDayOfWeekType :: (cal: *UCalendar, dayOfWeek: UCalendarDaysOfWeek, status: *UErrorCode) -> UCalendarWeekdayType #foreign libicutu "ucal_getDayOfWeekType_73";
+ucal_getDayOfWeekType :: (cal: *UCalendar, dayOfWeek: UCalendarDaysOfWeek, status: *UErrorCode) -> UCalendarWeekdayType #foreign libicui18n "ucal_getDayOfWeekType_73";
 
-ucal_getWeekendTransition :: (cal: *UCalendar, dayOfWeek: UCalendarDaysOfWeek, status: *UErrorCode) -> s32 #foreign libicutu "ucal_getWeekendTransition_73";
+ucal_getWeekendTransition :: (cal: *UCalendar, dayOfWeek: UCalendarDaysOfWeek, status: *UErrorCode) -> s32 #foreign libicui18n "ucal_getWeekendTransition_73";
 
-ucal_isWeekend :: (cal: *UCalendar, date: UDate, status: *UErrorCode) -> UBool #foreign libicutu "ucal_isWeekend_73";
+ucal_isWeekend :: (cal: *UCalendar, date: UDate, status: *UErrorCode) -> UBool #foreign libicui18n "ucal_isWeekend_73";
 
-ucal_getFieldDifference :: (cal: *UCalendar, target: UDate, field: UCalendarDateFields, status: *UErrorCode) -> s32 #foreign libicutu "ucal_getFieldDifference_73";
+ucal_getFieldDifference :: (cal: *UCalendar, target: UDate, field: UCalendarDateFields, status: *UErrorCode) -> s32 #foreign libicui18n "ucal_getFieldDifference_73";
 
 /**
 * Time zone transition types for ucal_getTimeZoneTransitionDate
@@ -1183,11 +1183,11 @@ UTimeZoneTransitionType :: enum u32 {
     PREVIOUS_INCLUSIVE :: 3;
 }
 
-ucal_getTimeZoneTransitionDate :: (cal: *UCalendar, type: UTimeZoneTransitionType, transition: *UDate, status: *UErrorCode) -> UBool #foreign libicutu "ucal_getTimeZoneTransitionDate_73";
+ucal_getTimeZoneTransitionDate :: (cal: *UCalendar, type: UTimeZoneTransitionType, transition: *UDate, status: *UErrorCode) -> UBool #foreign libicui18n "ucal_getTimeZoneTransitionDate_73";
 
-ucal_getWindowsTimeZoneID :: (id: *UChar, len: s32, winid: *UChar, winidCapacity: s32, status: *UErrorCode) -> s32 #foreign libicutu "ucal_getWindowsTimeZoneID_73";
+ucal_getWindowsTimeZoneID :: (id: *UChar, len: s32, winid: *UChar, winidCapacity: s32, status: *UErrorCode) -> s32 #foreign libicui18n "ucal_getWindowsTimeZoneID_73";
 
-ucal_getTimeZoneIDForWindowsID :: (winid: *UChar, len: s32, region: *u8, id: *UChar, idCapacity: s32, status: *UErrorCode) -> s32 #foreign libicutu "ucal_getTimeZoneIDForWindowsID_73";
+ucal_getTimeZoneIDForWindowsID :: (winid: *UChar, len: s32, region: *u8, id: *UChar, idCapacity: s32, status: *UErrorCode) -> s32 #foreign libicui18n "ucal_getTimeZoneIDForWindowsID_73";
 
 /**
 * Options used by ucal_getTimeZoneOffsetFromLocal and BasicTimeZone::getOffsetFromLocal()
@@ -1209,7 +1209,7 @@ UTimeZoneLocalOption :: enum u32 {
     DAYLIGHT_LATTER :: 15;
 }
 
-ucal_getTimeZoneOffsetFromLocal :: (cal: *UCalendar, nonExistingTimeOpt: UTimeZoneLocalOption, duplicatedTimeOpt: UTimeZoneLocalOption, rawOffset: *s32, dstOffset: *s32, status: *UErrorCode) -> void #foreign libicutu "ucal_getTimeZoneOffsetFromLocal_73";
+ucal_getTimeZoneOffsetFromLocal :: (cal: *UCalendar, nonExistingTimeOpt: UTimeZoneLocalOption, duplicatedTimeOpt: UTimeZoneLocalOption, rawOffset: *s32, dstOffset: *s32, status: *UErrorCode) -> void #foreign libicui18n "ucal_getTimeZoneOffsetFromLocal_73";
 
 /**
 * Currency Usage used for Decimal Format
@@ -1223,7 +1223,7 @@ UCurrencyUsage :: enum u32 {
     COUNT    :: 2;
 }
 
-ucurr_forLocale :: (locale: *u8, buff: *UChar, buffCapacity: s32, ec: *UErrorCode) -> s32 #foreign libicutu "ucurr_forLocale_73";
+ucurr_forLocale :: (locale: *u8, buff: *UChar, buffCapacity: s32, ec: *UErrorCode) -> s32 #foreign libicuuc "ucurr_forLocale_73";
 
 /**
 * Selector constants for ucurr_getName().
@@ -1248,21 +1248,21 @@ UCurrNameStyle :: enum u32 {
 */
 UCurrRegistryKey :: *void;
 
-ucurr_register :: (isoCode: *UChar, locale: *u8, status: *UErrorCode) -> UCurrRegistryKey #foreign libicutu "ucurr_register_73";
+ucurr_register :: (isoCode: *UChar, locale: *u8, status: *UErrorCode) -> UCurrRegistryKey #foreign libicuuc "ucurr_register_73";
 
-ucurr_unregister :: (key: UCurrRegistryKey, status: *UErrorCode) -> UBool #foreign libicutu "ucurr_unregister_73";
+ucurr_unregister :: (key: UCurrRegistryKey, status: *UErrorCode) -> UBool #foreign libicuuc "ucurr_unregister_73";
 
-ucurr_getName :: (currency: *UChar, locale: *u8, nameStyle: UCurrNameStyle, isChoiceFormat: *UBool, len: *s32, ec: *UErrorCode) -> *UChar #foreign libicutu "ucurr_getName_73";
+ucurr_getName :: (currency: *UChar, locale: *u8, nameStyle: UCurrNameStyle, isChoiceFormat: *UBool, len: *s32, ec: *UErrorCode) -> *UChar #foreign libicuuc "ucurr_getName_73";
 
-ucurr_getPluralName :: (currency: *UChar, locale: *u8, isChoiceFormat: *UBool, pluralCount: *u8, len: *s32, ec: *UErrorCode) -> *UChar #foreign libicutu "ucurr_getPluralName_73";
+ucurr_getPluralName :: (currency: *UChar, locale: *u8, isChoiceFormat: *UBool, pluralCount: *u8, len: *s32, ec: *UErrorCode) -> *UChar #foreign libicuuc "ucurr_getPluralName_73";
 
-ucurr_getDefaultFractionDigits :: (currency: *UChar, ec: *UErrorCode) -> s32 #foreign libicutu "ucurr_getDefaultFractionDigits_73";
+ucurr_getDefaultFractionDigits :: (currency: *UChar, ec: *UErrorCode) -> s32 #foreign libicuuc "ucurr_getDefaultFractionDigits_73";
 
-ucurr_getDefaultFractionDigitsForUsage :: (currency: *UChar, usage: UCurrencyUsage, ec: *UErrorCode) -> s32 #foreign libicutu "ucurr_getDefaultFractionDigitsForUsage_73";
+ucurr_getDefaultFractionDigitsForUsage :: (currency: *UChar, usage: UCurrencyUsage, ec: *UErrorCode) -> s32 #foreign libicuuc "ucurr_getDefaultFractionDigitsForUsage_73";
 
-ucurr_getRoundingIncrement :: (currency: *UChar, ec: *UErrorCode) -> float64 #foreign libicutu "ucurr_getRoundingIncrement_73";
+ucurr_getRoundingIncrement :: (currency: *UChar, ec: *UErrorCode) -> float64 #foreign libicuuc "ucurr_getRoundingIncrement_73";
 
-ucurr_getRoundingIncrementForUsage :: (currency: *UChar, usage: UCurrencyUsage, ec: *UErrorCode) -> float64 #foreign libicutu "ucurr_getRoundingIncrementForUsage_73";
+ucurr_getRoundingIncrementForUsage :: (currency: *UChar, usage: UCurrencyUsage, ec: *UErrorCode) -> float64 #foreign libicuuc "ucurr_getRoundingIncrementForUsage_73";
 
 /**
 * Selector constants for ucurr_openCurrencies().
@@ -1282,17 +1282,17 @@ UCurrCurrencyType :: enum u32 {
     NON_DEPRECATED :: 8;
 }
 
-ucurr_openISOCurrencies :: (currType: u32, pErrorCode: *UErrorCode) -> *UEnumeration #foreign libicutu "ucurr_openISOCurrencies_73";
+ucurr_openISOCurrencies :: (currType: u32, pErrorCode: *UErrorCode) -> *UEnumeration #foreign libicuuc "ucurr_openISOCurrencies_73";
 
-ucurr_isAvailable :: (isoCode: *UChar, from: UDate, to: UDate, errorCode: *UErrorCode) -> UBool #foreign libicutu "ucurr_isAvailable_73";
+ucurr_isAvailable :: (isoCode: *UChar, from: UDate, to: UDate, errorCode: *UErrorCode) -> UBool #foreign libicuuc "ucurr_isAvailable_73";
 
-ucurr_countCurrencies :: (locale: *u8, date: UDate, ec: *UErrorCode) -> s32 #foreign libicutu "ucurr_countCurrencies_73";
+ucurr_countCurrencies :: (locale: *u8, date: UDate, ec: *UErrorCode) -> s32 #foreign libicuuc "ucurr_countCurrencies_73";
 
-ucurr_forLocaleAndDate :: (locale: *u8, date: UDate, index: s32, buff: *UChar, buffCapacity: s32, ec: *UErrorCode) -> s32 #foreign libicutu "ucurr_forLocaleAndDate_73";
+ucurr_forLocaleAndDate :: (locale: *u8, date: UDate, index: s32, buff: *UChar, buffCapacity: s32, ec: *UErrorCode) -> s32 #foreign libicuuc "ucurr_forLocaleAndDate_73";
 
-ucurr_getKeywordValuesForLocale :: (key: *u8, locale: *u8, commonlyUsed: UBool, status: *UErrorCode) -> *UEnumeration #foreign libicutu "ucurr_getKeywordValuesForLocale_73";
+ucurr_getKeywordValuesForLocale :: (key: *u8, locale: *u8, commonlyUsed: UBool, status: *UErrorCode) -> *UEnumeration #foreign libicuuc "ucurr_getKeywordValuesForLocale_73";
 
-ucurr_getNumericCode :: (currency: *UChar) -> s32 #foreign libicutu "ucurr_getNumericCode_73";
+ucurr_getNumericCode :: (currency: *UChar) -> s32 #foreign libicuuc "ucurr_getNumericCode_73";
 
 /** A struct representing a range of text containing a specific field
 *  @stable ICU 2.0
@@ -1425,31 +1425,31 @@ UFormattableType :: enum u32 {
 */
 UFormattable :: *void;
 
-ufmt_open :: (status: *UErrorCode) -> *UFormattable #foreign libicutu "ufmt_open_73";
+ufmt_open :: (status: *UErrorCode) -> *UFormattable #foreign libicui18n "ufmt_open_73";
 
-ufmt_close :: (fmt: *UFormattable) -> void #foreign libicutu "ufmt_close_73";
+ufmt_close :: (fmt: *UFormattable) -> void #foreign libicui18n "ufmt_close_73";
 
-ufmt_getType :: (fmt: *UFormattable, status: *UErrorCode) -> UFormattableType #foreign libicutu "ufmt_getType_73";
+ufmt_getType :: (fmt: *UFormattable, status: *UErrorCode) -> UFormattableType #foreign libicui18n "ufmt_getType_73";
 
-ufmt_isNumeric :: (fmt: *UFormattable) -> UBool #foreign libicutu "ufmt_isNumeric_73";
+ufmt_isNumeric :: (fmt: *UFormattable) -> UBool #foreign libicui18n "ufmt_isNumeric_73";
 
-ufmt_getDate :: (fmt: *UFormattable, status: *UErrorCode) -> UDate #foreign libicutu "ufmt_getDate_73";
+ufmt_getDate :: (fmt: *UFormattable, status: *UErrorCode) -> UDate #foreign libicui18n "ufmt_getDate_73";
 
-ufmt_getDouble :: (fmt: *UFormattable, status: *UErrorCode) -> float64 #foreign libicutu "ufmt_getDouble_73";
+ufmt_getDouble :: (fmt: *UFormattable, status: *UErrorCode) -> float64 #foreign libicui18n "ufmt_getDouble_73";
 
-ufmt_getLong :: (fmt: *UFormattable, status: *UErrorCode) -> s32 #foreign libicutu "ufmt_getLong_73";
+ufmt_getLong :: (fmt: *UFormattable, status: *UErrorCode) -> s32 #foreign libicui18n "ufmt_getLong_73";
 
-ufmt_getInt64 :: (fmt: *UFormattable, status: *UErrorCode) -> s64 #foreign libicutu "ufmt_getInt64_73";
+ufmt_getInt64 :: (fmt: *UFormattable, status: *UErrorCode) -> s64 #foreign libicui18n "ufmt_getInt64_73";
 
-ufmt_getObject :: (fmt: *UFormattable, status: *UErrorCode) -> *void #foreign libicutu "ufmt_getObject_73";
+ufmt_getObject :: (fmt: *UFormattable, status: *UErrorCode) -> *void #foreign libicui18n "ufmt_getObject_73";
 
-ufmt_getUChars :: (fmt: *UFormattable, len: *s32, status: *UErrorCode) -> *UChar #foreign libicutu "ufmt_getUChars_73";
+ufmt_getUChars :: (fmt: *UFormattable, len: *s32, status: *UErrorCode) -> *UChar #foreign libicui18n "ufmt_getUChars_73";
 
-ufmt_getArrayLength :: (fmt: *UFormattable, status: *UErrorCode) -> s32 #foreign libicutu "ufmt_getArrayLength_73";
+ufmt_getArrayLength :: (fmt: *UFormattable, status: *UErrorCode) -> s32 #foreign libicui18n "ufmt_getArrayLength_73";
 
-ufmt_getArrayItemByIndex :: (fmt: *UFormattable, n: s32, status: *UErrorCode) -> *UFormattable #foreign libicutu "ufmt_getArrayItemByIndex_73";
+ufmt_getArrayItemByIndex :: (fmt: *UFormattable, n: s32, status: *UErrorCode) -> *UFormattable #foreign libicui18n "ufmt_getArrayItemByIndex_73";
 
-ufmt_getDecNumChars :: (fmt: *UFormattable, len: *s32, status: *UErrorCode) -> *u8 #foreign libicutu "ufmt_getDecNumChars_73";
+ufmt_getDecNumChars :: (fmt: *UFormattable, len: *s32, status: *UErrorCode) -> *u8 #foreign libicui18n "ufmt_getDecNumChars_73";
 
 /**
 * Display context types, for getting values of a particular setting.
@@ -1501,11 +1501,11 @@ UDisplayContext :: enum u32 {
 */
 UFieldPositionIterator :: struct {}
 
-ufieldpositer_open :: (status: *UErrorCode) -> *UFieldPositionIterator #foreign libicutu "ufieldpositer_open_73";
+ufieldpositer_open :: (status: *UErrorCode) -> *UFieldPositionIterator #foreign libicui18n "ufieldpositer_open_73";
 
-ufieldpositer_close :: (fpositer: *UFieldPositionIterator) -> void #foreign libicutu "ufieldpositer_close_73";
+ufieldpositer_close :: (fpositer: *UFieldPositionIterator) -> void #foreign libicui18n "ufieldpositer_close_73";
 
-ufieldpositer_next :: (fpositer: *UFieldPositionIterator, beginIndex: *s32, endIndex: *s32) -> s32 #foreign libicutu "ufieldpositer_next_73";
+ufieldpositer_next :: (fpositer: *UFieldPositionIterator, beginIndex: *s32, endIndex: *s32) -> s32 #foreign libicui18n "ufieldpositer_next_73";
 
 /** The possible number format rounding modes.
 *
@@ -1712,43 +1712,43 @@ UNumberFormatMinimumGroupingDigits :: enum s32 {
     MIN2 :: -3;
 }
 
-unum_open :: (style: UNumberFormatStyle, pattern: *UChar, patternLength: s32, locale: *u8, parseErr: *UParseError, status: *UErrorCode) -> *UNumberFormat #foreign libicutu "unum_open_73";
+unum_open :: (style: UNumberFormatStyle, pattern: *UChar, patternLength: s32, locale: *u8, parseErr: *UParseError, status: *UErrorCode) -> *UNumberFormat #foreign libicui18n "unum_open_73";
 
-unum_close :: (fmt: *UNumberFormat) -> void #foreign libicutu "unum_close_73";
+unum_close :: (fmt: *UNumberFormat) -> void #foreign libicui18n "unum_close_73";
 
-unum_clone :: (fmt: *UNumberFormat, status: *UErrorCode) -> *UNumberFormat #foreign libicutu "unum_clone_73";
+unum_clone :: (fmt: *UNumberFormat, status: *UErrorCode) -> *UNumberFormat #foreign libicui18n "unum_clone_73";
 
-unum_format :: (fmt: *UNumberFormat, number: s32, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicutu "unum_format_73";
+unum_format :: (fmt: *UNumberFormat, number: s32, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicui18n "unum_format_73";
 
-unum_formatInt64 :: (fmt: *UNumberFormat, number: s64, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicutu "unum_formatInt64_73";
+unum_formatInt64 :: (fmt: *UNumberFormat, number: s64, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicui18n "unum_formatInt64_73";
 
-unum_formatDouble :: (fmt: *UNumberFormat, number: float64, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicutu "unum_formatDouble_73";
+unum_formatDouble :: (fmt: *UNumberFormat, number: float64, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicui18n "unum_formatDouble_73";
 
-unum_formatDoubleForFields :: (format: *UNumberFormat, number: float64, result: *UChar, resultLength: s32, fpositer: *UFieldPositionIterator, status: *UErrorCode) -> s32 #foreign libicutu "unum_formatDoubleForFields_73";
+unum_formatDoubleForFields :: (format: *UNumberFormat, number: float64, result: *UChar, resultLength: s32, fpositer: *UFieldPositionIterator, status: *UErrorCode) -> s32 #foreign libicui18n "unum_formatDoubleForFields_73";
 
-unum_formatDecimal :: (fmt: *UNumberFormat, number: *u8, length: s32, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicutu "unum_formatDecimal_73";
+unum_formatDecimal :: (fmt: *UNumberFormat, number: *u8, length: s32, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicui18n "unum_formatDecimal_73";
 
-unum_formatDoubleCurrency :: (fmt: *UNumberFormat, number: float64, currency: *UChar, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicutu "unum_formatDoubleCurrency_73";
+unum_formatDoubleCurrency :: (fmt: *UNumberFormat, number: float64, currency: *UChar, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicui18n "unum_formatDoubleCurrency_73";
 
-unum_formatUFormattable :: (fmt: *UNumberFormat, number: *UFormattable, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicutu "unum_formatUFormattable_73";
+unum_formatUFormattable :: (fmt: *UNumberFormat, number: *UFormattable, result: *UChar, resultLength: s32, pos: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicui18n "unum_formatUFormattable_73";
 
-unum_parse :: (fmt: *UNumberFormat, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> s32 #foreign libicutu "unum_parse_73";
+unum_parse :: (fmt: *UNumberFormat, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> s32 #foreign libicui18n "unum_parse_73";
 
-unum_parseInt64 :: (fmt: *UNumberFormat, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> s64 #foreign libicutu "unum_parseInt64_73";
+unum_parseInt64 :: (fmt: *UNumberFormat, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> s64 #foreign libicui18n "unum_parseInt64_73";
 
-unum_parseDouble :: (fmt: *UNumberFormat, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> float64 #foreign libicutu "unum_parseDouble_73";
+unum_parseDouble :: (fmt: *UNumberFormat, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> float64 #foreign libicui18n "unum_parseDouble_73";
 
-unum_parseDecimal :: (fmt: *UNumberFormat, text: *UChar, textLength: s32, parsePos: *s32, outBuf: *u8, outBufLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "unum_parseDecimal_73";
+unum_parseDecimal :: (fmt: *UNumberFormat, text: *UChar, textLength: s32, parsePos: *s32, outBuf: *u8, outBufLength: s32, status: *UErrorCode) -> s32 #foreign libicui18n "unum_parseDecimal_73";
 
-unum_parseDoubleCurrency :: (fmt: *UNumberFormat, text: *UChar, textLength: s32, parsePos: *s32, currency: *UChar, status: *UErrorCode) -> float64 #foreign libicutu "unum_parseDoubleCurrency_73";
+unum_parseDoubleCurrency :: (fmt: *UNumberFormat, text: *UChar, textLength: s32, parsePos: *s32, currency: *UChar, status: *UErrorCode) -> float64 #foreign libicui18n "unum_parseDoubleCurrency_73";
 
-unum_parseToUFormattable :: (fmt: *UNumberFormat, result: *UFormattable, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> *UFormattable #foreign libicutu "unum_parseToUFormattable_73";
+unum_parseToUFormattable :: (fmt: *UNumberFormat, result: *UFormattable, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> *UFormattable #foreign libicui18n "unum_parseToUFormattable_73";
 
-unum_applyPattern :: (format: *UNumberFormat, localized: UBool, pattern: *UChar, patternLength: s32, parseError: *UParseError, status: *UErrorCode) -> void #foreign libicutu "unum_applyPattern_73";
+unum_applyPattern :: (format: *UNumberFormat, localized: UBool, pattern: *UChar, patternLength: s32, parseError: *UParseError, status: *UErrorCode) -> void #foreign libicui18n "unum_applyPattern_73";
 
-unum_getAvailable :: (localeIndex: s32) -> *u8 #foreign libicutu "unum_getAvailable_73";
+unum_getAvailable :: (localeIndex: s32) -> *u8 #foreign libicui18n "unum_getAvailable_73";
 
-unum_countAvailable :: () -> s32 #foreign libicutu "unum_countAvailable_73";
+unum_countAvailable :: () -> s32 #foreign libicui18n "unum_countAvailable_73";
 
 /* The UNumberFormatAttributeValue type cannot be #ifndef U_HIDE_INTERNAL_API, needed for .h variable declaration */
 /**
@@ -1827,15 +1827,15 @@ UNumberFormatAttribute :: enum u32 {
     LIMIT_BOOLEAN_ATTRIBUTE             :: 4101;
 }
 
-unum_hasAttribute :: (fmt: *UNumberFormat, attr: UNumberFormatAttribute) -> bool #foreign libicutu "unum_hasAttribute_73";
+unum_hasAttribute :: (fmt: *UNumberFormat, attr: UNumberFormatAttribute) -> bool #foreign libicui18n "unum_hasAttribute_73";
 
-unum_getAttribute :: (fmt: *UNumberFormat, attr: UNumberFormatAttribute) -> s32 #foreign libicutu "unum_getAttribute_73";
+unum_getAttribute :: (fmt: *UNumberFormat, attr: UNumberFormatAttribute) -> s32 #foreign libicui18n "unum_getAttribute_73";
 
-unum_setAttribute :: (fmt: *UNumberFormat, attr: UNumberFormatAttribute, newValue: s32) -> void #foreign libicutu "unum_setAttribute_73";
+unum_setAttribute :: (fmt: *UNumberFormat, attr: UNumberFormatAttribute, newValue: s32) -> void #foreign libicui18n "unum_setAttribute_73";
 
-unum_getDoubleAttribute :: (fmt: *UNumberFormat, attr: UNumberFormatAttribute) -> float64 #foreign libicutu "unum_getDoubleAttribute_73";
+unum_getDoubleAttribute :: (fmt: *UNumberFormat, attr: UNumberFormatAttribute) -> float64 #foreign libicui18n "unum_getDoubleAttribute_73";
 
-unum_setDoubleAttribute :: (fmt: *UNumberFormat, attr: UNumberFormatAttribute, newValue: float64) -> void #foreign libicutu "unum_setDoubleAttribute_73";
+unum_setDoubleAttribute :: (fmt: *UNumberFormat, attr: UNumberFormatAttribute, newValue: float64) -> void #foreign libicui18n "unum_setDoubleAttribute_73";
 
 /** The possible UNumberFormat text attributes @stable ICU 2.0*/
 UNumberFormatTextAttribute :: enum u32 {
@@ -1856,11 +1856,11 @@ UNumberFormatTextAttribute :: enum u32 {
     PUBLIC_RULESETS   :: 7;
 }
 
-unum_getTextAttribute :: (fmt: *UNumberFormat, tag: UNumberFormatTextAttribute, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "unum_getTextAttribute_73";
+unum_getTextAttribute :: (fmt: *UNumberFormat, tag: UNumberFormatTextAttribute, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicui18n "unum_getTextAttribute_73";
 
-unum_setTextAttribute :: (fmt: *UNumberFormat, tag: UNumberFormatTextAttribute, newValue: *UChar, newValueLength: s32, status: *UErrorCode) -> void #foreign libicutu "unum_setTextAttribute_73";
+unum_setTextAttribute :: (fmt: *UNumberFormat, tag: UNumberFormatTextAttribute, newValue: *UChar, newValueLength: s32, status: *UErrorCode) -> void #foreign libicui18n "unum_setTextAttribute_73";
 
-unum_toPattern :: (fmt: *UNumberFormat, isPatternLocalized: UBool, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "unum_toPattern_73";
+unum_toPattern :: (fmt: *UNumberFormat, isPatternLocalized: UBool, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicui18n "unum_toPattern_73";
 
 /**
 * Constants for specifying a number format symbol.
@@ -1928,15 +1928,15 @@ UNumberFormatSymbol :: enum u32 {
     FORMAT_SYMBOL_COUNT                :: 29;
 }
 
-unum_getSymbol :: (fmt: *UNumberFormat, symbol: UNumberFormatSymbol, buffer: *UChar, size: s32, status: *UErrorCode) -> s32 #foreign libicutu "unum_getSymbol_73";
+unum_getSymbol :: (fmt: *UNumberFormat, symbol: UNumberFormatSymbol, buffer: *UChar, size: s32, status: *UErrorCode) -> s32 #foreign libicui18n "unum_getSymbol_73";
 
-unum_setSymbol :: (fmt: *UNumberFormat, symbol: UNumberFormatSymbol, value: *UChar, length: s32, status: *UErrorCode) -> void #foreign libicutu "unum_setSymbol_73";
+unum_setSymbol :: (fmt: *UNumberFormat, symbol: UNumberFormatSymbol, value: *UChar, length: s32, status: *UErrorCode) -> void #foreign libicui18n "unum_setSymbol_73";
 
-unum_getLocaleByType :: (fmt: *UNumberFormat, type: ULocDataLocaleType, status: *UErrorCode) -> *u8 #foreign libicutu "unum_getLocaleByType_73";
+unum_getLocaleByType :: (fmt: *UNumberFormat, type: ULocDataLocaleType, status: *UErrorCode) -> *u8 #foreign libicui18n "unum_getLocaleByType_73";
 
-unum_setContext :: (fmt: *UNumberFormat, value: UDisplayContext, status: *UErrorCode) -> void #foreign libicutu "unum_setContext_73";
+unum_setContext :: (fmt: *UNumberFormat, value: UDisplayContext, status: *UErrorCode) -> void #foreign libicui18n "unum_setContext_73";
 
-unum_getContext :: (fmt: *UNumberFormat, type: UDisplayContextType, status: *UErrorCode) -> UDisplayContext #foreign libicutu "unum_getContext_73";
+unum_getContext :: (fmt: *UNumberFormat, type: UDisplayContextType, status: *UErrorCode) -> UDisplayContext #foreign libicui18n "unum_getContext_73";
 
 /** A date formatter.
 *  For usage in C programs.
@@ -2060,11 +2060,11 @@ UDateFormatField :: enum u32 {
     FIELD_COUNT                         :: 38;
 }
 
-udat_toCalendarDateField :: (field: UDateFormatField) -> UCalendarDateFields #foreign libicutu "udat_toCalendarDateField_73";
+udat_toCalendarDateField :: (field: UDateFormatField) -> UCalendarDateFields #foreign libicui18n "udat_toCalendarDateField_73";
 
-udat_open :: (timeStyle: UDateFormatStyle, dateStyle: UDateFormatStyle, locale: *u8, tzID: *UChar, tzIDLength: s32, pattern: *UChar, patternLength: s32, status: *UErrorCode) -> *UDateFormat #foreign libicutu "udat_open_73";
+udat_open :: (timeStyle: UDateFormatStyle, dateStyle: UDateFormatStyle, locale: *u8, tzID: *UChar, tzIDLength: s32, pattern: *UChar, patternLength: s32, status: *UErrorCode) -> *UDateFormat #foreign libicui18n "udat_open_73";
 
-udat_close :: (format: *UDateFormat) -> void #foreign libicutu "udat_close_73";
+udat_close :: (format: *UDateFormat) -> void #foreign libicui18n "udat_close_73";
 
 /**
 * DateFormat boolean attributes
@@ -2083,9 +2083,9 @@ UDateFormatBooleanAttribute :: enum u32 {
     BOOLEAN_ATTRIBUTE_COUNT           :: 4;
 }
 
-udat_getBooleanAttribute :: (fmt: *UDateFormat, attr: UDateFormatBooleanAttribute, status: *UErrorCode) -> UBool #foreign libicutu "udat_getBooleanAttribute_73";
+udat_getBooleanAttribute :: (fmt: *UDateFormat, attr: UDateFormatBooleanAttribute, status: *UErrorCode) -> UBool #foreign libicui18n "udat_getBooleanAttribute_73";
 
-udat_setBooleanAttribute :: (fmt: *UDateFormat, attr: UDateFormatBooleanAttribute, newValue: UBool, status: *UErrorCode) -> void #foreign libicutu "udat_setBooleanAttribute_73";
+udat_setBooleanAttribute :: (fmt: *UDateFormat, attr: UDateFormatBooleanAttribute, newValue: UBool, status: *UErrorCode) -> void #foreign libicui18n "udat_setBooleanAttribute_73";
 
 /**
 * Hour Cycle.
@@ -2101,49 +2101,49 @@ UDateFormatHourCycle :: enum u32 {
     _24 :: 3;
 }
 
-udat_clone :: (fmt: *UDateFormat, status: *UErrorCode) -> *UDateFormat #foreign libicutu "udat_clone_73";
+udat_clone :: (fmt: *UDateFormat, status: *UErrorCode) -> *UDateFormat #foreign libicui18n "udat_clone_73";
 
-udat_format :: (format: *UDateFormat, dateToFormat: UDate, result: *UChar, resultLength: s32, position: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicutu "udat_format_73";
+udat_format :: (format: *UDateFormat, dateToFormat: UDate, result: *UChar, resultLength: s32, position: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicui18n "udat_format_73";
 
-udat_formatCalendar :: (format: *UDateFormat, calendar: *UCalendar, result: *UChar, capacity: s32, position: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicutu "udat_formatCalendar_73";
+udat_formatCalendar :: (format: *UDateFormat, calendar: *UCalendar, result: *UChar, capacity: s32, position: *UFieldPosition, status: *UErrorCode) -> s32 #foreign libicui18n "udat_formatCalendar_73";
 
-udat_formatForFields :: (format: *UDateFormat, dateToFormat: UDate, result: *UChar, resultLength: s32, fpositer: *UFieldPositionIterator, status: *UErrorCode) -> s32 #foreign libicutu "udat_formatForFields_73";
+udat_formatForFields :: (format: *UDateFormat, dateToFormat: UDate, result: *UChar, resultLength: s32, fpositer: *UFieldPositionIterator, status: *UErrorCode) -> s32 #foreign libicui18n "udat_formatForFields_73";
 
-udat_formatCalendarForFields :: (format: *UDateFormat, calendar: *UCalendar, result: *UChar, capacity: s32, fpositer: *UFieldPositionIterator, status: *UErrorCode) -> s32 #foreign libicutu "udat_formatCalendarForFields_73";
+udat_formatCalendarForFields :: (format: *UDateFormat, calendar: *UCalendar, result: *UChar, capacity: s32, fpositer: *UFieldPositionIterator, status: *UErrorCode) -> s32 #foreign libicui18n "udat_formatCalendarForFields_73";
 
-udat_parse :: (format: *UDateFormat, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> UDate #foreign libicutu "udat_parse_73";
+udat_parse :: (format: *UDateFormat, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> UDate #foreign libicui18n "udat_parse_73";
 
-udat_parseCalendar :: (format: *UDateFormat, calendar: *UCalendar, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> void #foreign libicutu "udat_parseCalendar_73";
+udat_parseCalendar :: (format: *UDateFormat, calendar: *UCalendar, text: *UChar, textLength: s32, parsePos: *s32, status: *UErrorCode) -> void #foreign libicui18n "udat_parseCalendar_73";
 
-udat_isLenient :: (fmt: *UDateFormat) -> UBool #foreign libicutu "udat_isLenient_73";
+udat_isLenient :: (fmt: *UDateFormat) -> UBool #foreign libicui18n "udat_isLenient_73";
 
-udat_setLenient :: (fmt: *UDateFormat, isLenient: UBool) -> void #foreign libicutu "udat_setLenient_73";
+udat_setLenient :: (fmt: *UDateFormat, isLenient: UBool) -> void #foreign libicui18n "udat_setLenient_73";
 
-udat_getCalendar :: (fmt: *UDateFormat) -> *UCalendar #foreign libicutu "udat_getCalendar_73";
+udat_getCalendar :: (fmt: *UDateFormat) -> *UCalendar #foreign libicui18n "udat_getCalendar_73";
 
-udat_setCalendar :: (fmt: *UDateFormat, calendarToSet: *UCalendar) -> void #foreign libicutu "udat_setCalendar_73";
+udat_setCalendar :: (fmt: *UDateFormat, calendarToSet: *UCalendar) -> void #foreign libicui18n "udat_setCalendar_73";
 
-udat_getNumberFormat :: (fmt: *UDateFormat) -> *UNumberFormat #foreign libicutu "udat_getNumberFormat_73";
+udat_getNumberFormat :: (fmt: *UDateFormat) -> *UNumberFormat #foreign libicui18n "udat_getNumberFormat_73";
 
-udat_getNumberFormatForField :: (fmt: *UDateFormat, field: UChar) -> *UNumberFormat #foreign libicutu "udat_getNumberFormatForField_73";
+udat_getNumberFormatForField :: (fmt: *UDateFormat, field: UChar) -> *UNumberFormat #foreign libicui18n "udat_getNumberFormatForField_73";
 
-udat_adoptNumberFormatForFields :: (fmt: *UDateFormat, fields: *UChar, numberFormatToSet: *UNumberFormat, status: *UErrorCode) -> void #foreign libicutu "udat_adoptNumberFormatForFields_73";
+udat_adoptNumberFormatForFields :: (fmt: *UDateFormat, fields: *UChar, numberFormatToSet: *UNumberFormat, status: *UErrorCode) -> void #foreign libicui18n "udat_adoptNumberFormatForFields_73";
 
-udat_setNumberFormat :: (fmt: *UDateFormat, numberFormatToSet: *UNumberFormat) -> void #foreign libicutu "udat_setNumberFormat_73";
+udat_setNumberFormat :: (fmt: *UDateFormat, numberFormatToSet: *UNumberFormat) -> void #foreign libicui18n "udat_setNumberFormat_73";
 
-udat_adoptNumberFormat :: (fmt: *UDateFormat, numberFormatToAdopt: *UNumberFormat) -> void #foreign libicutu "udat_adoptNumberFormat_73";
+udat_adoptNumberFormat :: (fmt: *UDateFormat, numberFormatToAdopt: *UNumberFormat) -> void #foreign libicui18n "udat_adoptNumberFormat_73";
 
-udat_getAvailable :: (localeIndex: s32) -> *u8 #foreign libicutu "udat_getAvailable_73";
+udat_getAvailable :: (localeIndex: s32) -> *u8 #foreign libicui18n "udat_getAvailable_73";
 
-udat_countAvailable :: () -> s32 #foreign libicutu "udat_countAvailable_73";
+udat_countAvailable :: () -> s32 #foreign libicui18n "udat_countAvailable_73";
 
-udat_get2DigitYearStart :: (fmt: *UDateFormat, status: *UErrorCode) -> UDate #foreign libicutu "udat_get2DigitYearStart_73";
+udat_get2DigitYearStart :: (fmt: *UDateFormat, status: *UErrorCode) -> UDate #foreign libicui18n "udat_get2DigitYearStart_73";
 
-udat_set2DigitYearStart :: (fmt: *UDateFormat, d: UDate, status: *UErrorCode) -> void #foreign libicutu "udat_set2DigitYearStart_73";
+udat_set2DigitYearStart :: (fmt: *UDateFormat, d: UDate, status: *UErrorCode) -> void #foreign libicui18n "udat_set2DigitYearStart_73";
 
-udat_toPattern :: (fmt: *UDateFormat, localized: UBool, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "udat_toPattern_73";
+udat_toPattern :: (fmt: *UDateFormat, localized: UBool, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicui18n "udat_toPattern_73";
 
-udat_applyPattern :: (format: *UDateFormat, localized: UBool, pattern: *UChar, patternLength: s32) -> void #foreign libicutu "udat_applyPattern_73";
+udat_applyPattern :: (format: *UDateFormat, localized: UBool, pattern: *UChar, patternLength: s32) -> void #foreign libicui18n "udat_applyPattern_73";
 
 /**
 * The possible types of date format symbols
@@ -2210,23 +2210,23 @@ UDateFormatSymbolType :: enum u32 {
 
 UDateFormatSymbols :: struct {}
 
-udat_getSymbols :: (fmt: *UDateFormat, type: UDateFormatSymbolType, symbolIndex: s32, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "udat_getSymbols_73";
+udat_getSymbols :: (fmt: *UDateFormat, type: UDateFormatSymbolType, symbolIndex: s32, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicui18n "udat_getSymbols_73";
 
-udat_countSymbols :: (fmt: *UDateFormat, type: UDateFormatSymbolType) -> s32 #foreign libicutu "udat_countSymbols_73";
+udat_countSymbols :: (fmt: *UDateFormat, type: UDateFormatSymbolType) -> s32 #foreign libicui18n "udat_countSymbols_73";
 
-udat_setSymbols :: (format: *UDateFormat, type: UDateFormatSymbolType, symbolIndex: s32, value: *UChar, valueLength: s32, status: *UErrorCode) -> void #foreign libicutu "udat_setSymbols_73";
+udat_setSymbols :: (format: *UDateFormat, type: UDateFormatSymbolType, symbolIndex: s32, value: *UChar, valueLength: s32, status: *UErrorCode) -> void #foreign libicui18n "udat_setSymbols_73";
 
-udat_getLocaleByType :: (fmt: *UDateFormat, type: ULocDataLocaleType, status: *UErrorCode) -> *u8 #foreign libicutu "udat_getLocaleByType_73";
+udat_getLocaleByType :: (fmt: *UDateFormat, type: ULocDataLocaleType, status: *UErrorCode) -> *u8 #foreign libicui18n "udat_getLocaleByType_73";
 
-udat_setContext :: (fmt: *UDateFormat, value: UDisplayContext, status: *UErrorCode) -> void #foreign libicutu "udat_setContext_73";
+udat_setContext :: (fmt: *UDateFormat, value: UDisplayContext, status: *UErrorCode) -> void #foreign libicui18n "udat_setContext_73";
 
-udat_getContext :: (fmt: *UDateFormat, type: UDisplayContextType, status: *UErrorCode) -> UDisplayContext #foreign libicutu "udat_getContext_73";
+udat_getContext :: (fmt: *UDateFormat, type: UDisplayContextType, status: *UErrorCode) -> UDisplayContext #foreign libicui18n "udat_getContext_73";
 
-udat_toPatternRelativeDate :: (fmt: *UDateFormat, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "udat_toPatternRelativeDate_73";
+udat_toPatternRelativeDate :: (fmt: *UDateFormat, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicui18n "udat_toPatternRelativeDate_73";
 
-udat_toPatternRelativeTime :: (fmt: *UDateFormat, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicutu "udat_toPatternRelativeTime_73";
+udat_toPatternRelativeTime :: (fmt: *UDateFormat, result: *UChar, resultLength: s32, status: *UErrorCode) -> s32 #foreign libicui18n "udat_toPatternRelativeTime_73";
 
-udat_applyPatternRelative :: (format: *UDateFormat, datePattern: *UChar, datePatternLength: s32, timePattern: *UChar, timePatternLength: s32, status: *UErrorCode) -> void #foreign libicutu "udat_applyPatternRelative_73";
+udat_applyPatternRelative :: (format: *UDateFormat, datePattern: *UChar, datePatternLength: s32, timePattern: *UChar, timePatternLength: s32, status: *UErrorCode) -> void #foreign libicui18n "udat_applyPatternRelative_73";
 
 /**
 * @internal
@@ -2234,21 +2234,21 @@ udat_applyPatternRelative :: (format: *UDateFormat, datePattern: *UChar, datePat
 */
 UDateFormatOpener :: #type (timeStyle: UDateFormatStyle, dateStyle: UDateFormatStyle, locale: *u8, tzID: *UChar, tzIDLength: s32, pattern: *UChar, patternLength: s32, status: *UErrorCode) -> *UDateFormat #c_call;
 
-udat_registerOpener :: (opener: UDateFormatOpener, status: *UErrorCode) -> void #foreign libicutu "udat_registerOpener_73";
+udat_registerOpener :: (opener: UDateFormatOpener, status: *UErrorCode) -> void #foreign libicui18n "udat_registerOpener_73";
 
-udat_unregisterOpener :: (opener: UDateFormatOpener, status: *UErrorCode) -> UDateFormatOpener #foreign libicutu "udat_unregisterOpener_73";
+udat_unregisterOpener :: (opener: UDateFormatOpener, status: *UErrorCode) -> UDateFormatOpener #foreign libicui18n "udat_unregisterOpener_73";
 
-u_getDataDirectory :: () -> *u8 #foreign libicutu "u_getDataDirectory_73";
+u_getDataDirectory :: () -> *u8 #foreign libicuuc "u_getDataDirectory_73";
 
-u_setDataDirectory :: (directory: *u8) -> void #foreign libicutu "u_setDataDirectory_73";
+u_setDataDirectory :: (directory: *u8) -> void #foreign libicuuc "u_setDataDirectory_73";
 
-u_getTimeZoneFilesDirectory :: (status: *UErrorCode) -> *u8 #foreign libicutu "u_getTimeZoneFilesDirectory_73";
+u_getTimeZoneFilesDirectory :: (status: *UErrorCode) -> *u8 #foreign libicuuc "u_getTimeZoneFilesDirectory_73";
 
-u_setTimeZoneFilesDirectory :: (path: *u8, status: *UErrorCode) -> void #foreign libicutu "u_setTimeZoneFilesDirectory_73";
+u_setTimeZoneFilesDirectory :: (path: *u8, status: *UErrorCode) -> void #foreign libicuuc "u_setTimeZoneFilesDirectory_73";
 
-u_charsToUChars :: (cs: *u8, us: *UChar, length: s32) -> void #foreign libicutu "u_charsToUChars_73";
+u_charsToUChars :: (cs: *u8, us: *UChar, length: s32) -> void #foreign libicuuc "u_charsToUChars_73";
 
-u_UCharsToChars :: (us: *UChar, cs: *u8, length: s32) -> void #foreign libicutu "u_UCharsToChars_73";
+u_UCharsToChars :: (us: *UChar, cs: *u8, length: s32) -> void #foreign libicuuc "u_UCharsToChars_73";
 
 /**
 * Origin constants for UCharIterator.getIndex() and UCharIterator.move().
@@ -2647,109 +2647,109 @@ UCharIterator :: struct {
     setState:      UCharIteratorSetState;
 }
 
-uiter_current32 :: (iter: *UCharIterator) -> UChar32 #foreign libicutu "uiter_current32_73";
+uiter_current32 :: (iter: *UCharIterator) -> UChar32 #foreign libicuuc "uiter_current32_73";
 
-uiter_next32 :: (iter: *UCharIterator) -> UChar32 #foreign libicutu "uiter_next32_73";
+uiter_next32 :: (iter: *UCharIterator) -> UChar32 #foreign libicuuc "uiter_next32_73";
 
-uiter_previous32 :: (iter: *UCharIterator) -> UChar32 #foreign libicutu "uiter_previous32_73";
+uiter_previous32 :: (iter: *UCharIterator) -> UChar32 #foreign libicuuc "uiter_previous32_73";
 
-uiter_getState :: (iter: *UCharIterator) -> u32 #foreign libicutu "uiter_getState_73";
+uiter_getState :: (iter: *UCharIterator) -> u32 #foreign libicuuc "uiter_getState_73";
 
-uiter_setState :: (iter: *UCharIterator, state: u32, pErrorCode: *UErrorCode) -> void #foreign libicutu "uiter_setState_73";
+uiter_setState :: (iter: *UCharIterator, state: u32, pErrorCode: *UErrorCode) -> void #foreign libicuuc "uiter_setState_73";
 
-uiter_setString :: (iter: *UCharIterator, s: *UChar, length: s32) -> void #foreign libicutu "uiter_setString_73";
+uiter_setString :: (iter: *UCharIterator, s: *UChar, length: s32) -> void #foreign libicuuc "uiter_setString_73";
 
-uiter_setUTF16BE :: (iter: *UCharIterator, s: *u8, length: s32) -> void #foreign libicutu "uiter_setUTF16BE_73";
+uiter_setUTF16BE :: (iter: *UCharIterator, s: *u8, length: s32) -> void #foreign libicuuc "uiter_setUTF16BE_73";
 
-uiter_setUTF8 :: (iter: *UCharIterator, s: *u8, length: s32) -> void #foreign libicutu "uiter_setUTF8_73";
+uiter_setUTF8 :: (iter: *UCharIterator, s: *u8, length: s32) -> void #foreign libicuuc "uiter_setUTF8_73";
 
 UBreakIterator :: struct {}
 
-u_strlen :: (s: *UChar) -> s32 #foreign libicutu "u_strlen_73";
+u_strlen :: (s: *UChar) -> s32 #foreign libicuuc "u_strlen_73";
 
-u_countChar32 :: (s: *UChar, length: s32) -> s32 #foreign libicutu "u_countChar32_73";
+u_countChar32 :: (s: *UChar, length: s32) -> s32 #foreign libicuuc "u_countChar32_73";
 
-u_strHasMoreChar32Than :: (s: *UChar, length: s32, number: s32) -> UBool #foreign libicutu "u_strHasMoreChar32Than_73";
+u_strHasMoreChar32Than :: (s: *UChar, length: s32, number: s32) -> UBool #foreign libicuuc "u_strHasMoreChar32Than_73";
 
-u_strcat :: (dst: *UChar, src: *UChar) -> *UChar #foreign libicutu "u_strcat_73";
+u_strcat :: (dst: *UChar, src: *UChar) -> *UChar #foreign libicuuc "u_strcat_73";
 
-u_strncat :: (dst: *UChar, src: *UChar, n: s32) -> *UChar #foreign libicutu "u_strncat_73";
+u_strncat :: (dst: *UChar, src: *UChar, n: s32) -> *UChar #foreign libicuuc "u_strncat_73";
 
-u_strstr :: (s: *UChar, substring: *UChar) -> *UChar #foreign libicutu "u_strstr_73";
+u_strstr :: (s: *UChar, substring: *UChar) -> *UChar #foreign libicuuc "u_strstr_73";
 
-u_strFindFirst :: (s: *UChar, length: s32, substring: *UChar, subLength: s32) -> *UChar #foreign libicutu "u_strFindFirst_73";
+u_strFindFirst :: (s: *UChar, length: s32, substring: *UChar, subLength: s32) -> *UChar #foreign libicuuc "u_strFindFirst_73";
 
-u_strchr :: (s: *UChar, c: UChar) -> *UChar #foreign libicutu "u_strchr_73";
+u_strchr :: (s: *UChar, c: UChar) -> *UChar #foreign libicuuc "u_strchr_73";
 
-u_strchr32 :: (s: *UChar, c: UChar32) -> *UChar #foreign libicutu "u_strchr32_73";
+u_strchr32 :: (s: *UChar, c: UChar32) -> *UChar #foreign libicuuc "u_strchr32_73";
 
-u_strrstr :: (s: *UChar, substring: *UChar) -> *UChar #foreign libicutu "u_strrstr_73";
+u_strrstr :: (s: *UChar, substring: *UChar) -> *UChar #foreign libicuuc "u_strrstr_73";
 
-u_strFindLast :: (s: *UChar, length: s32, substring: *UChar, subLength: s32) -> *UChar #foreign libicutu "u_strFindLast_73";
+u_strFindLast :: (s: *UChar, length: s32, substring: *UChar, subLength: s32) -> *UChar #foreign libicuuc "u_strFindLast_73";
 
-u_strrchr :: (s: *UChar, c: UChar) -> *UChar #foreign libicutu "u_strrchr_73";
+u_strrchr :: (s: *UChar, c: UChar) -> *UChar #foreign libicuuc "u_strrchr_73";
 
-u_strrchr32 :: (s: *UChar, c: UChar32) -> *UChar #foreign libicutu "u_strrchr32_73";
+u_strrchr32 :: (s: *UChar, c: UChar32) -> *UChar #foreign libicuuc "u_strrchr32_73";
 
-u_strpbrk :: (_string: *UChar, matchSet: *UChar) -> *UChar #foreign libicutu "u_strpbrk_73";
+u_strpbrk :: (_string: *UChar, matchSet: *UChar) -> *UChar #foreign libicuuc "u_strpbrk_73";
 
-u_strcspn :: (_string: *UChar, matchSet: *UChar) -> s32 #foreign libicutu "u_strcspn_73";
+u_strcspn :: (_string: *UChar, matchSet: *UChar) -> s32 #foreign libicuuc "u_strcspn_73";
 
-u_strspn :: (_string: *UChar, matchSet: *UChar) -> s32 #foreign libicutu "u_strspn_73";
+u_strspn :: (_string: *UChar, matchSet: *UChar) -> s32 #foreign libicuuc "u_strspn_73";
 
-u_strtok_r :: (src: *UChar, delim: *UChar, saveState: **UChar) -> *UChar #foreign libicutu "u_strtok_r_73";
+u_strtok_r :: (src: *UChar, delim: *UChar, saveState: **UChar) -> *UChar #foreign libicuuc "u_strtok_r_73";
 
-u_strcmp :: (s1: *UChar, s2: *UChar) -> s32 #foreign libicutu "u_strcmp_73";
+u_strcmp :: (s1: *UChar, s2: *UChar) -> s32 #foreign libicuuc "u_strcmp_73";
 
-u_strcmpCodePointOrder :: (s1: *UChar, s2: *UChar) -> s32 #foreign libicutu "u_strcmpCodePointOrder_73";
+u_strcmpCodePointOrder :: (s1: *UChar, s2: *UChar) -> s32 #foreign libicuuc "u_strcmpCodePointOrder_73";
 
-u_strCompare :: (s1: *UChar, length1: s32, s2: *UChar, length2: s32, codePointOrder: UBool) -> s32 #foreign libicutu "u_strCompare_73";
+u_strCompare :: (s1: *UChar, length1: s32, s2: *UChar, length2: s32, codePointOrder: UBool) -> s32 #foreign libicuuc "u_strCompare_73";
 
-u_strCompareIter :: (iter1: *UCharIterator, iter2: *UCharIterator, codePointOrder: UBool) -> s32 #foreign libicutu "u_strCompareIter_73";
+u_strCompareIter :: (iter1: *UCharIterator, iter2: *UCharIterator, codePointOrder: UBool) -> s32 #foreign libicuuc "u_strCompareIter_73";
 
-u_strCaseCompare :: (s1: *UChar, length1: s32, s2: *UChar, length2: s32, options: u32, pErrorCode: *UErrorCode) -> s32 #foreign libicutu "u_strCaseCompare_73";
+u_strCaseCompare :: (s1: *UChar, length1: s32, s2: *UChar, length2: s32, options: u32, pErrorCode: *UErrorCode) -> s32 #foreign libicuuc "u_strCaseCompare_73";
 
-u_strncmp :: (ucs1: *UChar, ucs2: *UChar, n: s32) -> s32 #foreign libicutu "u_strncmp_73";
+u_strncmp :: (ucs1: *UChar, ucs2: *UChar, n: s32) -> s32 #foreign libicuuc "u_strncmp_73";
 
-u_strncmpCodePointOrder :: (s1: *UChar, s2: *UChar, n: s32) -> s32 #foreign libicutu "u_strncmpCodePointOrder_73";
+u_strncmpCodePointOrder :: (s1: *UChar, s2: *UChar, n: s32) -> s32 #foreign libicuuc "u_strncmpCodePointOrder_73";
 
-u_strcasecmp :: (s1: *UChar, s2: *UChar, options: u32) -> s32 #foreign libicutu "u_strcasecmp_73";
+u_strcasecmp :: (s1: *UChar, s2: *UChar, options: u32) -> s32 #foreign libicuuc "u_strcasecmp_73";
 
-u_strncasecmp :: (s1: *UChar, s2: *UChar, n: s32, options: u32) -> s32 #foreign libicutu "u_strncasecmp_73";
+u_strncasecmp :: (s1: *UChar, s2: *UChar, n: s32, options: u32) -> s32 #foreign libicuuc "u_strncasecmp_73";
 
-u_memcasecmp :: (s1: *UChar, s2: *UChar, length: s32, options: u32) -> s32 #foreign libicutu "u_memcasecmp_73";
+u_memcasecmp :: (s1: *UChar, s2: *UChar, length: s32, options: u32) -> s32 #foreign libicuuc "u_memcasecmp_73";
 
-u_strcpy :: (dst: *UChar, src: *UChar) -> *UChar #foreign libicutu "u_strcpy_73";
+u_strcpy :: (dst: *UChar, src: *UChar) -> *UChar #foreign libicuuc "u_strcpy_73";
 
-u_strncpy :: (dst: *UChar, src: *UChar, n: s32) -> *UChar #foreign libicutu "u_strncpy_73";
+u_strncpy :: (dst: *UChar, src: *UChar, n: s32) -> *UChar #foreign libicuuc "u_strncpy_73";
 
-u_uastrcpy :: (dst: *UChar, src: *u8) -> *UChar #foreign libicutu "u_uastrcpy_73";
+u_uastrcpy :: (dst: *UChar, src: *u8) -> *UChar #foreign libicuuc "u_uastrcpy_73";
 
-u_uastrncpy :: (dst: *UChar, src: *u8, n: s32) -> *UChar #foreign libicutu "u_uastrncpy_73";
+u_uastrncpy :: (dst: *UChar, src: *u8, n: s32) -> *UChar #foreign libicuuc "u_uastrncpy_73";
 
-u_austrcpy :: (dst: *u8, src: *UChar) -> *u8 #foreign libicutu "u_austrcpy_73";
+u_austrcpy :: (dst: *u8, src: *UChar) -> *u8 #foreign libicuuc "u_austrcpy_73";
 
-u_austrncpy :: (dst: *u8, src: *UChar, n: s32) -> *u8 #foreign libicutu "u_austrncpy_73";
+u_austrncpy :: (dst: *u8, src: *UChar, n: s32) -> *u8 #foreign libicuuc "u_austrncpy_73";
 
-u_memcpy :: (dest: *UChar, src: *UChar, count: s32) -> *UChar #foreign libicutu "u_memcpy_73";
+u_memcpy :: (dest: *UChar, src: *UChar, count: s32) -> *UChar #foreign libicuuc "u_memcpy_73";
 
-u_memmove :: (dest: *UChar, src: *UChar, count: s32) -> *UChar #foreign libicutu "u_memmove_73";
+u_memmove :: (dest: *UChar, src: *UChar, count: s32) -> *UChar #foreign libicuuc "u_memmove_73";
 
-u_memset :: (dest: *UChar, c: UChar, count: s32) -> *UChar #foreign libicutu "u_memset_73";
+u_memset :: (dest: *UChar, c: UChar, count: s32) -> *UChar #foreign libicuuc "u_memset_73";
 
-u_memcmp :: (buf1: *UChar, buf2: *UChar, count: s32) -> s32 #foreign libicutu "u_memcmp_73";
+u_memcmp :: (buf1: *UChar, buf2: *UChar, count: s32) -> s32 #foreign libicuuc "u_memcmp_73";
 
-u_memcmpCodePointOrder :: (s1: *UChar, s2: *UChar, count: s32) -> s32 #foreign libicutu "u_memcmpCodePointOrder_73";
+u_memcmpCodePointOrder :: (s1: *UChar, s2: *UChar, count: s32) -> s32 #foreign libicuuc "u_memcmpCodePointOrder_73";
 
-u_memchr :: (s: *UChar, c: UChar, count: s32) -> *UChar #foreign libicutu "u_memchr_73";
+u_memchr :: (s: *UChar, c: UChar, count: s32) -> *UChar #foreign libicuuc "u_memchr_73";
 
-u_memchr32 :: (s: *UChar, c: UChar32, count: s32) -> *UChar #foreign libicutu "u_memchr32_73";
+u_memchr32 :: (s: *UChar, c: UChar32, count: s32) -> *UChar #foreign libicuuc "u_memchr32_73";
 
-u_memrchr :: (s: *UChar, c: UChar, count: s32) -> *UChar #foreign libicutu "u_memrchr_73";
+u_memrchr :: (s: *UChar, c: UChar, count: s32) -> *UChar #foreign libicuuc "u_memrchr_73";
 
-u_memrchr32 :: (s: *UChar, c: UChar32, count: s32) -> *UChar #foreign libicutu "u_memrchr32_73";
+u_memrchr32 :: (s: *UChar, c: UChar32, count: s32) -> *UChar #foreign libicuuc "u_memrchr32_73";
 
-u_unescape :: (src: *u8, dest: *UChar, destCapacity: s32) -> s32 #foreign libicutu "u_unescape_73";
+u_unescape :: (src: *u8, dest: *UChar, destCapacity: s32) -> s32 #foreign libicuuc "u_unescape_73";
 
 /**
 * Callback function for u_unescapeAt() that returns a character of
@@ -2765,41 +2765,41 @@ u_unescape :: (src: *u8, dest: *UChar, destCapacity: s32) -> s32 #foreign libicu
 */
 UNESCAPE_CHAR_AT :: #type (offset: s32, _context: *void) -> UChar #c_call;
 
-u_unescapeAt :: (charAt: UNESCAPE_CHAR_AT, offset: *s32, length: s32, _context: *void) -> UChar32 #foreign libicutu "u_unescapeAt_73";
+u_unescapeAt :: (charAt: UNESCAPE_CHAR_AT, offset: *s32, length: s32, _context: *void) -> UChar32 #foreign libicuuc "u_unescapeAt_73";
 
-u_strToUpper :: (dest: *UChar, destCapacity: s32, src: *UChar, srcLength: s32, locale: *u8, pErrorCode: *UErrorCode) -> s32 #foreign libicutu "u_strToUpper_73";
+u_strToUpper :: (dest: *UChar, destCapacity: s32, src: *UChar, srcLength: s32, locale: *u8, pErrorCode: *UErrorCode) -> s32 #foreign libicuuc "u_strToUpper_73";
 
-u_strToLower :: (dest: *UChar, destCapacity: s32, src: *UChar, srcLength: s32, locale: *u8, pErrorCode: *UErrorCode) -> s32 #foreign libicutu "u_strToLower_73";
+u_strToLower :: (dest: *UChar, destCapacity: s32, src: *UChar, srcLength: s32, locale: *u8, pErrorCode: *UErrorCode) -> s32 #foreign libicuuc "u_strToLower_73";
 
-u_strToTitle :: (dest: *UChar, destCapacity: s32, src: *UChar, srcLength: s32, titleIter: *UBreakIterator, locale: *u8, pErrorCode: *UErrorCode) -> s32 #foreign libicutu "u_strToTitle_73";
+u_strToTitle :: (dest: *UChar, destCapacity: s32, src: *UChar, srcLength: s32, titleIter: *UBreakIterator, locale: *u8, pErrorCode: *UErrorCode) -> s32 #foreign libicuuc "u_strToTitle_73";
 
-u_strFoldCase :: (dest: *UChar, destCapacity: s32, src: *UChar, srcLength: s32, options: u32, pErrorCode: *UErrorCode) -> s32 #foreign libicutu "u_strFoldCase_73";
+u_strFoldCase :: (dest: *UChar, destCapacity: s32, src: *UChar, srcLength: s32, options: u32, pErrorCode: *UErrorCode) -> s32 #foreign libicuuc "u_strFoldCase_73";
 
-u_strToWCS :: (dest: *wchar_t, destCapacity: s32, pDestLength: *s32, src: *UChar, srcLength: s32, pErrorCode: *UErrorCode) -> *wchar_t #foreign libicutu "u_strToWCS_73";
+u_strToWCS :: (dest: *wchar_t, destCapacity: s32, pDestLength: *s32, src: *UChar, srcLength: s32, pErrorCode: *UErrorCode) -> *wchar_t #foreign libicuuc "u_strToWCS_73";
 
-u_strFromWCS :: (dest: *UChar, destCapacity: s32, pDestLength: *s32, src: *wchar_t, srcLength: s32, pErrorCode: *UErrorCode) -> *UChar #foreign libicutu "u_strFromWCS_73";
+u_strFromWCS :: (dest: *UChar, destCapacity: s32, pDestLength: *s32, src: *wchar_t, srcLength: s32, pErrorCode: *UErrorCode) -> *UChar #foreign libicuuc "u_strFromWCS_73";
 
-u_strToUTF8 :: (dest: *u8, destCapacity: s32, pDestLength: *s32, src: *UChar, srcLength: s32, pErrorCode: *UErrorCode) -> *u8 #foreign libicutu "u_strToUTF8_73";
+u_strToUTF8 :: (dest: *u8, destCapacity: s32, pDestLength: *s32, src: *UChar, srcLength: s32, pErrorCode: *UErrorCode) -> *u8 #foreign libicuuc "u_strToUTF8_73";
 
-u_strFromUTF8 :: (dest: *UChar, destCapacity: s32, pDestLength: *s32, src: *u8, srcLength: s32, pErrorCode: *UErrorCode) -> *UChar #foreign libicutu "u_strFromUTF8_73";
+u_strFromUTF8 :: (dest: *UChar, destCapacity: s32, pDestLength: *s32, src: *u8, srcLength: s32, pErrorCode: *UErrorCode) -> *UChar #foreign libicuuc "u_strFromUTF8_73";
 
-u_strToUTF8WithSub :: (dest: *u8, destCapacity: s32, pDestLength: *s32, src: *UChar, srcLength: s32, subchar: UChar32, pNumSubstitutions: *s32, pErrorCode: *UErrorCode) -> *u8 #foreign libicutu "u_strToUTF8WithSub_73";
+u_strToUTF8WithSub :: (dest: *u8, destCapacity: s32, pDestLength: *s32, src: *UChar, srcLength: s32, subchar: UChar32, pNumSubstitutions: *s32, pErrorCode: *UErrorCode) -> *u8 #foreign libicuuc "u_strToUTF8WithSub_73";
 
-u_strFromUTF8WithSub :: (dest: *UChar, destCapacity: s32, pDestLength: *s32, src: *u8, srcLength: s32, subchar: UChar32, pNumSubstitutions: *s32, pErrorCode: *UErrorCode) -> *UChar #foreign libicutu "u_strFromUTF8WithSub_73";
+u_strFromUTF8WithSub :: (dest: *UChar, destCapacity: s32, pDestLength: *s32, src: *u8, srcLength: s32, subchar: UChar32, pNumSubstitutions: *s32, pErrorCode: *UErrorCode) -> *UChar #foreign libicuuc "u_strFromUTF8WithSub_73";
 
-u_strFromUTF8Lenient :: (dest: *UChar, destCapacity: s32, pDestLength: *s32, src: *u8, srcLength: s32, pErrorCode: *UErrorCode) -> *UChar #foreign libicutu "u_strFromUTF8Lenient_73";
+u_strFromUTF8Lenient :: (dest: *UChar, destCapacity: s32, pDestLength: *s32, src: *u8, srcLength: s32, pErrorCode: *UErrorCode) -> *UChar #foreign libicuuc "u_strFromUTF8Lenient_73";
 
-u_strToUTF32 :: (dest: *UChar32, destCapacity: s32, pDestLength: *s32, src: *UChar, srcLength: s32, pErrorCode: *UErrorCode) -> *UChar32 #foreign libicutu "u_strToUTF32_73";
+u_strToUTF32 :: (dest: *UChar32, destCapacity: s32, pDestLength: *s32, src: *UChar, srcLength: s32, pErrorCode: *UErrorCode) -> *UChar32 #foreign libicuuc "u_strToUTF32_73";
 
-u_strFromUTF32 :: (dest: *UChar, destCapacity: s32, pDestLength: *s32, src: *UChar32, srcLength: s32, pErrorCode: *UErrorCode) -> *UChar #foreign libicutu "u_strFromUTF32_73";
+u_strFromUTF32 :: (dest: *UChar, destCapacity: s32, pDestLength: *s32, src: *UChar32, srcLength: s32, pErrorCode: *UErrorCode) -> *UChar #foreign libicuuc "u_strFromUTF32_73";
 
-u_strToUTF32WithSub :: (dest: *UChar32, destCapacity: s32, pDestLength: *s32, src: *UChar, srcLength: s32, subchar: UChar32, pNumSubstitutions: *s32, pErrorCode: *UErrorCode) -> *UChar32 #foreign libicutu "u_strToUTF32WithSub_73";
+u_strToUTF32WithSub :: (dest: *UChar32, destCapacity: s32, pDestLength: *s32, src: *UChar, srcLength: s32, subchar: UChar32, pNumSubstitutions: *s32, pErrorCode: *UErrorCode) -> *UChar32 #foreign libicuuc "u_strToUTF32WithSub_73";
 
-u_strFromUTF32WithSub :: (dest: *UChar, destCapacity: s32, pDestLength: *s32, src: *UChar32, srcLength: s32, subchar: UChar32, pNumSubstitutions: *s32, pErrorCode: *UErrorCode) -> *UChar #foreign libicutu "u_strFromUTF32WithSub_73";
+u_strFromUTF32WithSub :: (dest: *UChar, destCapacity: s32, pDestLength: *s32, src: *UChar32, srcLength: s32, subchar: UChar32, pNumSubstitutions: *s32, pErrorCode: *UErrorCode) -> *UChar #foreign libicuuc "u_strFromUTF32WithSub_73";
 
-u_strToJavaModifiedUTF8 :: (dest: *u8, destCapacity: s32, pDestLength: *s32, src: *UChar, srcLength: s32, pErrorCode: *UErrorCode) -> *u8 #foreign libicutu "u_strToJavaModifiedUTF8_73";
+u_strToJavaModifiedUTF8 :: (dest: *u8, destCapacity: s32, pDestLength: *s32, src: *UChar, srcLength: s32, pErrorCode: *UErrorCode) -> *u8 #foreign libicuuc "u_strToJavaModifiedUTF8_73";
 
-u_strFromJavaModifiedUTF8WithSub :: (dest: *UChar, destCapacity: s32, pDestLength: *s32, src: *u8, srcLength: s32, subchar: UChar32, pNumSubstitutions: *s32, pErrorCode: *UErrorCode) -> *UChar #foreign libicutu "u_strFromJavaModifiedUTF8WithSub_73";
+u_strFromJavaModifiedUTF8WithSub :: (dest: *UChar, destCapacity: s32, pDestLength: *s32, src: *u8, srcLength: s32, subchar: UChar32, pNumSubstitutions: *s32, pErrorCode: *UErrorCode) -> *UChar #foreign libicuuc "u_strFromJavaModifiedUTF8WithSub_73";
 
 #scope_file
 
@@ -2871,9 +2871,9 @@ u_strFromJavaModifiedUTF8WithSub :: (dest: *UChar, destCapacity: s32, pDestLengt
 
 
 #if OS == .MACOS {
-    libicutu :: #library "macos/libicutu";
-    libicuuc :: #library "macos/libicuuc";
-    libicui18n :: #library "macos/libicui18n";
-    libicudata :: #library "macos/libicudata";
+    libicudata :: #library "macos/lib/libicudata";
+    libicuuc :: #library "macos/lib/libicuuc";
+    libicui18n :: #library "macos/lib/libicui18n";
+    libicutu :: #library "macos/lib/libicutu";
 }
 

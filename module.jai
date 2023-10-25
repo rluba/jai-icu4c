@@ -1,3 +1,8 @@
+DEFAULT_ICU_DATA :: #run sprint("%/data", #filepath);
+
+init_icu :: (path_to_data := DEFAULT_ICU_DATA) {
+    u_setDataDirectory(temp_c_string(path_to_data));
+}
 
 // The result will be zero-terminated but the zero is _not_ included in the count.
 utf16_from_utf8 :: (str: string) -> result: [] u16, success: bool {

@@ -1,4 +1,6 @@
 main :: () {
+    init_icu();
+
     utf_roundtrip();
     available_locales();
     time_in_timezone_to_utc();
