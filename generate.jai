@@ -1,9 +1,10 @@
-AT_COMPILE_TIME :: true;
+AT_COMPILE_TIME   :: true;
 
-COMPILE         :: true;       // Enable to compile the library from source before generating bindings.
+COMPILE           :: false;       // Enable to compile the library from source before generating bindings.
 
-ICU_PATH        :: "icu-73.2"; // Path to the source, not included in this repo.
-ICU_VERSION     :: "73";       // For stipping identifier suffixes and for patching the dylib rpaths on macOS
+ICU_PATH          :: "icu-73.2"; // Path to the source, not included in this repo.
+ICU_VERSION       :: "73.2";     // For stipping identifier suffixes, copying the data file, and patching the dylib rpaths on macOS
+ICU_MAJOR_VERSION :: #run -> string { _, left := split_from_left(ICU_VERSION, #char "."); return left; }
 
 #if AT_COMPILE_TIME {
     #run {
@@ -139,13 +140,20 @@ build_icu :: () -> bool {
     run_or_exit(..build_command, working_directory = absolute_build_dir);
 	log("Done building icu");
 
+    log("Copying data file…");
+    data_src := tprint("%/share/icu/%/icudt%l.dat", absolute_install_dir, ICU_VERSION, ICU_MAJOR_VERSION);
+    data_dest := tprint("data/icudt%l.dat", ICU_MAJOR_VERSION);
+    success = copy_file(data_src, data_dest);
+    if !success exit(1);
+    log("Done copying data file");
+
     #if OS == .MACOS {
         log("Patching library paths…");
         library_names := string.[
-            tprint("libicuuc.%.dylib", ICU_VERSION),
-            tprint("libicudata.%.dylib", ICU_VERSION),
-            tprint("libicutu.%.dylib", ICU_VERSION),
-            tprint("libicui18n.%.dylib", ICU_VERSION),
+            tprint("libicuuc.%.dylib",   ICU_MAJOR_VERSION),
+            tprint("libicudata.%.dylib", ICU_MAJOR_VERSION),
+            tprint("libicutu.%.dylib",   ICU_MAJOR_VERSION),
+            tprint("libicui18n.%.dylib", ICU_MAJOR_VERSION),
         ];
         for lib: library_names {
             path := tprint("macos/lib/%", lib);
@@ -189,8 +197,15 @@ run_or_exit :: (command: .. string, working_directory := "") -> string {
 
 
 icu_visitor :: (decl: *Declaration, parent_decl: *Declaration) -> Declaration_Visit_Result {
-    if !decl.parent && ends_with(decl.output_name, ICU_VERSION) {
-        decl.output_name.count -= ICU_VERSION.count + 1; // Strip version suffix (eg. "_73")
+    if !decl.parent {
+        if ends_with(decl.output_name, ICU_MAJOR_VERSION) {
+            decl.output_name.count -= ICU_MAJOR_VERSION.count + 1; // Strip version suffix (eg. "_73")
+        }
+
+        if begins_with(decl.output_name, "U_PLATFORM") {
+            decl.decl_flags |= .OMIT_FROM_OUTPUT;
+            return .STOP;
+        }
     }
 
     return .RECURSE;
@@ -200,9 +215,14 @@ FOOTER :: #string END
 
 #if OS == .MACOS {
     libicudata :: #library "macos/lib/libicudata";
-    libicuuc :: #library "macos/lib/libicuuc";
+    libicuuc   :: #library "macos/lib/libicuuc";
     libicui18n :: #library "macos/lib/libicui18n";
-    libicutu :: #library "macos/lib/libicutu";
+    libicutu   :: #library "macos/lib/libicutu";
+} else #if OS == .LINUX {
+    libicudata :: #library "linux/lib/libicudata";
+    libicuuc   :: #library "linux/lib/libicuuc";
+    libicui18n :: #library "linux/lib/libicui18n";
+    libicutu   :: #library "linux/lib/libicutu";
 }
 
 END

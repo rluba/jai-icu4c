@@ -13,8 +13,14 @@
 .DS_Store
 *.dSYM
 /example/example
-/macos/bin
-/macos/sbin
-/macos/share
+
+# compiled stuff we don’t care about
+/*/bin
+/*/sbin
+/*/share
+
+# source dirs
 /icu-*/
+
+# build dirs
 /*_build/

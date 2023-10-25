@@ -124,20 +124,6 @@ U_PF_OS390 :: 9000;
 
 U_PF_OS400 :: 9400;
 
-U_PLATFORM :: U_PF_DARWIN;
-
-U_PLATFORM_USES_ONLY_WIN32_API :: 0;
-
-U_PLATFORM_HAS_WIN32_API :: 0;
-
-U_PLATFORM_HAS_WINUWP_API :: 0;
-
-U_PLATFORM_IMPLEMENTS_POSIX :: 1;
-
-U_PLATFORM_IS_LINUX_BASED :: 0;
-
-U_PLATFORM_IS_DARWIN_BASED :: 1;
-
 U_HAVE_STDINT_H :: 1;
 
 U_HAVE_INTTYPES_H :: U_HAVE_STDINT_H;
@@ -2872,8 +2858,13 @@ u_strFromJavaModifiedUTF8WithSub :: (dest: *UChar, destCapacity: s32, pDestLengt
 
 #if OS == .MACOS {
     libicudata :: #library "macos/lib/libicudata";
-    libicuuc :: #library "macos/lib/libicuuc";
+    libicuuc   :: #library "macos/lib/libicuuc";
     libicui18n :: #library "macos/lib/libicui18n";
-    libicutu :: #library "macos/lib/libicutu";
+    libicutu   :: #library "macos/lib/libicutu";
+} else #if OS == .LINUX {
+    libicudata :: #library "linux/lib/libicudata";
+    libicuuc   :: #library "linux/lib/libicuuc";
+    libicui18n :: #library "linux/lib/libicui18n";
+    libicutu   :: #library "linux/lib/libicutu";
 }
 
