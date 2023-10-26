@@ -147,8 +147,9 @@ build_icu :: () -> bool {
     if !success exit(1);
     log("Done copying data file");
 
+    // We need to adjust where these libraries search for their dependencies or using these library is a PITA!
+    log("Patching library paths…");
     #if OS == .MACOS {
-        log("Patching library paths…");
         library_names := string.[
             tprint("libicuuc.%.dylib",   ICU_MAJOR_VERSION),
             tprint("libicudata.%.dylib", ICU_MAJOR_VERSION),
@@ -169,8 +170,10 @@ build_icu :: () -> bool {
             );
             run_or_exit(..args);
         }
-        log("Done patching @rpath");
+    } else #if OS == .LINUX {
+        run_or_exit("patchelf", "--set-rpath", "'$ORIGIN'", "libicuuc.so");
     }
+    log("Done patching library paths");
 
 	return true;
 }

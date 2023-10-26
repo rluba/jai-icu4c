@@ -8,7 +8,7 @@ CFLAGS =
 CXXFLAGS =  -std=c++11
 # DEFS only contains those UCONFIG_CPPFLAGS which are not auto-set by platform.h
 DEFS = 
-prefix = /opt/app/linux
+prefix = /opt/app/modules/icu4c/linux
 exec_prefix = ${prefix}
 #bindir = ${exec_prefix}/bin
 libdir = ${exec_prefix}/lib

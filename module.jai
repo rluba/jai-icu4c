@@ -109,6 +109,16 @@ is_format_success :: (status: UErrorCode) -> bool {
     #load "unix.jai";
 }
 #scope_module
+
 wchar_t :: u16;
 
 Math :: #import "Math"; // FOr S32_MAX, which shouldn’t be in Math…
+
+#if OS == .MACOS {
+    libcpp   :: #system_library "libc++";
+} else #if OS == .LINUX {
+    // Some extra crap that icu4c needs to compile on Ubuntu 18.04
+    // You will probably need to adjust this when building on other Linux versions.
+    libstdcpp  :: #system_library "libstdc++.so.6";
+    libunwind  :: #system_library "libunwind";
+}
