@@ -157,7 +157,7 @@ build_icu :: () -> bool {
             tprint("libicui18n.%.dylib", ICU_MAJOR_VERSION),
         ];
         for lib: library_names {
-            path := tprint("macos/lib/%", lib);
+            path := tprint("%/lib/%", install_dir, lib);
             args: [..] string;
             array_add(*args, "install_name_tool");
             for library_names {
@@ -171,7 +171,15 @@ build_icu :: () -> bool {
             run_or_exit(..args);
         }
     } else #if OS == .LINUX {
-        run_or_exit("patchelf", "--set-rpath", "'$ORIGIN'", "libicuuc.so");
+        LIBRARY_NAMES :: string.[
+            "libicuuc.so",
+            "libicudata.so",
+            "libicutu.so",
+            "libicui18n.so",
+        ];
+        for LIBRARY_NAMES {
+            run_or_exit("patchelf", "--set-rpath", "$ORIGIN", tprint("%/lib/%", install_dir, it));
+        }
     }
     log("Done patching library paths");
 
