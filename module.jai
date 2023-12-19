@@ -57,6 +57,21 @@ format_date :: (format: *UDateFormat, date: Apollo_Time) -> string, success: boo
     return result, success;
 }
 
+set_date_format_timezone :: (format: *UDateFormat, timezone: string) -> bool {
+    timezone_utf16, success := utf16_from_utf8(timezone);
+    if !success return false;
+
+    status := UErrorCode.ZERO_ERROR;
+    cal := udat_getCalendar(format);
+    ucal_setTimeZone(cal, timezone_utf16.data, xx timezone_utf16.count, *status);
+    if status != .ZERO_ERROR {
+        log_error("Could not set calendar timezone: %", status);
+        return false;
+    }
+
+    return true;
+}
+
 format_date :: (format: *UDateFormat, date: UDate) -> string, success: bool {
     status := UErrorCode.ZERO_ERROR;
     preflight_count := udat_format(format, date, null, 0, null, *status);

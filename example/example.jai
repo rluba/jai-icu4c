@@ -150,11 +150,16 @@ date_formats :: () {
             exit(1);
         }
 
+        // Make date format use UTC timezone since time is interpreted in UTC
+        // but icu4c date formats format as local time by default:
+        success := set_date_format_timezone(date_format, "UTC");
+        assert(success);
+
         defer udat_close(date_format);
 
         udate := cast(UDate) to_milliseconds(time - APOLLO_TIME_FOR_JAN_1_1970);
 
-        result, success := format_date(date_format, udate);
+        result, success= := format_date(date_format, udate);
         assert(success);
         log("\"%\" formatted for \"%\" is \"%\"", calendar_to_iso_string(to_calendar(time)), locale, result);
     }
