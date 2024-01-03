@@ -78,7 +78,7 @@ format_date :: (format: *UDateFormat, date: UDate) -> string, success: bool {
     assert(status == .BUFFER_OVERFLOW_ERROR);
 
     status = .ZERO_ERROR;
-    buffer := NewArray(preflight_count + 1, u16, initialized = false, allocator = temp); // + 1 for zero-termination
+    buffer := NewArray(preflight_count + 1, u16, initialized = false,, temp); // + 1 for zero-termination
     count := udat_format(format, date, buffer.data, cast(s32) buffer.count, null, *status);
     if status != .ZERO_ERROR {
         log_error("Could not format date %: %", date, status);
@@ -99,7 +99,7 @@ format_float64 :: (format: *UNumberFormat, value: float64) -> string, success: b
     assert(status == .BUFFER_OVERFLOW_ERROR);
 
     status = .ZERO_ERROR;
-    buffer := NewArray(preflight_count + 1, u16, initialized = false, allocator = temp); // + 1 for zero-termination
+    buffer := NewArray(preflight_count + 1, u16, initialized = false,, temp); // + 1 for zero-termination
     count := unum_formatDouble(format, value, buffer.data, cast(s32) buffer.count, null, *status);
     if status != .ZERO_ERROR {
         log_error("Could not format number %: %", value, status);
