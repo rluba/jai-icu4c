@@ -147,7 +147,7 @@ build_icu :: () -> bool {
     if !success exit(1);
     log("Done copying data file");
 
-    // We need to adjust where these libraries search for their dependencies or using these library is a PITA!
+    // We need to adjust where these libraries search for their dependencies or using this library is a PITA!
     log("Patching library paths…");
     #if OS == .MACOS {
         library_names := string.[
