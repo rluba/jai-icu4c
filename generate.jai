@@ -112,7 +112,7 @@ build_icu :: () -> bool {
 
     #if OS == .MACOS {
         options := get_build_options();
-        macos_version_arg := tprint("-mmacosx-version-min=%.%\0", options.minimum_macos_version.major, options.minimum_macos_version.minor);
+        macos_version_arg := tprint("-mmacosx-version-min=%.%\0", options.minimum_os_version.major, options.minimum_os_version.minor);
         setenv("CFLAGS", macos_version_arg.data, 1);
         setenv("CXXFLAGS", macos_version_arg.data, 1);
         // setenv("LDFLAGS", tprint("-install_name @rpath/%", exe_path), 1);
