@@ -376,7 +376,7 @@ U_FILE_SEP_STRING :: "/";
 U_FILE_ALT_SEP_STRING :: "/";
 U_PATH_SEP_STRING :: ":";
 
-UITER_NO_STATE :: cast(u32)0xffffffff;
+UITER_NO_STATE :: cast(u32) 0xffffffff;
 
 /**
 * The ICU boolean type, a signed-byte integer.
@@ -2761,9 +2761,9 @@ u_strToTitle :: (dest: *UChar, destCapacity: s32, src: *UChar, srcLength: s32, t
 
 u_strFoldCase :: (dest: *UChar, destCapacity: s32, src: *UChar, srcLength: s32, options: u32, pErrorCode: *UErrorCode) -> s32 #foreign libicuuc "u_strFoldCase_73";
 
-u_strToWCS :: (dest: *wchar_t, destCapacity: s32, pDestLength: *s32, src: *UChar, srcLength: s32, pErrorCode: *UErrorCode) -> *wchar_t #foreign libicuuc "u_strToWCS_73";
+u_strToWCS :: (dest: *s32, destCapacity: s32, pDestLength: *s32, src: *UChar, srcLength: s32, pErrorCode: *UErrorCode) -> *s32 #foreign libicuuc "u_strToWCS_73";
 
-u_strFromWCS :: (dest: *UChar, destCapacity: s32, pDestLength: *s32, src: *wchar_t, srcLength: s32, pErrorCode: *UErrorCode) -> *UChar #foreign libicuuc "u_strFromWCS_73";
+u_strFromWCS :: (dest: *UChar, destCapacity: s32, pDestLength: *s32, src: *s32, srcLength: s32, pErrorCode: *UErrorCode) -> *UChar #foreign libicuuc "u_strFromWCS_73";
 
 u_strToUTF8 :: (dest: *u8, destCapacity: s32, pDestLength: *s32, src: *UChar, srcLength: s32, pErrorCode: *UErrorCode) -> *u8 #foreign libicuuc "u_strToUTF8_73";
 
@@ -2857,14 +2857,14 @@ u_strFromJavaModifiedUTF8WithSub :: (dest: *UChar, destCapacity: s32, pDestLengt
 
 
 #if OS == .MACOS {
-    libicudata :: #library "macos/lib/libicudata";
     libicuuc   :: #library "macos/lib/libicuuc";
-    libicui18n :: #library "macos/lib/libicui18n";
-    libicutu   :: #library "macos/lib/libicutu";
+    libicudata :: #library,link_always "macos/lib/libicudata";
+    libicui18n :: #library,link_always "macos/lib/libicui18n";
+    libicutu   :: #library,link_always "macos/lib/libicutu";
 } else #if OS == .LINUX {
-    libicudata :: #library "linux/lib/libicudata";
     libicuuc   :: #library "linux/lib/libicuuc";
-    libicui18n :: #library "linux/lib/libicui18n";
-    libicutu   :: #library "linux/lib/libicutu";
+    libicudata :: #library,link_always "linux/lib/libicudata";
+    libicui18n :: #library,link_always "linux/lib/libicui18n";
+    libicutu   :: #library,link_always "linux/lib/libicutu";
 }
 

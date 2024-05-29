@@ -225,15 +225,15 @@ icu_visitor :: (decl: *Declaration, parent_decl: *Declaration) -> Declaration_Vi
 FOOTER :: #string END
 
 #if OS == .MACOS {
-    libicudata :: #library "macos/lib/libicudata";
     libicuuc   :: #library "macos/lib/libicuuc";
-    libicui18n :: #library "macos/lib/libicui18n";
-    libicutu   :: #library "macos/lib/libicutu";
+    libicudata :: #library,link_always "macos/lib/libicudata";
+    libicui18n :: #library,link_always "macos/lib/libicui18n";
+    libicutu   :: #library,link_always "macos/lib/libicutu";
 } else #if OS == .LINUX {
-    libicudata :: #library "linux/lib/libicudata";
     libicuuc   :: #library "linux/lib/libicuuc";
-    libicui18n :: #library "linux/lib/libicui18n";
-    libicutu   :: #library "linux/lib/libicutu";
+    libicudata :: #library,link_always "linux/lib/libicudata";
+    libicui18n :: #library,link_always "linux/lib/libicui18n";
+    libicutu   :: #library,link_always "linux/lib/libicutu";
 }
 
 END
